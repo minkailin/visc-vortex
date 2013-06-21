@@ -1,0 +1,127 @@
+\documentclass[useAMS,usenatbib]{mn2e}
+\usepackage{epsfig,rotate,graphicx}
+\usepackage[fleqn]{amsmath}
+\usepackage{subfigure}
+\usepackage{lscape}
+\usepackage{bm}
+\usepackage{paralist}
+
+\newcommand{\p}{\partial}
+\newcommand{\mnras}{MNRAS}
+\newcommand{\apj}{ApJ}
+\newcommand{\na}{New A}
+\newcommand{\aap}{A\&A}
+\newcommand{\apjl}{ApJL}
+\newcommand{\araa}{ARAA}
+\newcommand{\dd}{\delta}
+\newcommand{\adot}{\dot{a}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\gtrsim}{\;\raisebox{-.8ex}{$\buildrel{\textstyle>}\over\sim$}\;}
+\newcommand{\lesssim}{\; \raisebox{-.8ex}{$\buildrel{\textstyle<}\over\sim$}\;}
+\newcommand{\anrev}{{\it ARA\&A, }}
+\newcommand{\apjs}{{\it ApJS, }}
+\newcommand{\icar}{{\it Icarus, }}
+\newcommand{\mnr}{{\it MNRAS, }}
+\newcommand{\nat}{{\it Nature, }}
+\newcommand{\sci}{{\it Sci, }}
+\newcommand{\ana}{{\it A\&A, }}
+\newcommand{\anas}{{\it A\&AS, }}
+\newcommand{\aaps}{{\it A\&AS, }}
+\newcommand{\anar}{{\it A\&AR, }}
+\newcommand{\prd}{{\it Phys. Rev. D }}
+\newcommand{\qjl}{{\it QJRAS, }}
+\newcommand{\sbar}{\bar{\sigma}}
+\newcommand{\avg}[1]{\langle #1 \rangle}
+%% \newcommand{\max}{\mathrm{max}}
+%% \newcommand{\min}{\mathrm{min}}
+\newcommand{\aziavg}[1]{\langle #1 \rangle_\phi}
+\newcommand{\init}[1]{#1^{(0)}}
+\newcommand{\bu}{\bm{u}}
+\newcommand{\bv}{\bm{v}}
+\newcommand{\rin}{r_\mathrm{in}}
+\newcommand{\rout}{r_\mathrm{out}}
+\newcommand{\dampin}{r_\mathrm{d,in}}
+\newcommand{\dampout}{r_\mathrm{d,out}}
+\newcommand{\psid}{\psi_\mathrm{d}}
+\newcommand{\psitr}{\psi_\mathrm{tr}}
+\newcommand{\psimax}{\psi_\mathrm{max}}
+\newcommand{\Rtr}{R_\mathrm{tr}}
+\newcommand{\lmax}{l_\mathrm{max}}
+\newcommand{\mmax}{m_\mathrm{max}}
+\newcommand{\trel}{t_\mathrm{rel}}
+\newcommand{\zeus}{{\tt ZEUS-MP }}
+\newcommand{\pluto}{{\tt PLUTO }}
+\newcommand{\ii}{\mathrm{i}}
+%\newcommand{\avg}[1]{\langle{#1}\rangle}
+\DeclareMathOperator{\erf}{erf}
+
+
+
+
+\title[Vortex formation in viscous discs]{Testing large-scale 
+  vortex formation against viscous layers in three-dimensional discs}
+
+%% \author[Lin]{ Min-Kai Lin
+%%   \thanks{E-mail: mklin924@cita.utoronto.ca} \\ 
+%% Canadian Institute for Theoretical Astrophysics,  
+%% 60 St. George Street, Toronto, ON, M5S 3H8, Canada \\
+%% }
+
+\author[Lin and Umurhan]{ Min-Kai Lin$^1$
+  \thanks{E-mail: mklin924@cita.utoronto.ca} and Orkan M. Umurhan $^2$ \thanks{E-mail:TBC} \\
+  $^1$ Canadian Institute for Theoretical Astrophysics,
+  60 St. George Street, Toronto, ON, M5S 3H8, Canada \\
+  $^2$ TBC
+}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+  Radially structured astrophysical discs may undergo vortex-formation
+  through the non-axisymmetric Rossby wave instability (RWI). 
+  Important examples include protoplanetary discs containing dead
+  zones or planet gaps. However, the linear instability is
+  vertically-global. Physical conditions away from the disc midplane
+  may thus affect large-scale vortex formation through the RWI. In
+  particular, whether or not the instability operates in layered
+  accretion discs, applicable to dead zones in protoplanetary discs,
+  has not been verified. We present customized hydrodynamical
+  simulations of vortex-formation in structured protoplanetary discs
+  with an imposed viscosity that is height-dependent. Three types of numerical
+  experiments are performed:
+  \begin{inparaenum}[(i)]
+  \item non-axisymmetric linear instability of artificial
+    density bumps;  
+  \item vortex-formation at planet gap edges; and 
+  \item vortex-formation in discs with a radial viscosity transition.
+  \end{inparaenum}
+\end{abstract}
+
+\begin{keywords}
+planetary systems: formation --- planetary systems:
+protoplanetary discs
+\end{keywords}
+
+
+\section{Introduction}\label{intro}
+
+\input{model}
+\input{sims}
+\input{bump}
+\input{planet}
+\input{dead}
+%% \input{discussion}
+%% \input{summary}
+
+%% \section*{Acknowledgments}
+
+\bibliographystyle{mn2e}
+\bibliography{ref}
+
+ \appendix
+% \input{appendix}
+%\input{appendix2}
+
+\end{document}
