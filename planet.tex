@@ -91,16 +91,16 @@ at $\zeta_\nu = 1.5h,\,1.0h$, respectively. These layers have a kinematic
 viscosity of $\hat{\nu}\sim 10^{-5}$ by setting $A_\nu=10$.  (See
 Fig. \ref{planet_visc2d} for the viscosity profile for case P1.)  
 
-For completeness we also performed two high-viscosity simluations
-which do not develop vortices. Case P3 has $\hat{\nu}\sim10^{-5}$
-throughout the vertical extent, while in case P4 the uppermost $25\%$
-of the vertical domain has $\hat{\nu}\sim10^{-4}$. The purpose is to
-examine how a stable gap profile is affected by layered viscosity. 
+%For completeness we also performed two high-viscosity simluations
+%which do not develop vortices. Case P3 has $\hat{\nu}\sim10^{-5}$
+%throughout the vertical extent, while in case P4 the uppermost $25\%$
+%of the vertical domain has $\hat{\nu}\sim10^{-4}$. The purpose is to
+%examine how a stable gap profile is affected by layered viscosity. 
 
 \subsubsection{Extended vertical domain}
 We also consider two runs with an extended vertical domain size
-$n_h=3$. Case P5 has $A_\nu=1$ so there is no viscous layer. For case
-P6 we set the transition angle $\zeta_\nu=2h$ with $A_\nu=100$. 
+$n_h=3$. Case P3 has $A_\nu=1$ so there is no viscous layer. For case
+P4 we set the transition angle $\zeta_\nu=2h$ with $A_\nu=100$. 
 Thus, the viscous layer with $\hat{\nu}\sim10^{-4}$ occupies $33\%$ of
 the uppermost vertical domain. 
 %We also consider case P6 without a
@@ -139,11 +139,10 @@ a single vortex in quasi-steady state \citep{valborro07,lin10}.
       P0 &  2     &    1    &    n/a      & none     &   14.3    \\% Ro~ -0.03
       P1 &  2     &    10   &    1.5      & $25\%$  &    11.9     \\ 
       P2 &  2     &    10   &    1.0      & $50\%$  &    6.1      \\
-      P3 &  2     &    10   &    n/a      & none    &    ??      \\
-      P4&  2     &    100  &    1.5      & $25\%$  &    ??     \\
-      P5 &  3     &    1    &     n/a      & none  &     18.3   \\
-      P6 &  3     &    100   &    2.0      & $33\%$ &     3.5    \\
-%      P6 &  3     &    100   &    n/a      & none   &     ??     \\
+%      P3 &  2     &    10   &    n/a      & none    &    ??      \\
+%      P4&  2     &    100  &    1.5      & $25\%$  &    ??     \\
+      P3 &  3     &    1    &     n/a      & none  &     18.3   \\
+      P4 &  3     &    100   &    2.0      & $33\%$ &     3.5    \\
       \hline
   \end{tabular}
 \end{table}
@@ -242,7 +241,7 @@ survival, the entire vertical extent of the disc should be `dead'.
 %We now consider appending a viscous layer on top of the fiducial 
 %case P0. 
 Case P3 is the same as case P0 above, except with an increased
-vertical domain size of $3H$. Case P4 has a high-viscosity layer with
+vertical domain size of $3H$ at the reference radius. Case P4 has a high-viscosity layer with
 $\hat{\nu}\sim10^{-4}$ in the the uppermost scale-height of the
 computational domain. In other words, the bulk of the 
 %% has a viscosity $\hat{\nu} \sim 10^{-5}$ and $\hat{\nu}\sim 10^{-4}$
@@ -256,7 +255,7 @@ vortex instability is not affected by vertical domain size. We note
 that the viscosity is increased in the disc atmosphere, where the
 density is a factor $\sim 7$ times smaller than the midplane (but the
 viscosity is $100$ times larger). The viscous layer has surpressed
-vortex formation via the RWI. This implies that vortex formation via
+vortex formation. This implies that vortex formation via
 the RWI at planetary gap edges can not tolerate a signigicantly
 viscous atmosphere, even if such a layer only occurs away from the
 midplane.    
@@ -275,4 +274,8 @@ midplane.
 \end{figure}
  
 
-
+\subsubsection{Kinetic energy evolution}
+Here we compare the evolution of kinetic energy between case P3 and
+P4. We calculate the specific energy $W=|\bm{v}|^2/2$ and compute its
+azimuthal Fourier transform, $W_m(r,\theta)$. We consider $m=1$ since 
+the vortex represents an $m=1$ perturbation.  
