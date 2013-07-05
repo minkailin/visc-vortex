@@ -1,26 +1,28 @@
-\section{Governing equations}
-We consider a three-dimensional, strictly isothermal, non-self-gravitating fluid disc orbiting a central
-star of mass $M_*$. We use both spherical co-ordinates $\bm{r}=(r,\theta,\phi)$ and cylindrical co-ordinates 
+\section{Disc model and Governing equations}
+We consider a three-dimensional, strictly isothermal,
+non-self-gravitating fluid disc orbiting a central 
+star of mass $M_*$. We use both spherical co-ordinates
+$\bm{r}=(r,\theta,\phi)$ and cylindrical co-ordinates  
 $\bm{r}=(R, \phi, z)$ centred on the star and 
 adopt a non-rotating frame. We also define $\psi \equiv \pi/2 -
 \theta$ as the angular displacement from the disc midplane. For
 convenience, we will sometimes refer to $\psi$ as the vertical
-direction. The governing
-equations are: 
+direction. The governing equations are: 
 \begin{align}
-&\frac{\p\rho}{\p t} + \nabla\cdot\left(\rho\bm{v}\right) = 0,\label{cont_eq}\\
-&\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bv = -\frac{1}{\rho}\nabla p -\nabla{\left(\Phi_*+\Phi_p\right)} 
- +\bm{f}_\nu + \bm{f}_d, 
+&\frac{\p\rho}{\p t} + \nabla\cdot\left(\rho\bm{v}\right) =
+  0,\label{cont_eq}\\ 
+&\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bv = -\frac{1}{\rho}\nabla
+  p -\nabla{\left(\Phi_*+\Phi_p\right)} +\bm{f}_\nu + \bm{f}_d,    
 \end{align}
-where $\rho$ is the density, $\bv$ is the velocity field and 
+where $\rho$ is the mass density, $\bv$ is the velocity field and 
 $p=c_s^2\rho$ is the pressure. The isothermal sound speed is written
 as $c_s = hr_0\Omega_k(r_0)$, where $h$ is the aspect-ratio at the reference radius $r_0$, 
 $\Omega_k(R) = \sqrt{GM_*/R^3}$ is the Keplerian frequency and $G$ is the gravitational constant. 
-$\Phi_*(r) = -GM_*/r $ is the stellar potential and $\Phi_p$ is a
-planetary potential. Details of $\Phi_p$ are described in Section
+$\Phi_*(r) = -GM_*/r $ is the stellar potential and $\Phi_p$ is a 
+planetary potential. Details of $\Phi_p$ are given in Section
 \ref{planet}. 
 
-Two dissipative terms are included in the momentu, equations: viscous
+Two dissipative terms are included in the momentum, equations: viscous
 damping $\bm{f}_\nu$ and frictional damping $\bm{f}_d$. The viscous
 force is 
 \begin{align}
@@ -32,19 +34,22 @@ where
     - \frac{2}{3}\left(\nabla\cdot\bv\right)\bm{1} \right]
 \end{align}
 is the viscous stress tensor and $\nu$ is the kinematic viscosity 
-(`$^\dagger$' denotes the transpose). The frictional force is
+(`$^\dagger$' denotes the transpose). The frictional force is 
 \begin{align}
   \bm{f}_d = -\gamma\left(\bv - \bv_\mathrm{ref}\right),
 \end{align}
 where $\gamma$ is the damping coefficient and the reference velocity field is taken 
-to be the initial velocity field, $\bv_\mathrm{ref}=\bm{v}(t=0)$. %where $\init{\phantom{a}}$ denotes evaluation at $t=0$. 
-$\nu$ and $\gamma$ are prescribed functions of position only, and are
-specified later.   
+to be the initial velocity field, 
+$\bv_\mathrm{ref}=\bm{v}(t=0)$. %where $\init{\phantom{a}}$ denotes
+                                %evaluation at $t=0$.  
+$\nu$ and $\gamma$ are prescribed functions of position only (see
+below). %The kinematic viscosity $\nu$ is specified directly, but
+%conversion to an alpha parameter 
 
 \subsection{Disc model and initial conditions}\label{IC}
 The numerical disc model occupies $r\in[\rin,\rout]$, $\theta\in[\theta_\mathrm{min},
   \pi/2]$ and $\phi\in[0,2\pi]$ in spherical co-ordinates. 
-Only the upper disc is considered explicitly 
+Only the upper disc is simulated explicitly 
 ($\psi>0$), by assuming symmetry across the midplane. The maximum
 angular height is $\psimax \equiv \pi/2 - \theta_\mathrm{min}$. 
 The extent of the vertical domain is parametrized by $n_h\equiv
@@ -70,19 +75,18 @@ surface density $\Sigma_i(R)$ is chosen as
   \Sigma_i(R) = \Sigma_0\left(\frac{R}{r_0}\right)^{-\sigma}\times B(R),
   %\left(1 - \sqrt{\frac{R_\mathrm{in}}{R + H_\mathrm{in}}}\right)\times B(R),
 \end{align}
-where $\sigma$ is the power-law index and the surface density scale $\Sigma_0$ 
+where $\sigma$ is the power-law index, and the surface density scale $\Sigma_0$ 
 is arbitrary for a non-self-gravitating disc. 
-The bump function $B(R)$ is
+The bump function $B(R)$ is 
 \begin{align}
 B(R) = 1 + \left(A - 1\right)\exp{\left[-\frac{(R-r_0)^2}{2\Delta R^2}\right]},
 \end{align}
 where $A$ is the bump amplitude and $\Delta R$ is the bump width. The initial surface 
 density has bump if $A>1$ and is smooth if $A=1$. 
 
-The initial angular velocity is chosen
-to 
+The initial angular velocity is chosen to 
 satisfy centrifugal balance with pressure and stellar gravity: 
-\begin{align}\label{init_vphi}
+\begin{align}\label{init_vphi} 
   R\Omega^2_i = \frac{1}{\rho_i}\frac{\p p_i}{\p
     R} + \frac{\p\Phi_*}{\p R},  
 \end{align}
@@ -94,45 +98,8 @@ state. %% Note that Eq. \ref{init_den} and Eq. \ref{init_vphi} are the
 The initial cylindrical radial velocity $v_{Ri}$ and the viscosity
 profile $\nu$ depends on the numerical experiment, and will be
 described along with simulation results. Note that $v_{Ri}$ and $\nu$
-are not independent if one additionally requires a steady-state, as
-discussed below (see also \S\ref{density_bump}).   
-
-\subsubsection{Viscous equilibria for a radially structured
-  disc}\label{visc_eq} 
-The RWI is a linear instability. That is, non-axisymmetric
-disturbances grow exponentially with respect to a time-independent
-axisymmetric background. A convenient way to simulate the RWI is to
-initialize an inviscid disc with a density bump \citep{li00}. 
-
-%%Complications arise when trying to extend RWI simulations 
-However, in a viscous disc, a density bump will undergoe viscous
-spreading \citep{lyndenbell74}, meaning a linear instability cannot be
-defined in the usual way. 
-%% The viscous time-scale
-%% associated with a density bump of characteristic width $H$ is 
-%% $t_\nu=H^2/\nu = O(10P_0)$ for the maximum viscosity values
-%% we consider. This is still longer than the expected RWI  
-%% linear growth time-scale, $t_\mathrm{RWI}=O(P_0)$, but $t_\nu$ can be
-%% shorter than our simulation time-scales,
-%% $t_\mathrm{sim}=O(100P_0)$. 
-Therefore, if a density bump is set as initial conditions for the RWI
-in a viscous disc, they should correspond to a
-steady-state. 
-%Otherwise, the density bump will undergo both
-%axisymmetric viscous evolution and the non-axistymmetric instability.   
-
-In choosing $\rho_i$ and $\Omega_i$, we have neglected radial
-velocities and viscous forces in the steady-state vertical and
-cylindrical radial momentum equations (Eq. \ref{vert_balance} and
-Eq. \ref{init_vphi}, respectively). This is standard practice for
-accretion disc modelling \citep[e.g.][]{takeuchi02}.   
-
-However, $v_{Ri}$ and $\nu$ cannot be ignored in the azimuthal
-momentum equation. Indeed, if a stead-state is desired, then the
-conservation of angular momentum in a viscous disc implies special
-relations between the viscosity, cylindrical radial velocity and
-density field. We do this for simulations in \S\ref{density_bump}.   
-
+are not independent if one additionally requires a steady-state (see
+\S\ref{density_bump}).    
 
 \subsection{Damping}
 Frictional damping is often used in hydrodynamical simulations in order
@@ -165,4 +132,4 @@ $\bm{r}_p(t)~=~(r_0,\,\pi/2,\,\Omega_k(r_0)t+\pi)$ its position in
 spherical co-ordinates, $\epsilon_p = \epsilon_{p0}r_h$ is a
 softening length, and $r_h=(M_p/3M_*)^{1/3}r_0$ is the Hill radius. 
 For the purpose of our study $\Phi_p$ is considered as a 
-fixed external potential. That is, orbital migration is neglected.  
+fixed external potential. That is, orbital migration is neglected. 

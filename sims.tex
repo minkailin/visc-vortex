@@ -1,9 +1,9 @@
 \section{Numerical experiments}
 The neccessary condition for the RWI --- a potential vorticity 
 extremum --- is either set as an initial condition via a density bump, 
-or obtained from a smooth disc by evolving it under the action of a
-radially-structured viscosity profile or disc-planet interaction. The
-setup of each experiment is detailed in subsequent sections.   
+or obtained from a smooth disc by evolving it under disc-planet
+interaction. The setup of each experiment is detailed in subsequent
+sections.    
 
 We adopt units such that $G=M_*=1$, and the reference radius $r_0=1$.    
 We set $\sigma=0.5$ for the initial surface density profile and apply 
@@ -35,14 +35,14 @@ $r$, reflective in $\theta$ and periodic in $\phi$.
 %For all cases both radial boundaries are unperturbed and the midplane is reflective. 
 
 \subsection{Diagnostics}
-We list several quantities calculated from
-simulation data for use in visualization and analysis. 
-Averaged quantities are used to facilitate  
-comparison between different cases. We use $\avg{\cdots}_j$ 
-to denote spatial averaging along the $j^\mathrm{th}$ co-ordinate. 
-Azimuthal averages are taken over $\phi\in[0,2\pi]$, while the domain
-for meridional averaging is stated along with simulation results in
-the next section. %% We also use $\overline{\cdots}$ to denote a further
+We list several quantities calculated from simulation data for use in
+result visualization and analysis.  
+%Averaged quantities are used to facilitate  
+%comparison between different cases. We use $\avg{\cdots}_j$ 
+%to denote spatial averaging along the $j^\mathrm{th}$ co-ordinate. 
+%Azimuthal averages are taken over $\phi\in[0,2\pi]$, while the domain
+%for meridional averaging is stated along with simulation results in
+%the next section. %% We also use $\overline{\cdots}$ to denote a further
 %% time average. 
 
 \subsubsection{Density perturbations}
@@ -50,62 +50,30 @@ The relative density perturbation $\delta\rho$ is
 \begin{align}
   \delta\rho(\bm{r},t) \equiv \frac{\rho - \rho_i}{\rho_i}, 
 \end{align}
-and non-axisymmetric density fluctuation is 
+and the non-axisymmetric density fluctuation is 
 \begin{align}
-  \Delta\rho(\bm{r},t) \equiv \frac{\rho - \aziavg{\rho}}{\aziavg{\rho}}.
+  \Delta\rho(\bm{r},t) \equiv \frac{\rho -
+    \aziavg{\rho}}{\aziavg{\rho}}, 
 \end{align}
-%where $\avg{\cdot}_\phi$ denotes an azimuthal average. 
+where $\avg{\cdot}_\phi$ denotes an azimuthal average.  
 Note that in general $\Delta\rho$ accounts for the time evolution of
 the axisymmetric part of the density field, but if
-$\p_t\avg{\rho}_\phi=0$ then $\Delta\rho$ is  identical to
+$\p_t\avg{\rho}_\phi=0$ then $\Delta\rho$ is identical to
 $\delta\rho-\avg{\delta\rho}_\phi$.   
-
-For quantitative analysis of non-axisymmetric density structures, we  
-compute the $m^\mathrm{th}$ Fourier component of the density field, 
-\begin{align}
-\hat{\rho}_m(r,\theta,t) \equiv \int_0^{2\pi} \rho(\bm{r},t)\exp{(-\ii m\phi)}d\phi.
-\end{align}
-The magnitude of a Fourier mode is measured by 
-\begin{align} 
-a_m(t)\equiv \frac{b_m(t)}{b_0(0)},\quad b_m(t)\equiv \avg{|\hat{\rho}_m|}_r,
-\end{align} 
-
-
-The complex frequency $\sigma_m$ associated with the $m^\mathrm{th}$ component 
-is defined through 
-\begin{align}\label{sigma}
-  \frac{\p\hat{\rho}_m}{\p t} \equiv -\ii\sigma_m\hat{\rho}_m. 
-\end{align}
-The time derivative in Eq. \ref{sigma} can be computed implicitly by 
-Fourier-transforming the continuity equation.
-
-Note that we have defined the complex frequency as one would in a
-linear stability analysis because the RWI is a linear 
-instability. %% This definition is useful in assessing how the linear is
-%% affected by the various boundary effects in the
-%% linear phase (i.e. when perturbations are small). 
-The mode frequency defined here is therefore most appropriate to
-describe simulations where the axisymmetric background does not evolve
-in time (i.e. if $\p_t\avg{\rho}_\phi=0$), as required to define a
-linear instability. 
-
-In the linear stability problem $\sigma_m$ is a constant eigenvalue. 
-However, when extracted numerically from a non-linear simulation, 
-we will generally obtain $\sigma_m=\sigma_m(r,\theta,t)$. Thus, we compute 
-$\avg{\sigma_m}_r = m\omega_m + \ii q_m$    
-where $\omega_m$ is the mode frequency and $q_m$ is the growth rate.  
 
 
 \subsubsection{Vortical structures}
 The Rossby number
 \begin{align}
-  Ro \equiv \frac{\hat{\bm{z}}\cdot\nabla\times\bv-\avg{\hat{\bm{z}}\cdot\nabla\times\bv}_\phi}{2\aziavg{\Omega}},
-\end{align}
-can be used to quantify the strength of vortical structures and to visualize it. 
-$Ro<0$ signifies anti-cyclonic motion with respect to the axisymmetric shear. Note that while
-for thin discs the rotation profile is Keplerian, the shear is non-Keplerian for radially 
-structured discs (i.e. $\Omega\simeq\Omega_K$ but $\kappa\neq\Omega$).
-
+  Ro \equiv
+  \frac{\hat{\bm{z}}\cdot\nabla\times\bv-\avg{\hat{\bm{z}}\cdot\nabla\times\bv}_\phi}{2\aziavg{\Omega}},   
+\end{align} 
+can be used to quantify the strength of vortical structures and to
+visualize it. $Ro<0$ signifies anti-cyclonic motion with respect to
+the axisymmetric shear. Note that while for thin discs the rotation
+profile is Keplerian, the shear is non-Keplerian for radially  
+structured discs (i.e. $\Omega\simeq\Omega_K$ but
+$\kappa\neq\Omega$). 
 
 \subsubsection{Potential vorticity}
 The potential vorticity (PV, or vortensity) is defined as
@@ -129,7 +97,15 @@ integrals are confined to the computational domain.
 We recall for a two-dimensional disc the vortensity is defined as 
 $\eta_\mathrm{2D} \equiv \hat{\bm{z}}\cdot\nabla\times\bv/\Sigma$, and
 extrema in $\eta_\mathrm{2D}$ is neccessary for the RWI in
-2D. Clearly, if the velocity field has no vertical dependence then
-$\eta_z$ is proportional to $\eta_\mathrm{2D}$ (at fixed cylindrical
-radius).   
+2D \citep{lovelace99,lin10}. Clearly, if the velocity field has no
+vertical dependence then $\eta_z$ is proportional to
+$\eta_\mathrm{2D}$ (at fixed cylindrical radius).   
 
+\subsubsection{Perturbed kinetic energy density}  
+We will be interested in the energetics of non-axisymmetric
+structures. We define the perturbed kinetic energy as
+$W\equiv|\bm{v}|^2/|\bm{v}(t~=0)|^2 - 1$, and its Fourier transform 
+$W_m\equiv\int_0^{2\phi} W\exp{(-\mathrm{i}m\phi)}d\phi$. We then examine
+$|W_m(r,\theta)|$ averaged over portions of the $(r,\theta)$
+plane. %Specifically we define the `midplane energy' as $|W_m|$
+%averaged over $$
