@@ -4,13 +4,13 @@ We first consider discs initialised with a density bump. Our aim here
 is to examine the effect of (layered) viscosity on the RWI 
 \emph{through the linear perturbation}. 
 In general a density bump in a viscous disc will undergo viscous
-spreading \citep{lyndenbell74}, but it is possible to 
-avoid this by choosing a viscosity profile $\nu$ and initial cylindrical radial
+spreading \citep{lyndenbell74}, but we can circumvent this 
+by choosing the viscosity profile $\nu$ and initial cylindrical radial
 velocity $v_{Ri}$ appropriately. 
 Although artificial, this setup avoids 
 the simultaneous evolution of the density bump subject to
 axisymmetric viscous spreading and growth of
-non-axisymmetric perturbations; the latter of which is our focus. 
+non-axisymmetric disturbances; only the latter of which is our focus. 
 
 
 \subsection{Viscous equilibria for a radially structured
@@ -119,7 +119,7 @@ vertical extent with $n_h=2$ scale-heights and aspect-ratio $h=0.1$ at
 $R=r_0$. We use $(N_r, N_\theta,
 N_\phi)=(256,64,512)$ grid points. 
 The resolution at the reference radius is then
-$16,\,32,\,8$ cells per scale-height in $r,\theta,\phi$ directions,
+$16,\,32,\,8$ cells per scale-height in $(r,\theta,\phi)$ directions,
 respectively. The planetary potential is disabled for these runs
 ($M_p\equiv 0$).    
 
@@ -156,10 +156,10 @@ is equivalent to setting $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$.
 \subsubsection{Linear growth rates and frequencies}
 The present setup allows us to define a linear instability in the
 usual way: exponential growth of perturbations measured with respect
-to an axisymmetric steady equilibrium. Although a proper linear
+to an axisymmetric steady equilibrium. A proper linear
 stability analysis, including the full viscous stress tensor, is
-beyond the scope of this paper, we can nevertheless extract linear 
-mode growth rates from the early evolution of nonlinear simulations.  
+beyond the scope of this paper, but we can nevertheless extract linear 
+mode growth rates from the early evolution of the non-linear simulations.  
 
 %For quantitative analysis of non-axisymmetric density structures, 
 The $m^\mathrm{th}$ Fourier component of the density field is  
@@ -201,7 +201,7 @@ $\Omega_0\equiv\Omega_i(r_0)\simeq\Omega_K(r_0)$.
 
 \subsection{Results}
 Table \ref{artificial_bump} summarises the simulations presented in
-this section.%, along with several diagnostic measures 
+this section. %, along with several diagnostic measures 
 %of each case.  
  The linear mode frequencies are measured at 
 $t=10P_0$ and averaged over the shell $r\in[0.8,1.2]r_0$.   
@@ -323,10 +323,23 @@ Table \ref{artificial_bump} shows the dominant linear mode remains at
 $m=4$, but linear growth rate does appreciably decrease 
 (by $\sim 34\%$ from case V0 to V3). However, these linear growth timescales
 are still $O(P_0)$.  
-We have the important result that the effect of viscosity on the
+We thus have the important result that the effect of viscosity
+(layered or not) on the
 instability through the linear perturbations is not significant as the
 RWI remains dynamical even in the high viscosity disc.   %linear
                                 %perturbations not effecitvely damped out
+
+The top row of Fig. \ref{vdamp0} shows that layered viscosity has a
+non-trivial effect on $\Delta\rho$ in the
+non-linear regime. $|\Delta \rho|$ increases
+from case V0 to V1, then decreases from cases V1 to V3 (but aquires a
+more global distribution). The dominant azimuthal wavenumber also
+increase: vortices do not readily merge in case V2 and V3. 
+ 
+%(third and fourth columns in the top row of Fig. \ref{vdamp0}).  
+%While
+%$\max(\Delta\rho)$ decreases with increasing viscosity, its
+%distribution becomes more global.  
 
 %replace with energy discussion 
 %The top row of Fig. \ref{vdamp0} show the density fluctuations of the
@@ -337,11 +350,12 @@ RWI remains dynamical even in the high viscosity disc.   %linear
 %the second half of the simulation for case V1, but this value decreases
 %by about 0.1 for case V0 over the same timescale. 
 
-Increasing the viscous layer further to case V2 and V3, we observe an
-increase in the dominant azimuthal wavenumber in the nonlinear phase
-(third and fourth columns in the top row of Fig. \ref{vdamp0}).  While
-$\max(\Delta\rho)$ decreases with increasing viscosity, its
-distribution becomes more global.  
+%Increasing the viscous layer further to case V2 and V3, we observe an
+%increase in the dominant azimuthal wavenumber in the nonlinear phase
+%(third and fourth columns in the top row of Fig. \ref{vdamp0}).  
+%While
+%$\max(\Delta\rho)$ decreases with increasing viscosity, its
+%distribution becomes more global.  
 
 \begin{figure*}
    \centering
@@ -364,7 +378,7 @@ distribution becomes more global.
    \caption{Vortex formation in viscous discs initialised with
      artificial density bumps. Snapshots are taken at $t=100P_0$. The
      thickness of the viscous layer increases from left to 
-     right: case V0, V1, V2 and V3.  
+     right: case V0, V1, V2 and V3.   
      Top: non-axisymemtric density field at the midplane
      $\Delta\rho(z=0)$. Bottom: midplane Rossby number
      $Ro(z=0)$. Here, $\phi_0$ is the azimuth of $\max[\Delta\rho(z=0)]$. 
@@ -372,27 +386,59 @@ distribution becomes more global.
    }
 \end{figure*}
 
-Fig. \ref{vdamp0_vort} compares the Rossby number associated with the
-over-densities produced by the RWI. Thickening the viscous 
-layer decreases the vortex aspect-ratio. Since their widths remain
+The bottom row of Fig. \ref{vdamp0} compares the Rossby number
+associated with the over-densities. Thickening the viscous 
+layer decreases the vortex aspect ratio. Since their widths remain
 at $\sim 2H_0$, the vortices become smaller with increasing
 viscosity. This may be partly attributed to fewer vortex merging
 events having occured as viscosity is increased. The merging of
 two vortices usually leads to a larger but weaker vortex (smaller
 $|Ro|$), so if vortex merging is resisted then each vortex may evolve
-separately. Vortices then become stronger as viscosity is increased
-(more negative $Ro$).
+separately. Strangely, vortices become stronger  (more negative $Ro$)
+as viscosity is increased.
+
+We compare  in Fig. \ref{bump_energy} the perturbed kinetic energy for 
+cases B0, V0 and V1; which are all dominated by a single vortex in 
+quasi-steady state. Thus we compute $W_1$, and
+average it over the atmosphere ($\tan{\psi}\in[0,0.5]h$) and the 
+disc bulk ($\tan{\psi}\in[0.5,2.0]h$). These averages are restricted
+to the vortex region $r\in[0.8,1.2]r_0$. Note that for the layered
+case V1, the distinction between disc bulk and atmosphere also
+separates the low and high viscosity regions, respectively. 
+%In an averaged sense, among 
+%these runs case B0 has the lowest viscosity while case V1 has the
+%highest.
+
+Fig. \ref{bump_energy} displays only a minor difference between the
+perturbed kinetic energy densities between the disc bulk and
+atmosphere, even in case V1 where the viscosity in the two regions
+differ by 100. This suggests that the perturbation evolves
+two-dimensionally. The energy in case B0 and V0 are both subject to
+slow decay. By contrast case V1, which has the highest viscosity in an
+averaged sense, does \emph{not} show such a decay. This suggests that
+viscosity could in fact strengthen the perturbation. 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{figures/pdisk_kerz_cases_bump}
+  \caption{The $m=1$ component of the kinetic energy density for
+    the inviscid case B0 (solid), low viscosity case V0 (dotted) and a
+    layered viscosity case V1 (dashed). For each, the contribution 
+    averaged over the disc atmosphere (thin lines) and that from the
+    disc bulk (thick lines) are plotted separately. 
+    \label{bump_energy}}
+\end{figure}
 
 
+We point out that the snapshots in
+Fig. \ref{vdamp0} are taken at the midplane, but  
+the influence of viscosity is apparent even when comparing case V1 to
+V0, i.e. when the viscous layer is confined near the upper
+boundary. This demonstrates the vertically-global nature of vortex
+formation through the RWI. Conditions near the disc
+surface should be expected to influence the instability throughout the
+fluid column. 
 
-%Notice the difference between the snapshots taken at $t=50P_0$ and at
-%$t=100P_0$ in Fig. \ref{vdamp0}---\ref{vdamp0_vort}
-%diminishes with increasing viscosity. In fact, we found the
-%high-viscosity case V3 reached steady-state after $t\geq40P_0$. Thus,
-%with increasing viscosity the system resists nonlinear vortex merging
-%evolution is halted  
-%to produce a single vortex, which usually occurs on a dynamical
-%timescale in inviscid simulations (case B0). 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -401,8 +447,8 @@ separately. Vortices then become stronger as viscosity is increased
 The observation of stronger vortical structures (more negative $Ro$
 and smaller vortex aspect-ratio) with increasing
 viscosity is unexpected, since one normally expects viscosity to
-smooth out the flow. We can make sense of this result by comparing key
-timescales relevant to the problem. 
+smooth out the flow. Here, we  attempt to make some sense of this
+result by comparing key timescales relevant to the problem. 
 
 The characteristic spatial scale of the background density bump and of
 the instability is the local scale-height $H$, so the associated
@@ -414,7 +460,7 @@ The linear instability growth timescale is
 \begin{align}
   t_\mathrm{RWI} = \frac{1}{\epsilon \Omega},
 \end{align}
-where $\epsilon$ is found from numerical simulations. 
+where $\epsilon$ is found from numerical simulations.   
 The ratio of these timescales is
 \begin{align}
   \frac{t_\nu}{t_\mathrm{RWI}} \sim \frac{\epsilon h^2}{\hat{\nu}}.
@@ -422,39 +468,37 @@ The ratio of these timescales is
 Table \ref{artificial_bump} indicates $\epsilon \sim 0.1$. 
 Inserting $h=0.1$ and $\hat{\nu}=10^{-4}$ gives $t_\nu \sim 10
 t_\mathrm{RWI}$. That is, viscosity damping is slower than linear
-growth, even for the highest viscosity values we consider. The linear
-phase of the instability is therefore unaffected by viscosity. 
+growth, even for the highest viscosity values we consider. 
+The linear instability is therefore unaffected by viscosity. 
 
 \cite{meheut13} argued that $t_\mathrm{RWI}$ is also the vortex
 turn-over time $t_\mathrm{turn}$ when the instability saturates and
 the linear phase terminates. Then 
 $t_\nu\sim 10 t_\mathrm{turn}$, implying viscous effects 
-are unimportant over a turn-over time. 
+are unimportant over one turn-over time. 
 However, if we estimate a vortex turn-over time as $t_\mathrm{turn}
 \sim 2\pi/|Ro|\Omega$ then $t_\nu\sim (h^2|Ro|/2\pi\hat{\nu})t_\mathrm{turn}$.  
 Inserting $h=0.1,\,\hat{\nu}=10^{-4}$ and $|Ro|=0.25$ (case V3) gives 
 $t_\nu \sim 4t_\mathrm{turn}$. Therefore, depending on the vortex shape, 
 $t_\nu$ may not be much larger than $t_\mathrm{turn}$. 
 
-%% \cite[The inequality accounts for the fact that the
-%% turn-over time is longer for more elogated vortices,][]{lesur09}. 
-%Similarity between $t_\nu$ and $t_\mathrm{turn}$ suggest viscosity
-%should have smoothed out the vortical structure. 
-
-In any case, our simulations span several local viscous time-scales,
-$t_\mathrm{sim}\sim 10t_\nu $, so viscous damping should
-have taken place. On the contrary, $Ro$ becomes more negative as the
-viscous layer increases from case V0 to V3. To rationalise this
-observation, we recall that the RWI is fundamentally
-associated with a vortensity minimum and the instability is stronger
-for deeper minima \citep{li00}.  
-%and the viscosity profile has been specially chosen to
-%maintain such a structure in a steady state in the absence of
-%perturbations.  
+In any case, our simulations span several local viscous timescales, 
+$t_\mathrm{sim}\sim 10t_\nu $, so viscous damping should have taken
+place, making the observation that $Ro$ becomes more negative as the 
+viscous layer increases from case V0 to V3, a surprising
+result. However, recall that we have chosen a  time-independent
+viscosity profile consistent with a steady-state disc containing a
+density bump. That is, the viscosity profile is radially
+structured. We suggest that for such setups, viscosity attempts to
+restore the initial disc profile, i.e. the initial PV minimum, acting
+as a vorticity source.      
 
 \subsection{Potential voritcity evolution}
-Consider the potential vorticity perturbation at the bump radius, which was
-found to be  
+The RWI is fundamentally associated with a PV minimum and the
+instability is stronger for deeper minima \citep{li00}. We might
+therefore expect deeper minima to support stronger vortices. 
+Consider the potential vorticity perturbation at the bump radius,
+which we found to be  
 \begin{align}\label{vortensity_pert}
   \left.\frac{\aziavg{\eta_z}(t=100P_0)}{\eta_z(t=0)}\right|_{R=r_0} - 1 = 
   \begin{cases}
@@ -465,7 +509,7 @@ found to be
   \end{cases}.
 \end{align} 
 (This value is 4.92 for the inviscid case B0.) The PV
-perturbation is positive, so the initial PV minimum is weakened
+perturbation is positive, implying initial PV minimum is weakened
 by the vortices \citep{meheut10}. This effect
 diminishes with increasing viscosity. One contributing factor is 
 that viscosity reduces the linear growth rate, implying the linear
@@ -473,12 +517,7 @@ perturbations saturate at a smaller amplitude \citep{meheut13}. This
 is expected to weaken the background axisymmetric structure to a lesser
 extent.    
 
-We also recall that in the present simulations, the time-independent
-viscosity profile was specially chosen to be consistent with a
-steady-state disc containing a localised PV minimum.  
-That is, the viscosity profile is also radially structured. We suggest
-that for such setups, viscosity attempts to restore the initial disc
-profile, i.e. the initial PV minimum.   
+
 
 When viscosity is small, the viscous timescale is long compared to our
 simulation timescale. In this case the nonlinear evolution of the
@@ -488,23 +527,14 @@ associated with the density bump becomes shorter than our simulation
 timescale. %deviations away from the initial bump is smoothed out by
             %viscosity 
 This means that over the course of the simulation, our spatially-fixed
-viscosity profile acts as a source of PV minimum. 
+viscosity profile acts as a source to restore the original PV minimum. 
 
 In essence, in the nonlinear regime there is competition
 between destruction of the background PV minimum by the
 vortices and reformation of the initial radial PV minimum by the
 imposed viscosity profile. We except this latter to support the
-instability, leading to stronger vortices.  
-
+instability. 
  
-We point out that the snapshots in
-Fig. \ref{vdamp0}---\ref{vdamp0_vort} are taken at the midplane, but  
-the influence of viscosity is apparent even when comparing case V1 to
-V0, i.e. when the viscous layer is confined near the upper
-boundary. This demonstrates the vertically-global nature of vortex
-formation through the RWI. Conditions near the disc
-surface should be expected to influence the instability throughout the
-fluid column. 
 
 
 
