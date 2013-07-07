@@ -359,20 +359,20 @@ increase: vortices do not readily merge in case V2 and V3.
 
 \begin{figure*}
    \centering
-   \includegraphics[scale=.39,clip=true,trim=0cm 0.9cm 0cm
-     0.99cm]{figures/vdamp0_pdisk010}\includegraphics[scale=.39,clip=true,trim=2.3cm
+   \includegraphics[scale=.43,clip=true,trim=0cm 0.9cm 0cm
+     0.99cm]{figures/vdamp0_pdisk010}\includegraphics[scale=.43,clip=true,trim=2.3cm
      0.9cm 0cm
-     0.99cm]{figures/vdamp2_pdisk010}\includegraphics[scale=.39,clip=true,trim=2.3cm 
+     0.99cm]{figures/vdamp2_pdisk010}\includegraphics[scale=.43,clip=true,trim=2.3cm 
      0.9cm 0cm
-     0.99cm]{figures/vdamp3_pdisk010}\includegraphics[scale=.39,clip=true,trim=2.3cm
+     0.99cm]{figures/vdamp3_pdisk010}\includegraphics[scale=.43,clip=true,trim=2.3cm
      0.9cm 0cm
      0.99cm]{figures/vdamp0_nu4_pdisk010}\\
-      \includegraphics[scale=.39,clip=true,trim=0cm 0.cm 0cm
-     0.99cm]{figures/vdamp0_vort010}\includegraphics[scale=.39,clip=true,trim=2.3cm
+      \includegraphics[scale=.43,clip=true,trim=0cm 0.cm 0cm
+     0.99cm]{figures/vdamp0_vort010}\includegraphics[scale=.43,clip=true,trim=2.3cm
      0.0cm 0cm
-     0.99cm]{figures/vdamp2_vort010}\includegraphics[scale=.39,clip=true,trim=2.3cm 
+     0.99cm]{figures/vdamp2_vort010}\includegraphics[scale=.43,clip=true,trim=2.3cm 
      0.0cm 0cm
-     0.99cm]{figures/vdamp3_vort010}\includegraphics[scale=.39,clip=true,trim=2.3cm
+     0.99cm]{figures/vdamp3_vort010}\includegraphics[scale=.43,clip=true,trim=2.3cm
      0.0cm 0cm
      0.99cm]{figures/vdamp0_nu4_vort010}
    \caption{Vortex formation in viscous discs initialised with
@@ -486,7 +486,7 @@ In any case, our simulations span several local viscous timescales,
 $t_\mathrm{sim}\sim 10t_\nu $, so viscous damping should have taken
 place, making the observation that $Ro$ becomes more negative as the 
 viscous layer increases from case V0 to V3, a surprising
-result. However, recall that we have chosen a  time-independent
+result. However, recall that we have chosen a stationary
 viscosity profile consistent with a steady-state disc containing a
 density bump. That is, the viscosity profile is radially
 structured. We suggest that for such setups, viscosity attempts to
@@ -496,7 +496,7 @@ as a vorticity source.
 \subsection{Potential voritcity evolution}
 The RWI is fundamentally associated with a PV minimum and the
 instability is stronger for deeper minima \citep{li00}. We might
-therefore expect deeper minima to support stronger vortices. 
+therefore expect deeper minima to correlate with stronger vortices. 
 Consider the potential vorticity perturbation at the bump radius,
 which we found to be  
 \begin{align}\label{vortensity_pert}
@@ -509,18 +509,17 @@ which we found to be
   \end{cases}.
 \end{align} 
 (This value is 4.92 for the inviscid case B0.) The PV
-perturbation is positive, implying initial PV minimum is weakened
+perturbation is positive, thus the initial PV minimum is weakened
 by the vortices \citep{meheut10}. This effect
 diminishes with increasing viscosity. One contributing factor is 
-that viscosity reduces the linear growth rate, implying the linear
-perturbations saturate at a smaller amplitude \citep{meheut13}. This
+that viscosity reduces the linear growth rate (Table
+\ref{artificial_bump}), implying the linear 
+instability saturates at a smaller amplitude \citep{meheut13}. This  
 is expected to weaken the background axisymmetric structure to a lesser
 extent.    
 
-
-
 When viscosity is small, the viscous timescale is long compared to our
-simulation timescale. In this case the nonlinear evolution of the
+simulation timescale. In this case the non-linear evolution of the
 instability---vortex formation---weakens the PV minimum with viscosity
 playing no role. As we increase viscosity, the viscous timecale
 associated with the density bump becomes shorter than our simulation
@@ -529,11 +528,12 @@ timescale. %deviations away from the initial bump is smoothed out by
 This means that over the course of the simulation, our spatially-fixed
 viscosity profile acts as a source to restore the original PV minimum. 
 
-In essence, in the nonlinear regime there is competition
-between destruction of the background PV minimum by the
+In essence, in the nonlinear regime there is competition 
+between destruction of the background PV minimum by the 
 vortices and reformation of the initial radial PV minimum by the
-imposed viscosity profile. We except this latter to support the
-instability. 
+imposed viscosity profile. We except the latter to support vortex
+formation, since the anti-cyclonic vortices are regions of local
+vorticity minima. 
  
 
 

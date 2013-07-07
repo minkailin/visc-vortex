@@ -1,28 +1,42 @@
-\section{Vortex formation at planetary gap edges in layered discs}
-Gaps opened by giant planets in protoplanetary discs is a potential site for 
-the RWI. Vortex formation at gap edges is seen in many 
+\section{Vortex formation at planetary gap edges in layered
+  discs}\label{disc-planet} 
+The previous simulations, while necessary to isolate the effect of 
+viscosity on the linear RWI, has the disadvantage that the radially
+structured viscosity profile may act to source radial disc structure
+in the non-linear regime. In this section, we use disc-planet interaction to
+create the disc structure required for instability, and employ a radially smooth
+viscosity profile. We therefore expect viscosity to only
+act as a damping mechanism. %This experiment separates out the cause of
+%radial structure and 
+
+%Gaps opened by giant planets in protoplanetary discs is a potential
+%site for  he RWI. 
+Vortex formation at gap edges is seen in many  
 2D and 3D hydrdynamical simulations of giant planets in low viscosity discs 
-\citep{valborro07,lin10,lin11a,lin12}. The fact that this is due to the RWI has also been explicitly  
-verified through linear stability analysis of planetary gap profiles 
-produced from 2D simulations \citep{valborro07,lin10}. 
+\citep{valborro07,lin10,lin11a,lin12}. The fact that this is due to
+the RWI has been explicitly verified through linear stability
+analysis of planetary gap profiles produced from 2D simulations
+\citep{valborro07,lin10}. Here, we simulate gap-opening giant planets
+in 3D discs where the kinematic viscosity varies with height above the
+disc midplane. Our numerical experiments are similar in spirit to
+those performed by \cite{pierens10}, but our focus here is gap
+stability in a layered disc. 
+ 
+%In this case the required structure for instability, the PV extremum, 
+%is induced by disc-planet interaction (cf. as an initial condition considered in the
+%previous section). 
 
-Here, we simulate gap-opening giant planets in 3D discs where the kinematic viscosity  
-varies with height above the disc midplane. Our numerical experiments are similar
-in spirit to those performed by \cite{pierens10}, but our focus here is gap stability in a 
-layered disc. 
+%We initialise a smooth disc ($A=1$ so there is no initial bump). The associated viscous timescale
+%$t_\nu=r^2/\nu\sim 10^3P_0$ (for $\hat{\nu}\sim 10^{-4}$) is much
+%longer than our simulation timescale. It is not crucial to initialize
+%the simulation with an exact steady state since the giant planet
+%maintains the gap. We therefore employ a simpler viscosity profile than
+%the previous experiment.   
 
-In this case the required structure for instability, the PV extremum, 
-is induced by disc-planet interaction (cf. as an initial condition considered in the
-previous section). We therefore initialise a 
-smooth disc ($A=1$ so there is no initial bump). The associated viscous timescale
-$t_\nu=r^2/\nu\sim 10^3P_0$ (for $\hat{\nu}\sim 10^{-4}$) is much
-longer than our simulation timescale. It is not crucial to initialize
-the simulation with an exact steady state since the giant planet
-maintains the gap. We therefore employ a simpler viscosity profile than
-the previous experiment.   
 %no initial pert
 
-\subsection{Viscosity profile}\label{planet_visc_mode}
+\subsection{Radially smooth viscosity profile for disc-planet
+  interaction}\label{planet_visc_mode} 
 Using the same notation as \S\ref{visc_model}, we impose a viscosity
 profile $\hat{\nu}$ such that 
 \begin{align}\label{planet_visc_profile}
@@ -30,10 +44,21 @@ profile $\hat{\nu}$ such that
   \hat{\nu}_0\left[1+Q(\psi)\right]\Sigma_i(r_0)\left.\frac{d\ln{\Omega_i}}{d\ln{R}}\right|_{r_0}.      
 \end{align}
 We have set the dimensionless argument in Eq. \ref{step} to
-$\zeta=\psi$. The viscosity increases by a factor $A_\nu$ for 
-$\psi > \zeta_\nu$. So the viscous layer is 
+$\zeta=\psi$. Recall $\psi=\pi/2-\theta$ is the angular height away from the midplane. 
+The viscosity increases from its floor value $\hat{\nu}_0$ by a factor
+$A_\nu$ for $\psi > \zeta_\nu$. So the viscous layer is 
 a wedge in the meridional plane, which conveniently fits into our
-spherical grid. Fig. \ref{planet_visc2d} gives an example of this
+spherical grid. Note that setting $\psi = 0$ in Eq. \ref{planet_visc_profile} gives
+the appropriate viscosity profile for a razor-thin viscous disc in
+steady state when the initial cylindrical radial velocity 
+is set by Eq. \ref{init_vr}. 
+
+The typical viscosity value adopted for disc-planet simulations, 
+$\hat{\nu}\sim 10^{-5}$ or $\alpha\sim 10^{-3}$, is known to surpress
+vortex formation in 2D \citep{valborro07, mudryk09}. 
+We therefore choose a floor viscosity of $\hat{\nu}_0=10^{-6}$.
+The angluar thickness of the viscosity transition is fixed to
+$\Delta\zeta_\nu = 0.2h$. Fig. \ref{planet_visc2d} gives an example of this
 viscosity profile. We will quote the thickness of the viscous layer as a 
 percentage of the entire $\theta$ domain size. 
 
@@ -47,26 +72,23 @@ percentage of the entire $\theta$ domain size.
     \label{planet_visc2d}}
 \end{figure}
 
-We set the floor viscosity $\hat{\nu}_0=10^{-6}$. The more typical
-value adopted for disc-planet simulations, $\hat{\nu}_0\sim 10^{-5}$,
-is known to surpress vortex formation in 2D simulations
-\citep{valborro07, mudryk09}. The angluar thickness of the viscosity
-transition is fixed to $\Delta\zeta_\nu = 0.2h$.   
-
-Note that setting $\psi = 0$ in Eq. \ref{planet_visc_profile} gives
-the appropriate viscosity profile for a razor-thin viscous disc in
-steady state when the initial cylindrical radial velocity 
-is set by Eq. \ref{init_vr}. 
+%This viscosity profile is a smooth
+%function of radius, meaning a localized radial density structure will
+%be smoothed out, unless it is maintained by an external
+%source (the planet in our case). We therefore expect viscosity to only
+%act as a damping mechanism, c.f. a source for radial structure in the
+%previous section. 
 
 \subsection{Disc-planet simulations} 
 We simulate discs with $h=0.05$ and radial extent
-$[\rin,\rout]=[0.4,2.5]r_0$. The initial cylindrical radial velocity
-is given by Eq. \ref{init_vr}. The standard resolution is $(N_r,
-N_\theta, N_\phi)=(256, 32n_h, 768)$, corresponding to $6,\,32,\,6$
-cells per $H$ along the $r,\theta,\phi$ directions 
-at the reference radius. 
+$[\rin,\rout]=[0.4,2.5]r_0$. Initially the surface density is smooth
+($A=1$) with cylindrical radial velocity is given by
+Eq. \ref{init_vr}. The standard resolution is $(N_r, N_\theta,
+N_\phi)=(256, 32n_h, 768)$, corresponding to $6,\,32,\,6$ 
+cells per $H$ along the $r,\theta,\phi$ directions at the reference
+radius.  
 
-We use a planetary mass 
+We insert into the disc a planet of mass  
 $M_p=10^{-3}M_*$, which corresponds to a Jupiter mass planet if
 $M_*=M_{\sun}$. The softening length adopted for the planet potential is
 $\epsilon_p=0.5r_h$. The planet potential is switched on 
@@ -77,8 +99,7 @@ in our cases).
 
 We remark that the above choice of physical and numerical parameter
 values are typical for global disc-planet simulations
-\citep[e.g.][]{valborro06,mignone12}.  
-
+\citep[e.g.][]{valborro06,mignone12}.   
 
 \subsubsection{Standard runs} 
 The fiducial vertical extent of our disc model is $n_h=2$
@@ -102,7 +123,8 @@ We also consider two runs with an extended vertical domain size
 $n_h=3$. Case P3 has $A_\nu=1$ so there is no viscous layer. For case
 P4 we set the transition angle $\zeta_\nu=2h$ with $A_\nu=100$. 
 Thus, the viscous layer with $\hat{\nu}\sim10^{-4}$ occupies $33\%$ of
-the uppermost vertical domain. 
+the uppermost vertical domain. %Note that most of the mass is contained
+%in the low viscosity layer. 
 %We also consider case P6 without a
 %viscous layer but 
 
@@ -142,12 +164,12 @@ a single vortex in quasi-steady state \citep{valborro07,lin10}.
 %      P3 &  2     &    10   &    n/a      & none    &    ??      \\
 %      P4&  2     &    100  &    1.5      & $25\%$  &    ??     \\
       P3 &  3     &    1    &     n/a      & none  &     18.3   \\
-      P4 &  3     &    100   &    2.0      & $33\%$ &     3.5??    \\
+      P4 &  3     &    100   &    2.0      & $33\%$ &     3.5    \\
       \hline
   \end{tabular}
 \end{table}
 
-\subsection{Thickening the viscous layer}
+\subsection{Introducing a viscous layer}
 We first compare cases P0, P1 and P2. Fig. \ref{planet_gap} 
 shows that the PV profiles induced by the planet is very
 similar. (In fact, case P0 and P1 already non-axisymmetric
@@ -172,7 +194,7 @@ instability is largely unaffected by viscous layers. However,
 the $t=50P_0$ snapshot shows that thickening the viscous layer does lead
 to somewhat larger vortices, as expected because of viscous diffusion.   
 
-However, a viscous layer can have significant influences  
+On the other hand, a viscous layer can have significant influences  
 well into the non-linear regime. Fig. \ref{jup0} shows that the vortex
 merging proceeds in case P0 to form a single vortex at the outer gap
 edge at $t=100P_0$. This is a standard result for giant planets in
@@ -231,7 +253,7 @@ survival, the entire vertical extent of the disc should be `dead'.
  \end{figure}
 
 
-\subsubsection{PV evolution}
+\subsubsection{Diffusion of potential vorticity}
 It is instructive to examine the PV evolution for the above cases 
 because the RWI is associated with PV minima. We compare the 
 azimuthally averaged PV profiles in Fig. \ref{planet_gap_PV}.  
@@ -315,3 +337,4 @@ midplane.
  
 
 
+%\subsection{Locally isothermal simulations}
