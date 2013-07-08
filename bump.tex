@@ -87,8 +87,9 @@ is a generic function describing a step of magnitude
 $A_\nu-1$. The position and width of the step is described by
 $\zeta_\nu$ and $\Delta\zeta_\nu$, respectively. 
 In Eq. \ref{visc_profile} we have set the dimensionless co-ordinate
-$\zeta=z/H_0$ where $H_0=H(r_0)$. We have specified
-the kinematic viscosity directly, but it is straight forward to
+$\zeta=z/H_0$ where $H_0=H(r_0)$. %We have specified
+%the kinematic viscosity directly, but 
+It is straight forward to
 translate $\hat{\nu}$ to an alpha viscosity 
 using $\nu = \alpha c_s H$ \citep{shakura73}. This gives $\alpha =
 \hat{\nu}/h^2$ at $R=r_0$.  Thus for $h=0.1$ and $\hat{\nu}=10^{-4}$ we
@@ -180,16 +181,6 @@ is defined through
 The time derivative in Eq. \ref{sigma} can be computed implicitly by 
 Fourier-transforming the continuity equation \citep[as done
   in][]{lin13}. 
-
-%Note that we have defined the complex frequency as one would in a
-%linear stability analysis because the RWI is a linear 
-%instability. %% This definition is useful in assessing how the linear is
-%% affected by the various boundary effects in the
-%% linear phase (i.e. when perturbations are small). 
-%The mode frequency defined here is therefore most appropriate to
-%describe simulations where the axisymmetric background does not evolve
-%in time (i.e. if $\p_t\avg{\rho}_\phi=0$), as required to define a
-%linear instability. 
 
 In a linear stability problem $\sigma_m$ is a constant eigenvalue. 
 However, when extracted numerically from a non-linear simulation, 
@@ -311,8 +302,8 @@ respectively.
 We first compare the control case V0 to the fiducial
 inviscid case B0. Table \ref{artificial_bump} shows that despite
 increasing the viscosity by a factor of $10^3$, the change to the
-linear mode frequencies are negligible in going from case B0 to
-V0. The value of $a_m$ and minimum Rossby number show that the final
+linear mode frequencies are negligible. 
+The value of $a_m$ and minimum Rossby number show that the final
 vortex in V0 is only slightly weaker than that in B0. This is also
 reflected in  Fig. \ref{bump0_bump1} (case B0) and the left most column of
 Fig. \ref{vdamp0} (case V0). Case V0 develops a more elongated 
