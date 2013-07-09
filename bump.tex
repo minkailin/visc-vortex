@@ -150,9 +150,13 @@ Fig. \ref{visc2d} for a plot of the kinematic viscosity profile for case V2.)
 For case V1 and V2 the transition thickness is fixed to
 $\Delta\zeta_\nu=0.2$.  
  
-Finally, we consider a high viscosity run, case V3, with $\zeta_\nu =
-0$, i.e. the viscous layer occupies the entire vertical domain. This
-is equivalent to setting $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$.  
+Finally, we consider a high viscosity run, case V3, 
+%with $\zeta_\nu =
+%0$, i.e. the viscous layer occupies the entire vertical domain. This
+%is equivalent to setting 
+with $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$.  This is equivalent to
+extending the viscous layer in case V1/V2 to the entire vertical
+domain.  
 
 \subsubsection{Linear growth rates and frequencies}
 The present setup allows us to define a linear instability in the
@@ -211,8 +215,8 @@ The minimum Rossby number is measured at the midplane.
   \caption{Summary of hydrodynamic simulations initialized with a
     density bump. %% `UBC' is
     %% the boundary condition applied at the upper disc boundary. 
-    Note that case V3
-    is equivalent to setting 
+    %Note that case V3
+    %is equivalent to setting 
     $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$. \label{artificial_bump}}
   \begin{tabular}{lcccccl @{\extracolsep{0.1cm}} ccc}
     \hline\hline
@@ -237,7 +241,7 @@ The minimum Rossby number is measured at the midplane.
     V2  & -6 & 100 & 1.0  &  4  & 0.986  & 0.182  
     &  1 & 4.9 &  -0.21 \\
     
-    V3  & -6 & 100 & 0.0  &  4  & 0.986  &  0.131  
+    V3  & -4 & 1 & n/a  &  4  & 0.986  &  0.131  
     &  3 &  3.7  &  -0.25 \\
    \hline
   \end{tabular}
