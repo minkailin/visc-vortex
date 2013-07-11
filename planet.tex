@@ -51,11 +51,12 @@ percentage of the entire $\theta$ domain size.
   \includegraphics[width=\linewidth]{figures/pdisk_visc2d_planet}
   \caption{Example of the `wedge' viscosity profile
     imposed in disc-planet simulations
-    (Eq. \ref{planet_visc_profile}). 
-    This specific plot corresponds to case P1. 
+    (Eq. \ref{planet_visc_profile}).  
     For a disc with constant aspect ratio, as chosen here, the viscous
     layer occupies a constant number of scale heights across the
-    radial range. 
+    radial range. This specific plot corresponds to case P1, so the
+    viscous layer (yellow-white colours) always occupies the uppermost
+    $H$ at each cylindrical radius. 
     The solid line
     delineates the upper boundary of the computational domain.
     \label{planet_visc2d}}
@@ -115,8 +116,8 @@ Our fiducial case P0 has $A_\nu=1$ so there is no viscous layer, thus
 $\hat{\nu}\sim 10^{-6}$ everywhere. For case
 P1 and P2 we set $A_\nu=100$ with transition angle $\zeta_\nu=2h$ and
 $h$, respectively. Thus the viscous layer with $\hat{\nu}\sim10^{-4}$
-occupies the upper $H$ and $2H$ of the vertical domain. As an
-experiment we also consider case P0.5, in which we resume case P0 from
+occupies the upper $H$ and $2H$ of the vertical domain. We also
+consider case P0.5, in which we resume case P0 from 
 $t=100P_0$ but with the layered viscosity profile of case P1. 
 
 %Thus, the viscous layer with $\hat{\nu}\sim10^{-4}$ occupies $33\%$ of
@@ -189,10 +190,10 @@ midplane.
 
 \begin{figure}
    \centering
-   \includegraphics[scale=.39,clip=true,trim=0cm 1.84cm 0cm
-     0cm]{figures/jup0_3h_pdisk010}\includegraphics[scale=.39,clip=true,trim=2.3cm
-     1.84cm 0cm
-     0cm]{figures/jup1_3h_pdisk008}
+%   \includegraphics[scale=.39,clip=true,trim=0cm 1.84cm 0cm
+%     0cm]{figures/jup0_3h_pdisk010}\includegraphics[scale=.39,clip=true,trim=2.3cm
+%     1.84cm 0cm
+%     0cm]{figures/jup1_3h_pdisk008}
    \caption{Density perturbation $\delta\rho$ at the end of the
      disc-planet simulations case P3 (left, no viscous layer) and P4
      (right, viscous layer occupies $33\%$ of the uppermost vertical
