@@ -1,6 +1,7 @@
 \section{Non-axisymmmetric instability of artificial density bumps in
   layered discs}\label{density_bump} 
-We first consider discs initialised with a density bump. Our aim here
+We first consider strictly isothermal discs ($q=0$) initialised with a
+density bump ($A>1$). Our aim here
 is to examine the effect of (layered) viscosity on the RWI 
 \emph{through the linear perturbation}. 
 In general a density bump in a viscous disc will undergo viscous
@@ -12,6 +13,8 @@ the simultaneous evolution of the density bump subject to
 axisymmetric viscous spreading and growth of
 non-axisymmetric disturbances; only the latter of which is our focus. 
 
+
+{\bf redo one or two layered sims on scinet with whatever changes made for d-p sims} 
 
 \subsection{Viscous equilibria for a radially structured
   disc}\label{visc_eq} 
@@ -43,7 +46,9 @@ cylindrical radius, the azimuthal momentum equation reads
   R\rho v_R\frac{\p}{\p R}\left(R^2\Omega \right) = \frac{\p}{\p
     R}\left(R^3\rho\nu\frac{\p\Omega}{\p R}\right). 
 \end{align}
-Assuming a steady state with $v_z=0$, mass
+Note that the viscous term due to vertical shear ($\partial_z\Omega$) 
+is absent because in this experiment we are considering barotropic
+discs. Assuming a steady state with $v_z=0$, mass
 conservation (Eq. \ref{cont_eq}) implies that the mass flux  
 $\dot{M}\equiv R\rho v_R$ is independent of $R$. In this case,
 Eq. \ref{ang_mom_cons} can 
@@ -122,12 +127,17 @@ N_\phi)=(256,64,512)$ grid points.
 The resolution at the reference radius is then
 $16,\,32,\,8$ cells per scale-height in $(r,\theta,\phi)$ directions,
 respectively. The planetary potential is disabled for these runs
-($M_p\equiv 0$).    
+($M_p\equiv 0$). We apply a damping rate $\hat{\gamma}=1$ with the
+reference velocity $\bm{v}_\mathrm{ref}=\bm{v}(t=0)$.     
 
 The bump parameters are set to $A=1.25$ and $\Delta R = 0.05r_0$ for
 all runs in this section. The spherical radial velocity is subject 
 to random perturbations of magnitude $10^{-4}c_s$ 
 a few time-steps after initialisation. 
+
+{\bf redo on scinet. get rid of the small scale instability. redo
+  sims. probably just present the 3h sims? also do 3h with visc boost =10,
+  and the visc-restart sim. and 3h with 0.5h layer. }
 
 \subsubsection{Inviscid run}
 For reference we simulate an effectively inviscid disc, case B0,

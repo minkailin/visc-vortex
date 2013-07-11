@@ -1,5 +1,5 @@
 \section{Disc model and Governing equations}\label{model} 
-We consider a three-dimensional, strictly isothermal,
+We consider a three-dimensional, isothermal,
 non-self-gravitating fluid disc orbiting a central 
 star of mass $M_*$. We use both spherical co-ordinates
 $\bm{r}=(r,\theta,\phi)$ and cylindrical co-ordinates  
@@ -9,18 +9,24 @@ adopt a non-rotating frame. We also define $\psi \equiv \pi/2 -
 convenience, we will sometimes refer to $\psi$ as the vertical
 direction. The governing equations are: 
 \begin{align}
-&\frac{\p\rho}{\p t} + \nabla\cdot\left(\rho\bm{v}\right) =
+  &\frac{\p\rho}{\p t} + \nabla\cdot\left(\rho\bm{v}\right) =
   0,\label{cont_eq}\\ 
-&\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bv = -\frac{1}{\rho}\nabla
-  p -\nabla{\left(\Phi_*+\Phi_p\right)} +\bm{f}_\nu + \bm{f}_d,    
+  &\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bv = -\frac{1}{\rho}\nabla
+  p -\nabla{\left(\Phi_*+\Phi_p\right)} +\bm{f}_\nu + \bm{f}_d\label{mom_eq},    
 \end{align}
 where $\rho$ is the mass density, $\bv$ is the velocity field and 
-$p=c_s^2\rho$ is the pressure. The isothermal sound speed is written
-as $c_s = hr_0\Omega_k(r_0)$, where $h$ is the aspect-ratio at the reference radius $r_0$, 
-$\Omega_k(R) = \sqrt{GM_*/R^3}$ is the Keplerian frequency and $G$ is the gravitational constant. 
-$\Phi_*(r) = -GM_*/r $ is the stellar potential and $\Phi_p$ is a 
-planetary potential. Details of $\Phi_p$ are given in Section
-\ref{planet}. 
+$p=c_s^2\rho$ is the pressure. The sound speed $c_s$ is prescribed as 
+\begin{align}
+  c_s = hr_0\Omega_k(r_0)\times\left(\frac{r_0}{R}\right)^{q/2}, 
+\end{align}
+where $h$ is the aspect-ratio at the reference radius $r_0$, 
+$\Omega_k(R) = \sqrt{GM_*/R^3}$ is the Keplerian frequency and $G$ is
+the gravitational constant. The power-law index $q$ specifies the
+radial temperature profile: $q=0$ corresponds to a strictly isothermal
+disc, while $q=1$ is a locally isothermal disc with constant aspect
+ratio. In Eq. \ref{mom_eq}, $\Phi_*(r) = -GM_*/r $ is the stellar
+potential and $\Phi_p$ is a planetary potential. Details of $\Phi_p$
+are given in \S\ref{planet}. 
 
 Two dissipative terms are included in the momentum, equations: viscous
 damping $\bm{f}_\nu$ and frictional damping $\bm{f}_d$. The viscous
@@ -38,10 +44,8 @@ is the viscous stress tensor and $\nu$ is the kinematic viscosity
 \begin{align}
   \bm{f}_d = -\gamma\left(\bv - \bv_\mathrm{ref}\right),
 \end{align}
-where $\gamma$ is the damping coefficient and the reference velocity field is taken 
-to be the initial velocity field, 
-$\bv_\mathrm{ref}=\bm{v}(t=0)$. %where $\init{\phantom{a}}$ denotes
-                                %evaluation at $t=0$.  
+where $\gamma$ is the damping coefficient and
+$\bm{v}_\mathrm{ref}$ is a reference velocity field. 
 $\nu$ and $\gamma$ are prescribed functions of position only (see
 below). %The kinematic viscosity $\nu$ is specified directly, but
 %conversion to an alpha parameter 
@@ -91,7 +95,8 @@ satisfy centrifugal balance with pressure and stellar gravity:
     R} + \frac{\p\Phi_*}{\p R},  
 \end{align}
 so $\Omega_i=\Omega_i(R)$ for a strictly isothermal equation of
-state. %% Note that Eq. \ref{init_den} and Eq. \ref{init_vphi} are the
+state ($q=0$). 
+%% Note that Eq. \ref{init_den} and Eq. \ref{init_vphi} are the
 %% vertical and cylindrical radial momentum equations assuming a steady
 %% state and negligible viscosity. 
 
@@ -125,7 +130,8 @@ for the inner and outer radial zones, respectively.
 \subsection{Planet potential}\label{planet}
 Our disc model has the option to include a planet potential $\Phi_p$,
 \begin{align}
-  \Phi_p(\bm{r},t) = -\frac{GM_p}{\sqrt{|\bm{r}-\bm{r}_p(t)|^2 + \epsilon^2_p}},
+  \Phi_p(\bm{r},t) = -\frac{GM_p}{\sqrt{|\bm{r}-\bm{r}_p(t)|^2 +
+      \epsilon^2_p}} + \frac{GM_p}{|\bm{r}_p|^3}\bm{r}\cdot\bm{r}_p,
 \end{align}
 where $M_p$ is the planet mass,
 $\bm{r}_p(t)~=~(r_0,\,\pi/2,\,\Omega_k(r_0)t+\pi)$ its position in
