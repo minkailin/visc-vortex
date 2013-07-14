@@ -3,9 +3,10 @@
 The previous simulations, while necessary to isolate the effect of 
 viscosity on the linear RWI, has the disadvantage that the radially
 structured viscosity profile may act to source radial disc structure
-in the non-linear regime. In this section, we use disc-planet interaction to
-create the disc structure required for instability, and employ a radially smooth
-viscosity profile. We therefore expect viscosity to only
+in the non-linear regime. In this section, we employ a radially smooth
+viscosity profile and use 
+disc-planet interaction to
+create the disc structure required for instability. We therefore expect viscosity to only
 act as a damping mechanism. 
 
 Vortex formation at gap edges is seen in many  
@@ -24,27 +25,19 @@ stability in a layered disc.
 Using the same notation as \S\ref{visc_model}, we impose a viscosity
 profile $\hat{\nu}$ such that 
 \begin{align}\label{planet_visc_profile}
-  \hat{\nu}\Sigma_i(R)=%\frac{d\ln{\Omega_i}}{d\ln{R}} =
-  \hat{\nu}_0\left[1+Q(\psi)\right]\Sigma_i(r_0)%\left.\frac{d\ln{\Omega_i}}{d\ln{R}}\right|_{r_0}.      
+  \hat{\nu}\Sigma_i(R)=
+  \hat{\nu}_0\left[1+Q(\psi)\right]\Sigma_i(r_0)   
 \end{align}
 We have set the dimensionless argument in Eq. \ref{step} to
 $\zeta=\psi$. Recall $\psi=\pi/2-\theta$ is the angular height away from the midplane. 
 The viscosity increases from its floor value $\hat{\nu}_0$ by a factor
 $A_\nu$ for $\psi > \zeta_\nu$. So the viscous layer is 
 a wedge in the meridional plane, which conveniently fits into our
-spherical grid. %Note that setting $\psi = 0$ in Eq. \ref{planet_visc_profile} gives
-%the appropriate viscosity profile for a razor-thin viscous disc in
-%steady state when the initial cylindrical radial velocity 
-%is set by Eq. \ref{init_vr}. 
-
-The typical viscosity value adopted for disc-planet simulations, 
-$\hat{\nu}\sim 10^{-5}$ or $\alpha\sim 10^{-3}$, is known to surpress
-vortex formation in 2D \citep{valborro07, mudryk09}. 
-We therefore choose a floor viscosity of $\hat{\nu}_0=10^{-6}$.
-The angluar thickness of the viscosity transition is fixed to
-$\Delta\zeta_\nu = 0.2h$. Fig. \ref{planet_visc2d} gives an example of this
-viscosity profile. We will quote the thickness of the viscous layer as a 
-percentage of the entire $\theta$ domain size. 
+spherical grid. We set the floor viscosity $\hat{\nu}_0=2.5\times 10^{-7}$. 
+The angluar thickness of the viscosity transition is fixed to $\Delta\zeta_\nu =
+0.2h$. Fig. \ref{planet_visc2d} gives an example of this 
+viscosity profile. %We will quote the thickness of the viscous layer as a 
+%percentage of the entire $\theta$ domain size. 
 
 \begin{figure}
   \centering
@@ -61,13 +54,6 @@ percentage of the entire $\theta$ domain size.
     delineates the upper boundary of the computational domain.
     \label{planet_visc2d}}
 \end{figure}
-
-%This viscosity profile is a smooth
-%function of radius, meaning a localized radial density structure will
-%be smoothed out, unless it is maintained by an external
-%source (the planet in our case). We therefore expect viscosity to only
-%act as a damping mechanism, c.f. a source for radial structure in the
-%previous section. 
 
 \subsection{Disc-planet simulations} 
 We simulate locally isothermal discs with constant aspect-ratio
@@ -96,48 +82,36 @@ We remark that the above choice of physical and numerical parameter
 values are typical for global disc-planet simulations
 \citep[e.g.][]{valborro06,mignone12}.   
 
-%\subsubsection{Standard runs} 
-%The fiducial vertical extent of our disc model is $n_h=2$
-%scale-heights at $R=r_0$.  The control run, case P0, has $A_\nu=1$ so there is 
-%no viscous layer. The kinematic viscosity is therefore
-%$\hat{\nu}\sim10^{-6}$  everywhere. We then introduce a viscous
-%layer (or wedge) occupying the uppermost $25\%$ and $50\%$ of the
-%vertical domain in cases P1 and P2, by choosing the transition angle
-%at $\zeta_\nu = 1.5h,\,1.0h$, respectively. These layers have a kinematic 
-%viscosity of $\hat{\nu}\sim 10^{-5}$ by setting $A_\nu=10$.  (See
-%Fig. \ref{planet_visc2d} for the viscosity profile for case P1.)  
 
-
-\subsubsection{Runs}
-%We also consider two runs with an extended vertical domain size
-%$n_h=3$. 
-
-Our fiducial case P0 has $A_\nu=1$ so there is no viscous layer, thus
-$\hat{\nu}\sim 10^{-6}$ everywhere. For case
-P1 and P2 we set $A_\nu=100$ with transition angle $\zeta_\nu=2h$ and
-$h$, respectively. Thus the viscous layer with $\hat{\nu}\sim10^{-4}$
-occupies the upper $H$ and $2H$ of the vertical domain. We also
-consider case P0.5, in which we resume case P0 from 
+\subsubsection{Runs} 
+The fiducial case P0 has $A_\nu=1$ so there is no viscous layer, thus
+$\hat{\nu}\sim 10^{-7}$ ($\alpha\sim 10^{-4}$) everywhere. Vortex
+formation is then expected because the typical viscosity
+value adopted for disc-planet simulations, $\hat{\nu}\sim 10^{-5}$ or
+$\alpha\sim 10^{-3}$, is known to surpress vortex formation in 2D
+\citep{valborro07, mudryk09}. 
+For case P0.5 and P1 we set $A_\nu=100$ with transition angle $\zeta_\nu=2.5h$ and
+$2h$, respectively. Thus the viscous layer with $\hat{\nu}\sim10^{-5}$
+($\alpha\sim10^{-2}$) occupies the uppermost $0.5H$ and $H$ of the vertical
+domain. %vortex formation is not expected to occur for such high
+        %viscosity values. 
+We also consider case P0R, in which we restart case P0 from 
 $t=100P_0$ but with the layered viscosity profile of case P1. 
 
-%Thus, the viscous layer with $\hat{\nu}\sim10^{-4}$ occupies $33\%$ of
-%the uppermost vertical domain. %Note that most of the mass is contained
-%in the low viscosity layer. 
-%We also consider case P6 without a
-%viscous layer but 
-
+%also have additional runs for testing. these use n_h=2 for speed
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Results}
-Our disc-planet simulations are summarised in Table \ref{planet_sims}.
+Table \ref{planet_sims} summarises the disc-planet simulations. 
 We focus on vortex-formation at the outer gap edge. 
 The non-axisymmetric mode amplitude in the last column was 
-averaged over the shell $r\in[1.2,1.6]r_0$ and over time 
-$t\in[100,150]P_0$. We examine the $m=1$ mode since 
-for non-self-gravitating planetary gaps, if unstable, usually develop
-a single vortex in quasi-steady state \citep{valborro07,lin10}.   
+averaged over the shell $r\in[1.3,1.6]r_0$ and over time 
+$t\in[150,200]P_0$. 
+%We examine the $m=1$ mode since 
+%for non-self-gravitating planetary gaps, if unstable, usually develop
+%a single vortex in quasi-steady state \citep{valborro07,lin10}.   
 
 %for  mode amp: spatial average over [1.2,1.6], time average over [100,150]P_0
 
@@ -147,59 +121,75 @@ a single vortex in quasi-steady state \citep{valborro07,lin10}.
     `wedge' viscosity model described by
     Eq. \ref{planet_visc_profile}. The thickness of the viscous layer
     is measured from the upper disc boundary. Case P0.5 employs the
-    viscosity profile of P0 (P1) for $t\leq100P_0$ ($t\geq100P_0$). }
+    viscosity profile of P0 for $t\leq100P_0$, and that of P1 for 
+    $t>100P_0$.\label{planet_sims}}
     \begin{tabular}{lcccr}
       \hline\hline
-      %      \multicolumn{6}{c}{\phantom{stuff}} &
-      %      \multicolumn{3}{c}{Linear phase ($t\leq10P_0$)}&
-      %      \multicolumn{3}{c}{$t=100P_0$}\\
-      %      \cline{7-9}\cline{10-12}
-      Case & $A_\nu$ &$\zeta_\nu/h$ & visc. layer& $10^2\overline{a}_1$ \\ 
+      Case & $A_\nu$ &$\zeta_\nu/h$ & visc. layer& vortex \\ 
       \hline
-      P0      &    1     &    $\infty$      & 0     &       \\
-      P0.5    &    1$\to$100 & $\infty\to2.0$ &$0\to H$ &     \\
-       P1      &    100   &    2.0      & $H$   &       \\ 
-      P2      &    100   &    1.0      & $2H$  &         \\ 
+      P0      &    1     &    $\infty$      & 0     &   YES    \\
+      P0R    &    1$\to$100 & $\infty\to2.0$ &$0\to H$  & ?  \\
+      P0.5    &    100 & 2.5 &$0.5H$ &  ?           \\ 
+      P1      &    100   &    2.0      & $H$    &  NO    \\ 
+%      P2      &    100   &    1.0      & $2H$  &         &\\ 
       \hline
   \end{tabular}
 \end{table}
 
-%\subsubsection{}
+%density perturbation evolution. snapshots at t=50, 100, 150, 200. 
+%azi averaged vortensity. t=50 and t=200
+%kinetic energy. m=1 ke 
+%additional experiments. case p0.5. strictly isothermal sims. 
 
-%We now consider appending a viscous layer on top of the fiducial 
-%case P0. 
-Case P3 is the same as case P0 above, except with an increased
-vertical domain size of $3H$ at the reference radius. Case P4 has a high-viscosity layer with
-$\hat{\nu}\sim10^{-4}$ in the the uppermost scale-height of the
-computational domain. In other words, the bulk of the 
-%% has a viscosity $\hat{\nu} \sim 10^{-5}$ and $\hat{\nu}\sim 10^{-4}$
-%% for cases P3 and P4, respectively. 
-disk for case P4 has a low-viscosity of $\hat{\nu}\sim10^{-6}$, but
-with a viscous atmosphere appended on top.  
+%p0 and p1 show initial development m=4
 
-Fig. \ref{jup0_3h} shows the density pertubation at $t=100P_0$ for
-cases P3 and P4. Case P3 is essentially identical to case P0, so the 
-vortex instability is not affected by vertical domain size. We note
-that the viscosity is increased in the disc atmosphere, where the
-density is a factor $\sim 7$ times smaller than the midplane (but the
-viscosity is $100$ times larger). The viscous layer has surpressed
-vortex formation. This implies that vortex formation via
-the RWI at planetary gap edges can not tolerate a signigicantly
-viscous atmosphere, even if such a layer only occurs away from the
-midplane.    
+Fig. \ref{jup0_3h} compares the time evolution of the midplane density
+perturbation $\Delta\rho(z=0)$ for cases P0, P0.5 and P1. Note that in 
+all cases the RWI with $m=4$ develops early on ($t\simeq20P_0$),
+consistent with the limited effect of viscosity on the linear
+instability, as found above. 
 
-\begin{figure}
+However, comparing case P0 and P1 shows that the non-linear evolution
+is significantly affected by layered viscosity. Despite the fact that
+the viscous layer only occupies $\sim4\%$ of the total column density
+in case P1, its evolution diverges from case P0 from $t\simeq50P_0$.  
+
+
+%Case P3 is essentially identical to case P0, so the 
+%vortex instability is not affected by vertical domain size. We note
+%that the viscosity is increased in the disc atmosphere, where the
+%density is a factor $\sim 7$ times smaller than the midplane (but the
+%viscosity is $100$ times larger). The viscous layer has surpressed
+%vortex formation. This implies that vortex formation via
+%the RWI at planetary gap edges can not tolerate a signigicantly
+%viscous atmosphere, even if such a layer only occurs away from the
+%midplane.    
+
+\begin{figure*}
    \centering
-%   \includegraphics[scale=.39,clip=true,trim=0cm 1.84cm 0cm
-%     0cm]{figures/jup0_3h_pdisk010}\includegraphics[scale=.39,clip=true,trim=2.3cm
-%     1.84cm 0cm
-%     0cm]{figures/jup1_3h_pdisk008}
-   \caption{Density perturbation $\delta\rho$ at the end of the
-     disc-planet simulations case P3 (left, no viscous layer) and P4
-     (right, viscous layer occupies $33\%$ of the uppermost vertical
-     domain).   
+   \includegraphics[scale=.43,clip=true,trim=0cm 1.84cm 0cm
+     0cm]{figures/jup0_3h_pdisk_005}\includegraphics[scale=.43,clip=true,trim=2.3cm
+     1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_010}\includegraphics[scale=.43,clip=true,trim=2.3cm
+     1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
+     1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_020}\\
+    \includegraphics[scale=.43,clip=true,trim=0cm 1.84cm 0cm
+     0.9cm]{figures/jup0d5_3h_pdisk_005.ps}\includegraphics[scale=.43,clip=true,trim=2.3cm
+     1.84cm 0cm 0.9cm]{figures/jup0d5_3h_pdisk_010}\\%\includegraphics[scale=.43,clip=true,trim=2.3cm
+     %1.84cm 0cm 0cm]{figures/jup0.5_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
+     %1.84cm 0cm 0cm]{figures/jup0.5_3h_pdisk_020}\\
+   \includegraphics[scale=.43,clip=true,trim=0cm 0.cm 0.cm
+     0.9cm]{figures/jup1_3h_pdisk_005}\includegraphics[scale=.43,clip=true,trim=2.3cm
+     0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_010}\includegraphics[scale=.43,clip=true,trim=2.3cm
+     0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
+     0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_020}\\
+%    \includegraphics[scale=.43,clip=true,trim=0cm 0.cm 0.cm
+%     0.9cm]{figures/jup2_3h_pdisk_005}
+   \caption{Relative density perturbation $\Delta\rho$ for disc-planet
+     simluations. The thickness of the viscous layer increases from
+     top to bottom: case P0 (no viscous layer), case P0.5 (viscous
+     layer of $0.5H$) and cases P1 (viscous layer of $H$). 
      \label{jup0_3h}}
-\end{figure}
+\end{figure*}
  
 
 
