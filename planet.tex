@@ -135,13 +135,14 @@ a single vortex in quasi-steady state \citep{valborro07,lin10}.
   \end{tabular}
 \end{table}
 
-%density perturbation evolution. snapshots at t=50, 100, 150, 200. 
-%azi averaged vortensity. t=50 and t=200
-%kinetic energy. m=1 ke 
-%additional experiments. case p0.5. strictly isothermal sims. 
-%p0 and p1 show initial development m=4
+%other sims
+%loc iso (q=1) with floor visc 1d-6, amp=100 and 10. HR for one of
+%them. and visc-restart.  
+%isothermal (q=0) with floor visc=1d-6, amp=100 and 10
+%may need to add other columns nu_floor, nu_amp, q 
 
-\subsubsection{Density evolution}
+\subsubsection{Density evolution}%prob replace with nu_floor=1d-6,
+                                %amp=10 sims
 
 Fig. \ref{jup0_3h} compares the time evolution of the midplane density
 perturbation $\Delta\rho(z=0)$ for cases P0, P0.5 and P1. In 
@@ -191,7 +192,8 @@ throughout the vertical fluid column.
     \label{jup0_3h}}
 \end{figure*}
 
-\subsubsection{Kinetic energy density}
+\subsubsection{Kinetic energy density}%prob replace with nu_floor=1d-6,
+                                %amp=10 sims
 Here we examine the $m=1$ component of the kinetic energy
 density, $W_1$. Specifically we compare the no-layer case P0, layered
 case P1 and case P0R which is case P0 resumed from $t=100P_0$ with a
@@ -240,15 +242,23 @@ evolution remains two-dimensional.
 \label{pdisk_kerz_cases_planet}}
 \end{figure}
 
-\subsubsection{Potential vorticity}
+\subsubsection{Potential vorticity}%how is vortex destroyed? use the visc-restart
+We examine the PV evolution for case P0R to see how viscosity destroys
+the vortex. To higlight the vortices, which are positive (negative)
+density (vertical vorticity) perturbations, we show in Fig. the
+inverse PV perturbation, $\eta_z(t=0)/\eta_z - 1$. 
+
+
+
+ 
 
 
 
 
 
-\subsection{Additional simulations}
-We have performed several additional simulations to check the
-robustness of results above. 
+%\subsection{Additional simulations}
+%We have performed several additional simulations to check the
+%robustness of results above. 
 %amp=10
 %higher resolution
 %higher floor viscosity(amp=10, amp=100, HR) maybe replace above
