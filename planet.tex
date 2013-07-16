@@ -108,10 +108,9 @@ Table \ref{planet_sims} summarises the disc-planet simulations.
 We focus on vortex-formation at the outer gap edge. 
 The non-axisymmetric mode amplitude in the last column was 
 averaged over the shell $r\in[1.3,1.6]r_0$ and over time 
-$t\in[150,200]P_0$. 
-%We examine the $m=1$ mode since 
-%for non-self-gravitating planetary gaps, if unstable, usually develop
-%a single vortex in quasi-steady state \citep{valborro07,lin10}.   
+$t\in[150,200]P_0$. We examine the $m=1$ mode since 
+for non-self-gravitating planetary gaps, if unstable, usually develop
+a single vortex in quasi-steady state \citep{valborro07,lin10}.   
 
 %for  mode amp: spatial average over [1.2,1.6], time average over [100,150]P_0
 
@@ -120,17 +119,17 @@ $t\in[150,200]P_0$.
   \caption{Summary of disc-planet simulations. These runs employ the
     `wedge' viscosity model described by
     Eq. \ref{planet_visc_profile}. The thickness of the viscous layer
-    is measured from the upper disc boundary. Case P0.5 employs the
+    is measured from the upper disc boundary. Case P0R employs the
     viscosity profile of P0 for $t\leq100P_0$, and that of P1 for 
     $t>100P_0$.\label{planet_sims}}
-    \begin{tabular}{lcccr}
+    \begin{tabular}{llllrc}
       \hline\hline
-      Case & $A_\nu$ &$\zeta_\nu/h$ & visc. layer& vortex \\ 
+      Case & $A_\nu$ &$\zeta_\nu/h$ & visc. layer& $10^2\overline{a}_1$ &vortex \\ 
       \hline
-      P0      &    1     &    $\infty$      & 0     &   YES    \\
-      P0R    &    1$\to$100 & $\infty\to2.0$ &$0\to H$  & ?  \\
-      P0.5    &    100 & 2.5 &$0.5H$ &  ?           \\ 
-      P1      &    100   &    2.0      & $H$    &  NO    \\ 
+      P0      &    1     &    $\infty$      & 0     & 16.4  &YES    \\
+      P0R    &    1$\to$100 & $\infty\to2.0$ &$0\to H$& 6.2 & NO   \\
+      P0.5    &    100 & 2.5 &$0.5H$ &  13.5    &  YES     \\ 
+      P1      &    100   &    2.0      & $H$    &  5.1 & NO    \\ 
 %      P2      &    100   &    1.0      & $2H$  &         &\\ 
       \hline
   \end{tabular}
@@ -140,57 +139,118 @@ $t\in[150,200]P_0$.
 %azi averaged vortensity. t=50 and t=200
 %kinetic energy. m=1 ke 
 %additional experiments. case p0.5. strictly isothermal sims. 
-
 %p0 and p1 show initial development m=4
 
+\subsubsection{Density evolution}
+
 Fig. \ref{jup0_3h} compares the time evolution of the midplane density
-perturbation $\Delta\rho(z=0)$ for cases P0, P0.5 and P1. Note that in 
-all cases the RWI with $m=4$ develops early on ($t\simeq20P_0$),
+perturbation $\Delta\rho(z=0)$ for cases P0, P0.5 and P1. In 
+all cases we observed the RWI with $m=4$ develops early on ($t\simeq20P_0$),
 consistent with the limited effect of viscosity on the linear
-instability, as found above. 
+instability, as found above.  
 
-However, comparing case P0 and P1 shows that the non-linear evolution
-is significantly affected by layered viscosity. Despite the fact that
-the viscous layer only occupies $\sim4\%$ of the total column density
-in case P1, its evolution diverges from case P0 from $t\simeq50P_0$.  
-
-
-%Case P3 is essentially identical to case P0, so the 
-%vortex instability is not affected by vertical domain size. We note
-%that the viscosity is increased in the disc atmosphere, where the
-%density is a factor $\sim 7$ times smaller than the midplane (but the
-%viscosity is $100$ times larger). The viscous layer has surpressed
-%vortex formation. This implies that vortex formation via
-%the RWI at planetary gap edges can not tolerate a signigicantly
-%viscous atmosphere, even if such a layer only occurs away from the
-%midplane.    
+Comparing the no-layer case P0 to case P0.5 (viscous layer $0.5H$)
+shows that a thin viscous layer has little effect on the
+evolution of the unstable gap edge, except the vortex merging
+time-scale is slightly altered. However, case P1 evolves quite
+differently from case P0. While a single vortex does form at
+$t\sim100P_0$, it is \emph{transient}, having disappeared at the end of
+the simulation. The final $m=1$ amplitude is about 3 times smaller
+than that in case P0 (Table \ref{planet_sims}). This result is
+significant because the viscous layer of 
+thickness $H$ only occupies $\sim4\%$ of the total column density
+in case P1, but the vortex is still destroyed. This suggests that vortex
+survival at planetary gap edges requires low effective viscosity
+throughout the vertical fluid column. 
 
 \begin{figure*}
-   \centering
-   \includegraphics[scale=.43,clip=true,trim=0cm 1.84cm 0cm
-     0cm]{figures/jup0_3h_pdisk_005}\includegraphics[scale=.43,clip=true,trim=2.3cm
-     1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_010}\includegraphics[scale=.43,clip=true,trim=2.3cm
-     1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
-     1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_020}\\
-    \includegraphics[scale=.43,clip=true,trim=0cm 1.84cm 0cm
-     0.9cm]{figures/jup0d5_3h_pdisk_005.ps}\includegraphics[scale=.43,clip=true,trim=2.3cm
-     1.84cm 0cm 0.9cm]{figures/jup0d5_3h_pdisk_010}\\%\includegraphics[scale=.43,clip=true,trim=2.3cm
-     %1.84cm 0cm 0cm]{figures/jup0.5_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
-     %1.84cm 0cm 0cm]{figures/jup0.5_3h_pdisk_020}\\
-   \includegraphics[scale=.43,clip=true,trim=0cm 0.cm 0.cm
-     0.9cm]{figures/jup1_3h_pdisk_005}\includegraphics[scale=.43,clip=true,trim=2.3cm
-     0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_010}\includegraphics[scale=.43,clip=true,trim=2.3cm
-     0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
-     0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_020}\\
-%    \includegraphics[scale=.43,clip=true,trim=0cm 0.cm 0.cm
-%     0.9cm]{figures/jup2_3h_pdisk_005}
-   \caption{Relative density perturbation $\Delta\rho$ for disc-planet
-     simluations. The thickness of the viscous layer increases from
-     top to bottom: case P0 (no viscous layer), case P0.5 (viscous
-     layer of $0.5H$) and cases P1 (viscous layer of $H$). 
-     \label{jup0_3h}}
+  \centering
+  \includegraphics[scale=.43,clip=true,trim=0cm 1.84cm 0cm
+    0cm]{figures/jup0_3h_pdisk_005}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_010}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    1.84cm 0cm 0cm]{figures/jup0_3h_pdisk_020}\\
+  \includegraphics[scale=.43,clip=true,trim=0cm 1.84cm 0cm
+    0.9cm]{figures/jup0d5_3h_pdisk_005.ps}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    1.84cm 0cm 0.9cm]{figures/jup0d5_3h_pdisk_010}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    1.84cm 0cm 0.9cm]{figures/jup0d5_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    1.84cm 0cm 0.9cm]{figures/jup0d5_3h_pdisk_020}\\
+  \includegraphics[scale=.43,clip=true,trim=0cm 0.cm 0.cm
+    0.9cm]{figures/jup1_3h_pdisk_005}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_010}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_015}\includegraphics[scale=.43,clip=true,trim=2.3cm
+    0.cm 0cm 0.9cm]{figures/jup1_3h_pdisk_020}\\
+  %    \includegraphics[scale=.43,clip=true,trim=0cm 0.cm 0.cm
+  %     0.9cm]{figures/jup2_3h_pdisk_005}
+  \caption{Relative density perturbation $\delta\rho$ for disc-planet
+    simluations. The thickness of the viscous layer increases from
+    top to bottom: case P0 (no viscous layer), case P0.5 (viscous
+    layer of $0.5H$) and cases P1 (viscous layer of $H$). The
+    vertical extent of the computational domain is $3H$ and the
+    viscous layer is measured from the upper disc boundary. 
+    \label{jup0_3h}}
 \end{figure*}
- 
+
+\subsubsection{Kinetic energy density}
+Here we examine the $m=1$ component of the kinetic energy
+density, $W_1$. Specifically we compare the no-layer case P0, layered
+case P1 and case P0R which is case P0 resumed from $t=100P_0$ with a
+viscous layer. Fig. \ref{pdisk_kerz_cases_planet} shows the evolution of
+this quantity averaged over the outer gap edge. For each case we
+average $W_1$ over the disc bulk and the atmosphere, and plot them
+separately in the figure. 
+
+The $m=1$ component does not emerge from the linear instability, but is a
+result of non-linear vortex merging. 
+Fig. \ref{pdisk_kerz_cases_planet} shows that merging is accelerated
+by a viscous layer: the single vortex appears at $t\sim70P_0$ for case
+P1 but only forms at $t\sim120P_0$ for case P0. Also note for all
+cases, $W_1$ in the disc bulk (thick lines) is similar to that in the
+disc atmosphere (thin lines), implying the $m=1$ disturbance
+(i.e. the vortex) evolves two-dimensionally. We checked that this is
+consistent with the Froude number $Fr\equiv|Ro|H/z < 1 $ away from the
+midplane \citep{barranco05,oishi09}. 
+
+%check froud number is
+%less than 1
+
+Case P0R shows that introducing a viscous layer eventually destroys
+the vortex. Now, the local viscous timescale $t_\nu\equiv
+H^2/\nu\gtrsim 16P_0$ so on short timescales after introducing the 
+viscous layer ($t=100P_0$), vortex-merging proceeds in case P0R
+similarly to case P0 ($t\in[100,110]P_0$). However, $W_1$ decays after
+$t>110P_0$ and evolves towards that for case P1. We expect viscosity
+to damp the $m=1$ disturbance in the disc atmosphere between
+$t\in[110,200]P_0$ because this corresponds to $\sim 6 t_\nu$, but it
+appears that the disturbance in the disc bulk is also damped out: the
+evolution remains two-dimensional.   
 
 
-%\subsection{Locally isothermal simulations}
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{figures/pdisk_kerz_cases_planet_m1}
+  \caption{Evolution of the $m=1$ component of kinetic energy density,
+    averaged over $r\in[1.2,1.6]r_0$. This average
+    is split into that taken over disc bulk ($z\in[0,2]H$, thick
+    lines) and the disc atmosphere ($z\in[2,3]H$, thin lines). Case P0
+    has no viscous layer (solid) and case P1 has a viscous layer in
+    $z\in[2,3]H$ (dashed). Case P0R is identical to case P0 up to $t=100P_0$,
+    but was simulated with a viscous layer of thickness
+    $H$ for $t>100P_0$. 
+\label{pdisk_kerz_cases_planet}}
+\end{figure}
+
+\subsubsection{Potential vorticity}
+
+
+
+
+
+\subsection{Additional simulations}
+We have performed several additional simulations to check the
+robustness of results above. 
+%amp=10
+%higher resolution
+%higher floor viscosity(amp=10, amp=100, HR) maybe replace above
+%discsussion with these 
+%strictly isothermal run (no vertical shear effect)
