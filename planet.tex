@@ -84,7 +84,16 @@ choice of physical and numerical parameter values are typical for
 global disc-planet simulations \citep[e.g.][]{valborro06,mignone12}.    
 
 
-\subsubsection{Runs} 
+
+
+%also have additional runs for testing. these use n_h=2 for speed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Results}
+Table \ref{planet_sims} summarises the disc-planet simulations. 
+%\subsubsection{Runs} 
 The main simulations to be discussed are cases P0 --- P1, with a floor
 viscosity of $\hat{\nu}_0=2.5\times10^{-7}$. 
 The fiducial run P0 has $A_\nu=1$ so there is no viscous layer, thus
@@ -101,18 +110,10 @@ domain. %vortex formation is not expected to occur for such high
 Case P0R is case P0 restarted from 
 $t=100P_0$ with the layered viscosity profile of case P1. 
 
-%also have additional runs for testing. these use n_h=2 for speed
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
 
-
-\subsection{Results}
-Table \ref{planet_sims} summarises the disc-planet simulations. 
-We focus on vortex-formation at the outer gap edge. 
-The $m=1$ mode amplitude was 
-averaged over the shell $r\in[1.2,1.6]r_0$ and over time 
-$t\in[t_\mathrm{max},200]P_0$, where $t_\mathrm{max}$ is when
-$\mathrm{max}(a_1)$ is attained.  
+ 
 %We examine the $m=1$ mode since 
 %for non-self-gravitating planetary gaps, if unstable, usually develop
 %a single vortex in quasi-steady state \citep{valborro07,lin10}. 
@@ -122,7 +123,10 @@ $\mathrm{max}(a_1)$ is attained.
   \caption{Summary of disc-planet simulations. These runs employ the
     `wedge' viscosity model described by
     Eq. \ref{planet_visc_profile}. The thickness of the viscous layer
-    is measured from the upper disc boundary. Case P0R employs the
+    is measured from the upper disc boundary. The $m=1$ mode amplitude was 
+    averaged over the shell $r\in[1.2,1.6]r_0$ and over time 
+    $t\in[t_\mathrm{max},200]P_0$, where $t_\mathrm{max}$ is when
+    $\mathrm{max}(a_1)$ is attained. Case P0R employs the
     viscosity profile of P0 for $t\leq100P_0$, and that of P1 for 
     $t>100P_0$.\label{planet_sims}}
     \begin{tabular}{llllrl}
@@ -316,16 +320,14 @@ instability. These are summarised in Table \ref{planet_sims_iso}.
 \begin{table}
   \centering
   \caption{Disc-planet simulations with a strictly
-    isothermal equation of state ($q=0$). These runs employ the
-    `wedge' viscosity model described by
-    Eq. \ref{planet_visc_profile}. The thickness of the viscous layer
+    isothermal equation of state ($q=0$). The thickness of the viscous layer
     is quoted at the reference radius $R=r_0$. \label{planet_sims_iso}}
     \begin{tabular}{llllrc}
       \hline\hline
       Case & $10^6\hat{\nu}_0$ & $A_\nu$ & visc. layer& $10^2\overline{a}_1$ &vortex \\ 
       \hline
-      Iso0   & 1.0  & 1          & 0      & 17.4  &  YES   \\
-      Iso1   & 1.0  & 10         & $H_0$  &       &       \\ 
+      Iso0   & 1.0  & 1          & 0      & 19.3  &  YES   \\
+      Iso1   & 1.0  & 10         & $H_0$  & 12.8  &  YES     \\ 
       Iso2   & 1.0  & 100        & $H_0$  & 1.1  &  NO     \\ 
       \hline
   \end{tabular}
@@ -344,8 +346,7 @@ stable.
    \includegraphics[scale=.27,clip=true,trim=0cm 0.cm 0cm
      0.9cm]{figures/jup0_3h_iso_pdisk_vorten_015}\includegraphics[scale=.27,clip=true,clip=true,trim=2.3cm
      0.cm 0cm
-     0.9cm]{figures/jup1_3h_iso_amp10_pdisk_vorten_015}
-   \includegraphics[scale=.27,clip=true,clip=true,trim=2.3cm
+     0.9cm]{figures/jup1_3h_iso_amp10_pdisk_vorten_015}\includegraphics[scale=.27,clip=true,clip=true,trim=2.3cm
      0.cm 0cm
      0.9cm]{figures/jup1_3h_iso_pdisk_vorten_015}
    \caption{Isothermal disc-planet simulations. The perturbed inverse
