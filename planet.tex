@@ -307,9 +307,9 @@ above are unlikely to capture this instability. Nevertheless, we have
 performed additional simulations designed to eliminate the vertical shear
 instability.  
 
-\subsubsection{Higher floor viscosity}
+\subsubsection{Higher viscosity}
 We performed several simulations with a floor
-viscosity of $\hat{\nu}_0=10^{-6}$. A viscosity value of
+viscosity of $\hat{\nu}_0=10^{-6}$. A viscosity of
 $\hat{\nu}\sim 10^{-6}$ is expectd to damp the vertial shear 
 instability \citep{nelson12}, while still permitting the gap-edge
 RWI. Table \ref{planet_sims} summarises
@@ -321,16 +321,18 @@ similarly Pb0: three vortices formed by $t\sim30P_0$, merging into two
 vortices by $t\sim40P_0$, then finally into a single vortex by
 $t\sim130P_0$, which subsequently decays. However, the final vortex
 decays faster in the presence of a viscous layer. This is shown in
-Fig. in terms of the $m=1$ kinetic energy density. 
-
-
+Fig. \ref{pdisk_kerz_cases_planet_hivisc}, which compares the $m=1$
+kinetic energy density for case Pb0 and Pb1. The evolution only begins
+to differ after the single-vortex has formed. 
 
 \begin{figure}
   \centering
-  %  \includegraphics[width=\linewidth]{figures/pdisk_kerz_cases_planet_m1}
+  \includegraphics[width=\linewidth]{figures/pdisk_kerz_cases_nu6}
   \caption{Same as Fig. \ref{pdisk_kerz_cases_planet} but for higher
     floor viscosity cases Pb0 (solid, no viscous layer) and Pb1
-    (dotted, viscous layer of $H$). 
+    (dotted, viscous layer of $H$). The thick (thin) lines indicate
+    $W_1$ averaged over $\tan{\psi}\in[0,2]h$
+    ($\tan{\psi}\in[2,3]h$). 
     \label{pdisk_kerz_cases_planet_hivisc}}
 \end{figure}
 
@@ -345,7 +347,12 @@ transient features and are entirely absent for $t\gtrsim80P_0$.
 \subsubsection{Strictly isothermal discs} 
 We repeated simulations P0, P1 and Q1 with a strictly isothermal
 equation of state ($q=0$). These are summarised in Table
-\ref{planet_sims_iso}.  
+\ref{planet_sims_iso}. Fig. \ref{pdisk_kerz_cases_planet_iso} compares
+the $m=1$ kinetic energy density for these cases. Consistent with the
+above simulations, a viscous layer causes a faster decay in this
+quantity. Most interesting though, is that case Iso2 (with a viscous
+layer of $\sim H$) does not develop a single vortex. 
+%and the end, vortices in all cases?  
 
 \begin{table}
   \centering
@@ -374,10 +381,12 @@ equation of state ($q=0$). These are summarised in Table
 
 \begin{figure}
   \centering
-  %  \includegraphics[width=\linewidth]{figures/pdisk_kerz_cases_planet_m1}
+  \includegraphics[width=\linewidth]{figures/pdisk_kerz_cases_iso}
   \caption{Same as Fig. \ref{pdisk_kerz_cases_planet} but for strictly
     isothermal Iso0 (solid, no viscous layer so $\hat{\nu}\sim10^{-6}$), Iso1
     (dotted, viscous layer with $\hat{\nu}\sim10^{-5}$) and Iso2
-    (dashed, viscous layer with $\hat{\nu}\sim10^{-4}$). 
+    (dashed, viscous layer with $\hat{\nu}\sim10^{-4}$). The thick (thin) lines indicate
+    $W_1$ averaged over $\tan{\psi}\in[0,2]h$
+    ($\tan{\psi}\in[2,3]h$).  
     \label{pdisk_kerz_cases_planet_iso}}
 \end{figure}
