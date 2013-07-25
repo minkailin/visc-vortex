@@ -14,8 +14,10 @@ direction. The governing equations are:
   &\frac{\p\bm{v}}{\p t} + \bm{v}\cdot\nabla\bv = -\frac{1}{\rho}\nabla
   p -\nabla{\left(\Phi_*+\Phi_p\right)} +\bm{f}_\nu + \bm{f}_d\label{mom_eq},    
 \end{align}
-where $\rho$ is the mass density, $\bv$ is the velocity field and 
-$p=c_s^2\rho$ is the pressure. The sound speed $c_s$ is prescribed as 
+where $\rho$ is the mass density, $\bv$ is the velocity field (the
+azimuthal angular velocity being $\Omega\equiv v_\phi/R$) and 
+$p=c_s^2\rho$ is the pressure. 
+The sound speed $c_s$ is prescribed as 
 \begin{align}
   c_s = hr_0\Omega_k(r_0)\times\left(\frac{r_0}{R}\right)^{q/2}, 
 \end{align}
@@ -25,8 +27,8 @@ the gravitational constant. The power-law index $q$ specifies the
 radial temperature profile: $q=0$ corresponds to a strictly isothermal
 disc, while $q=1$ is a locally isothermal disc with constant aspect
 ratio. In Eq. \ref{mom_eq}, $\Phi_*(r) = -GM_*/r $ is the stellar
-potential and $\Phi_p$ is a planetary potential. Details of $\Phi_p$
-are given in \S\ref{planet}. 
+potential and $\Phi_p$ is a planetary potential (see \S\ref{planet}
+for details).  
 
 Two dissipative terms are included in the momentum, equations: viscous
 damping $\bm{f}_\nu$ and frictional damping $\bm{f}_d$. The viscous
@@ -40,7 +42,7 @@ where
     - \frac{2}{3}\left(\nabla\cdot\bv\right)\bm{1} \right]
 \end{align}
 is the viscous stress tensor and $\nu$ is the kinematic viscosity 
-(`$^\dagger$' denotes the transpose). The frictional force is 
+($^\dagger$ denotes the transpose). The frictional force is 
 \begin{align}
   \bm{f}_d = -\gamma\left(\bv - \bv_\mathrm{ref}\right),
 \end{align}
@@ -51,7 +53,8 @@ below). %The kinematic viscosity $\nu$ is specified directly, but
 %conversion to an alpha parameter 
 
 \subsection{Disc model and initial conditions}\label{IC}
-The numerical disc model occupies $r\in[\rin,\rout]$, $\theta\in[\theta_\mathrm{min},
+The numerical disc model occupies $r\in[\rin,\rout]$,
+$\theta\in[\theta_\mathrm{min}, 
   \pi/2]$ and $\phi\in[0,2\pi]$ in spherical co-ordinates. 
 Only the upper disc is simulated explicitly 
 ($\psi>0$), by assuming symmetry across the midplane. The maximum
@@ -85,7 +88,8 @@ The bump function $B(R)$ is
 \begin{align}
 B(R) = 1 + \left(A - 1\right)\exp{\left[-\frac{(R-r_0)^2}{2\Delta R^2}\right]},
 \end{align}
-where $A$ is the bump amplitude and $\Delta R$ is the bump width. The initial surface 
+where $A$ is the bump amplitude and $\Delta R$ is the bump width. The
+initial surface  
 density has bump if $A>1$ and is smooth if $A=1$. 
 
 The initial angular velocity is chosen to 
@@ -107,11 +111,10 @@ are not independent if one additionally requires a steady-state (see
 \S\ref{density_bump}).    
 
 \subsection{Damping}
-Frictional damping is often used in hydrodynamical simulations in order
-to reduce reflections from boundaries
-\citep[e.g.][]{bate02,valborro07}. We employ it for this  
-purpose in the radial direction. The damping coefficient $\gamma$ is only 
-non-zero within the `damping zones', here taken to be $r\leq \dampin,\, 
+We apply frictional damping in the radial direction to reduce
+reflections from boundaries \citep[e.g.][]{bate02,valborro07}.  The
+damping coefficient $\gamma$ is only  non-zero within the `damping
+zones', here taken to be $r\leq \dampin,\,  
 r\geq \dampout$, 
 \begin{align}
   \gamma = \hat{\gamma}\Omega_i\times
@@ -122,8 +125,8 @@ r\geq \dampout$,
 \end{align}
 where $\hat{\gamma}$ is the dimensionless damping rate. We choose
 \begin{align}
-\xi_\mathrm{in}(r) = \left(\frac{\dampin - r}{\dampin - \rin}\right)^2 \text{ and } \quad
-\xi_\mathrm{out}(r) = \left(\frac{r - \dampout}{\rout- \dampout}\right)^2
+  \xi_\mathrm{in}(r) = \left(\frac{\dampin - r}{\dampin - \rin}\right)^2 \text{ and } \quad
+  \xi_\mathrm{out}(r) = \left(\frac{r - \dampout}{\rout- \dampout}\right)^2
 \end{align}
 for the inner and outer radial zones, respectively. 
 

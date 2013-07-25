@@ -14,18 +14,8 @@ axisymmetric viscous spreading and growth of
 non-axisymmetric disturbances; only the latter of which is our focus. 
 
 
-%{\bf redo one or two layered sims on scinet with whatever changes made for d-p sims} 
-
 \subsection{Viscous equilibria for a radially structured
-  disc}\label{visc_eq} 
-%The RWI is a linear instability. That is, non-axisymmetric 
-%disturbances grow exponentially with respect to a time-independent
-%axisymmetric background. A convenient way to study the RWI is to
-%initialize an inviscid disc with a density bump \citep[e.g.][]{li00}. 
-%However, taking this approach with a viscous disc is problematic,
-%because the density bump will generally undergoe viscous spreading 
-%\citep{lyndenbell74}. 
- 
+  disc}\label{visc_eq}  
 In choosing $\rho_i$ and $\Omega_i$, we neglected radial
 velocities and viscous forces in the steady-state vertical and
 cylindrical radial momentum equations (Eq. \ref{vert_balance} and
@@ -36,12 +26,11 @@ However, $v_{R}$ and $\nu$ cannot be ignored in the azimuthal
 momentum equation. Indeed, if a steady-state is desired, then the
 conservation of angular momentum in a viscous disc implies special
 relations between the viscosity, cylindrical radial velocity and
-density field. %We do this for simulations in \S\ref{density_bump}.   
-
+density field. 
 
 \subsubsection{Initial cylindrical radial velocity}
-For axisymmetric flow with angular velocity that only depends on the
-cylindrical radius, the azimuthal momentum equation reads 
+For axisymmetric flow with $\Omega=\Omega(R)$, the azimuthal momentum
+equation reads  
 \begin{align}\label{ang_mom_cons}
   R\rho v_R\frac{\p}{\p R}\left(R^2\Omega \right) = \frac{\p}{\p
     R}\left(R^3\rho\nu\frac{\p\Omega}{\p R}\right). 
@@ -62,7 +51,7 @@ $z$. Eq. \ref{temp} motivates the simple choice
   v_{Ri} = \frac{\nu}{R}\frac{d\ln{\Omega_i}}{d\ln{R}} 
 \end{align}
 for the initial cylindrical radial velocity. Next, we choose the
-viscosity profile $\nu$ to make the mass flux independent of
+viscosity profile $\nu$ to make $\dot{M}$ independent of
 cylindrical radius.  
 
 \subsubsection{Viscosity profile for a steady state}\label{visc_model}
@@ -72,7 +61,7 @@ by Eq. \ref{init_vr}, this implies
 $R\rho_i\nu\Omega_i^\prime/\Omega_i$ is only a function of $z$. We are
 therefore free to choose the vertical dependence of viscosity.   
 
-Let $\nu = \hat{\nu}r_0^2\Omega_K(r_0)$, where
+Let $\nu = \hat{\nu}r_0^2\Omega_k(r_0)$, where
 $\hat{\nu}=\hat{\nu}(R,z)$ is a dimensionless function describing
 the magnitude and spatial distribution of the axisymmetric kinetmatic
 viscosity. We choose $\hat{\nu}$ such that   
@@ -94,11 +83,10 @@ $\zeta_\nu$ and $\Delta\zeta_\nu$, respectively.
 In Eq. \ref{visc_profile} we have set the dimensionless co-ordinate
 $\zeta=z/H_0$ where $H_0=H(r_0)$. %We have specified
 %the kinematic viscosity directly, but 
-It is straight forward to
-translate $\hat{\nu}$ to an alpha viscosity 
-using $\nu = \alpha c_s H$ \citep{shakura73}. This gives $\alpha =
-\hat{\nu}/h^2$ at $R=r_0$.  Thus for $h=0.1$ and $\hat{\nu}=10^{-4}$ we
-get $\alpha\sim 10^{-2}$.  
+We can translate $\hat{\nu}$ to an alpha viscosity 
+using $\nu = \alpha c_s H$ \citep{shakura73} so that $\alpha =
+\hat{\nu}/h^2$ at $R=r_0$.  This gives $\alpha\sim 10^{-2}$ for
+$h=0.1$ and $\hat{\nu}=10^{-4}$. 
 
 Eq. \ref{visc_profile} implies that at the fixed cylindrical radius
 $R=r_0$, the dimensionless viscosity increases from $\hat{\nu} =
@@ -118,15 +106,14 @@ profile is depicted in Fig. \ref{visc2d}.
 \end{figure}
 
 
-
 \subsection{Simulations}
 We consider discs with radial extent $[\rin,\rout]=[0.4,2.0]r_0$,
-vertical extent with $n_h=2$ scale-heights and aspect-ratio $h=0.1$ at
+vertical extent $n_h=2$ scale-heights and aspect-ratio $h=0.1$ at
 $R=r_0$. We use $(N_r, N_\theta,
 N_\phi)=(256,64,512)$ grid points. 
 The resolution at the reference radius is then
 $16,\,32,\,8$ cells per scale-height in $(r,\theta,\phi)$ directions,
-respectively. The planetary potential is disabled for these runs
+respectively. The planet potential is disabled for these runs
 ($M_p\equiv 0$). We apply a damping rate $\hat{\gamma}=1$ with the
 reference velocity $\bm{v}_\mathrm{ref}=\bm{v}(t=0)$.     
 
@@ -135,18 +122,14 @@ all runs in this section. The spherical radial velocity is subject
 to random perturbations of magnitude $10^{-4}c_s$ 
 a few time-steps after initialisation. 
 
-%{\bf redo on scinet. get rid of the small scale instability. redo
-%  sims. probably just present the 3h sims? also do 3h with visc boost =10,
-%  and the visc-restart sim. and 3h with 0.5h layer. }
-
 \subsubsection{Inviscid run}
 For reference we simulate an effectively inviscid disc, case B0,
 with the viscosity parameters $\hat{\nu}_0=10^{-9}$ and $A_\nu = 1$.  
-The latter implies the viscosity is independent of $z$ at $R=r_0$.   
+Thus viscosity is independent of $z$ at $R=r_0$.   
 Inviscid setups similar to case B0 have previously been simulated
-both in the linear and nonlinear regimes  \citep{meheut12, lin13}. So,
-in addition to a control run, case B0 also serves to test the \pluto
-code in simulating the RWI.    
+both in the linear and non-linear regimes  \citep{meheut12, lin13}. 
+%So, %in addition to a control run, case B0 also serves to test the \pluto
+%code in simulating the RWI.    
 
 \subsubsection{Viscous runs}
 In these runs the floor viscosity is 
@@ -154,16 +137,14 @@ $\hat{\nu}_0=10^{-6}$. The control run case V0 has $A_\nu =
 1$. Thus, case V0 is the viscous version of case B0.  
 We then consider models where the kinematic viscosity increases by
 a factor $A_\nu=100$ for $z>\zeta_\nu H_0$ at the bump radius. We
-choose $\zeta_\nu=1.5,\,1.0$ for cases V1 and V2, respecively.  This gives a upper 
+choose $\zeta_\nu=1.5,\,1.0$ for cases V1 and V2, respecively.  This
+gives a upper 
 viscous layer of thickness $0.5H$ and $H$ at $R=r_0$. (See
 Fig. \ref{visc2d} for a plot of the kinematic viscosity profile for case V2.) 
 For case V1 and V2 the transition thickness is fixed to
 $\Delta\zeta_\nu=0.2$.  
  
 Finally, we consider a high viscosity run, case V3, 
-%with $\zeta_\nu =
-%0$, i.e. the viscous layer occupies the entire vertical domain. This
-%is equivalent to setting 
 with $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$.  This is equivalent to
 extending the viscous layer in case V1/V2 to the entire vertical
 domain.  
@@ -174,13 +155,13 @@ usual way: exponential growth of perturbations measured with respect
 to an axisymmetric steady equilibrium. A proper linear
 stability analysis, including the full viscous stress tensor, is
 beyond the scope of this paper, but we can nevertheless extract linear 
-mode growth rates from the early evolution of the non-linear simulations.  
+mode frequences from the non-linear simulations.  
 
-%For quantitative analysis of non-axisymmetric density structures, 
 The $m^\mathrm{th}$ Fourier component of the density field is  
 \begin{align}
-\hat{\rho}_m(r,\theta,t) \equiv \int_0^{2\pi} \rho(\bm{r},t)\exp{(-\ii m\phi)}d\phi.
-\end{align}
+\hat{\rho}_m(r,\theta,t) \equiv \int_0^{2\pi} \rho(\bm{r},t)\exp{(-\ii
+  m\phi)}d\phi. 
+\end{align} 
 The magnitude of a Fourier mode is measured by 
 \begin{align} 
 a_m(t)\equiv \frac{b_m(t)}{b_0(0)},\quad b_m(t)\equiv \avg{|\hat{\rho}_m|}_r,
@@ -202,31 +183,21 @@ we will generally obtain $\sigma_m=\sigma_m(r,\theta,t)$. Thus, we compute
 $\avg{\sigma_m}_r = m\omega_m + \ii q_m$    
 where $\omega_m$ is the mode frequency and $q_m$ is the growth rate.
 We normalise the linear frequencies by
-$\Omega_0\equiv\Omega_i(r_0)\simeq\Omega_K(r_0)$. 
+$\Omega_0\equiv\Omega_i(r_0)\simeq\Omega_k(r_0)$. 
 
 \subsection{Results}
 Table \ref{artificial_bump} summarises the simulations presented in
-this section. %, along with several diagnostic measures 
-%of each case.  
- The linear mode frequencies are measured at 
-$t=10P_0$ and averaged over the shell $r\in[0.8,1.2]r_0$.   
-For convenience we will refer to $t\leq10P_0$ as the `linear
-phase' since the relative density perturbations are
-small ($\delta\rho\ll 1$) during this time.  
-%The dominant azimuthal wavenumber is the mode with largest
-%amplitude. 
-The second set of measurements is made at $t=100P_0$, which is well
-into the nonlinear regime. %The dominant mode is that with 
-%$\mathrm{max}[a_m(100P_0)]$. 
-The minimum Rossby number is measured at the midplane. 
+this section. Linear mode frequencies are measured at 
+$t=10P_0$ (when $|\delta\rho|\ll 1$) and averaged over 
+$r\in[0.8,1.2]r_0$. The second set of measurements is made well into
+the non-linear regime at $t=100P_0$. 
+The minimum Rossby number is measured at
+the midplane.  
 
 \begin{table*}
   \centering
   \caption{Summary of hydrodynamic simulations initialized with a
-    density bump. %% `UBC' is
-    %% the boundary condition applied at the upper disc boundary. 
-    %Note that case V3
-    %is equivalent to setting 
+    density bump. 
     $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$. \label{artificial_bump}}
   \begin{tabular}{lcccccl @{\extracolsep{0.1cm}} ccc}
     \hline\hline
@@ -261,24 +232,20 @@ The minimum Rossby number is measured at the midplane.
 Fig. \ref{bump0_bump1} 
 shows the density fluctuation and Rossby number for
 case B0. The dominant linear mode is $m=4$ with a growth rate
-$0.2\Omega_0$. This 
-corresponds to a growth timescale of $\sim P_0$. 
-This is consistent with recent 3D linear calculations
-\citep{meheut12,lin13}. Fig. \ref{bump0_bump1} shows that the
-linear phase consists of non-axisymmetric vorticity perturbations on
-either side of the density bump \citep{umurhan10}, i.e. vorticity
-waves propagating along the PV gradients.     
-
-The nonlinear outcome of the RWI is vortex-formation
-\citep{li00}. Four vortices develop initially, but 
-merge on a dynamical time-scale to produce 
-a single vortex. %meheut12 vortex weakens on even longer time scales
-                 %but we do not consider it here 
- Case B0 evolves similarly to previous numerical  
-studies of the RWI in an inviscid disc
+$0.2\Omega_0$, consistent with recent 3D linear calculations 
+\citep{meheut12,lin13}. 
+%Fig. \ref{bump0_bump1} shows that the
+%linear phase consists of non-axisymmetric vorticity perturbations on
+%either side of the density bump \citep{umurhan10}, i.e. vorticity
+%waves propagating along the PV gradients.     
+The non-linear outcome of the RWI is vortex formation
+\citep{li00}. Four vortices develop initially, then 
+merge on a dynamical timescale into  
+a single vortex. Case B0 evolves similarly to previous simulations of
+the RWI in an inviscid disc 
 \citep[e.g.][where more detailed analyses are 
 given]{meheut10,meheut12b}. This, together with the agreement with
-previous linear simulations, demonstrates the ability of the \pluto
+linear calculations, demonstrates the ability of the \pluto
 code to capture the RWI. 
 
 \begin{figure}
@@ -297,52 +264,39 @@ code to capture the RWI.
      0.9cm]{figures/bump0_vort010}
   \caption{Evolution of the inviscid case B0. Top: midplane density fluctuation, 
     $\Delta\rho(z=0)$. Bottom: midplane
-    Rossby number (note the different axis range from the top plots). 
+    Rossby number (note the different axis range from the top panel). 
     Here, $\chi$ is an empirical measure of the final vortex
     aspect-ratio. $\phi_0$ is the azimuth of 
-    $\mathrm{max}\left[|\Delta\rho(z=0)|\right]$
+    $\mathrm{max}\left[|\Delta\rho(z=0)|\right]$.
     \label{bump0_bump1}}
 \end{figure}
 
 \subsubsection{The effect of a viscous layer}
 We now examine viscous cases V0 --- V3. Recall  
-from Table \ref{artificial_bump} that the 
-thickness of the upper viscous layer increases from case V0 to case
-V3. At the reference radius, the viscous layer (with $
+from Table \ref{artificial_bump} that the viscous layer (with $
 \hat{\nu}\sim10^{-4}$) occupies the uppermost $0\%,\,25\%,\,50\%$ and
-$100\%$ of the vertical domain for cases V0, V1, V2 and V3,
-respectively.    
+$100\%$ of the vertical domain at $R=r_0$ for cases V0, V1, V2 and V3,
+respectively.     
 
-We first compare the control case V0 to the fiducial
+We first compare the viscous case V0 to the 
 inviscid case B0. Table \ref{artificial_bump} shows that despite
 increasing the viscosity by a factor of $10^3$, the change to the
 linear mode frequencies are negligible. 
-The value of $a_m$ and minimum Rossby number show that the final
+The value of $a_m$ and minimum Rossby number indicate that the final
 vortex in V0 is only slightly weaker than that in B0. This is also
 reflected in  Fig. \ref{bump0_bump1} (case B0) and the left most column of
 Fig. \ref{vdamp0} (case V0). Case V0 develops a more elongated 
 vortex with smaller $|\Delta\rho|$ than that in case B0. 
   
-As we increase the thickness of the viscous layer from case V0 to V3, 
-Table \ref{artificial_bump} shows the dominant linear mode remains at
-$m=4$, but linear growth rate does appreciably decrease 
-(by $\sim 34\%$ from case V0 to V3). However, these linear growth timescales
-are still $O(P_0)$.  
-We thus have the important result that the effect of viscosity
-(layered or not) on the
-instability through the linear perturbations is not significant as the
-RWI remains dynamical even in the high viscosity disc.   %linear
-                                %perturbations not effecitvely damped out
-
-The top row of Fig. \ref{vdamp0} shows that layered viscosity has a
-non-trivial effect on $\Delta\rho$ in the
-non-linear regime. $|\Delta \rho|$ increases
-from case V0 to V1, then decreases from cases V1 to V3 (but aquires a
-more global distribution). The dominant azimuthal wavenumber also
-increase: vortices do not readily merge in case V2 and V3. 
+As we introduce and thicken the viscous layer from case V0 to V3, the dominant
+linear mode remains at $m=4$ (Table \ref{artificial_bump}), but linear
+growth rate does appreciably decrease (by $\sim 34\%$ from case V0 to
+V3). However, these linear growth timescales  
+are still $\sim P_0$. We thus have the important result that
+viscosity (layered or not) does not significantly affect the linear
+instability because the RWI grows dynamically even in the high
+viscosity disc.     
  
-
-
 \begin{figure*}
    \centering
    \includegraphics[scale=.43,clip=true,trim=0cm 0.9cm 0cm
@@ -372,16 +326,24 @@ increase: vortices do not readily merge in case V2 and V3.
    }
 \end{figure*}
 
-The bottom row of Fig. \ref{vdamp0} compares the Rossby number
+%The top row of Fig. \ref{vdamp0} shows that layered viscosity has a
+%non-trivial effect on $\Delta\rho$ in the 
+%non-linear regime. $|\Delta \rho|$ increases
+%from case V0 to V1, then decreases from cases V1 to V3 (but aquires a
+%more global distribution). The dominant azimuthal wavenumber also
+%increase: vortices do not readily merge in case V2 and V3. 
+
+The effect of layered viscosity in the non-linear regime is more
+complicated. The bottom row of Fig. \ref{vdamp0} compares the Rossby number
 associated with the over-densities. Thickening the viscous 
 layer decreases the vortex aspect ratio. Since their widths remain
 at $\sim 2H_0$, the vortices become smaller with increasing
-viscosity. This may be partly attributed to fewer vortex merging
+viscosity. This is partly attributed to fewer vortex merging
 events having occured as viscosity is increased. The merging of
 two vortices usually leads to a larger but weaker vortex (smaller
-$|Ro|$), so if vortex merging is resisted then each vortex may evolve
-separately. Strangely, vortices become stronger  (more negative $Ro$)
-as viscosity is increased.
+$|Ro|$): if merging is resisted then each vortex may grow separately.  
+Strangely, vortices become stronger  (more negative $Ro$) as viscosity
+is increased. 
 
 We compare  in Fig. \ref{bump_energy} the perturbed kinetic energy for 
 cases B0, V0 and V1; which are all dominated by a single vortex in 
@@ -416,14 +378,14 @@ viscosity could in fact strengthen the perturbation.
 \end{figure}
 
 
-We point out that the snapshots in
-Fig. \ref{vdamp0} are taken at the midplane, but  
-the influence of viscosity is apparent even when comparing case V1 to
-V0, i.e. when the viscous layer is confined near the upper
-boundary. This demonstrates the vertically-global nature of vortex
-formation through the RWI. Conditions near the disc
-surface should be expected to influence the instability throughout the
-fluid column. 
+%We point out that the snapshots in
+%Fig. \ref{vdamp0} are taken at the midplane, but  
+%the influence of viscosity is apparent even when comparing case V1 to
+%V0, i.e. when the viscous layer is confined near the upper
+%boundary. This demonstrates the vertically-global nature of vortex
+%formation through the RWI. Conditions near the disc
+%surface should be expected to influence the instability throughout the
+%fluid column. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

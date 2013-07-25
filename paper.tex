@@ -89,7 +89,7 @@
   vortex formation in 3D discs, we present customized
   non-linear hydrodynamical 
   simulations of global 3D protoplanetary discs with an imposed kinematic
-  viscosity that is height-dependent. Two types of numerical 
+  viscosity that is height-dependent. Two sets of numerical 
   experiments are performed:
   \begin{inparaenum}[(i)]
   \item non-axisymmetric instability of artificial
@@ -127,7 +127,7 @@ protoplanetary discs
 Recent observations have revealed a class of transition discs ---
 circumstellar discs which are dust poor in its inner regions ---  
 with non-axisymmetric dust distributions in its outer 
-regions \citep{brown09,mayama12,marel13,isella13}. 
+regions \citep{brown09,mayama12,marel13,isella13}.  
 One interpretation of such a non-axisymmetric structure is the presence of
 a large-scale disc vortex, which is known to act as a dust trap
 \citep{barge95,inaba06,birnstiel13,ataiee13,lyra13}.  
@@ -140,8 +140,9 @@ that can develop in radially structured discs.
 %nonlinear simulations
 %dust capture 
 
-Modern work on the RWI began with 2D linear stability analysis
-\citep{lovelace99,li00}. These studies show that a disc with radially localized
+Modern work on the RWI began with two-dimensional (2D) linear
+stability analysis \citep{lovelace99,li00}. These studies show that a
+disc with radially localized 
 structure, such as a surface density enhancement of $\gtrsim 10\%$ over a
 radial lengthscale of order the local disc scale-height, is unstable to
 non-axisymmetric perturbations, which grow on dynamical (orbital)
@@ -153,68 +154,76 @@ While these studies consider disc models with artificial radial
 structure, it has recently been estabilished that a natural site for
 the RWI is the edge of gaps induced by disc-planet interaction 
 \citep{koller03,li05,valborro07,li09,lyra09b,lin10,lin11a}. Indeed, this has
-been the proposed explanation for the recently observed dust asymmetry
-in the Oph IRS 48 transition disc system \citep{marel13}.      
+been the proposed explanation for the lopsided dust distribution
+observed in the Oph IRS 48 transition disc system \citep{marel13}.       
 
 %3D results
 An important extension to the aforementioned theoretical studies is
-the generalization of the RWI to 3D 
+the generalization of the RWI to three-dimensional (3D) 
 discs. Both nonlinear 3D hydrodynamic simulations 
-\citep{meheut10,meheut12b,lin12b} and 3D linear calculations
+\citep{meheut10,meheut12b,lin12b,lyra12} and 3D linear calculations
 \citep{umurhan10,meheut12,lin12,lin13} have been carried out. 
 These studies reveal that the RWI is a 2D instability,
 in that there is negligible difference between growth rates obtained
 from 2D and 3D linear calculations. The associated density and
-horizontal velocity perturbations have weak vertical dependence; and
+horizontal velocity perturbations have weak vertical dependence;  
 vertical velocities are small. In nonlinear hydrodynamic simulations,
-the vortices are columnar and extend throughout the vertical domain
-\citep{richard13}. 
+the vortices are columnar and extend throughout the vertical extent of
+the disc \citep{richard13}.  
 
 %relevance to layered disc models
 The RWI therefore appears to be a global instability in the direction
-perpendicular to the disc midplane. The vortical perturbation involves
-the entire column of fluid. Thus conditions away
-from the disc midplane may have important effects on vortex-formation
+perpendicular to the disc midplane: the vortical perturbation involves
+the entire fluid column. Thus conditions away
+from the disc midplane may have important effects on vortex formation
 via the RWI. For example, \cite{lin13a} only found linear
 instability for certain upper disc boundary conditions. This issue is
 relevant to protoplanetary disc models including `dead zones'.   
 
 %the question 
-It is believed that accretion in protoplanetary discs is driven by
-magnetohydrodynamic (MHD) turbulence as a result of the magneto-rotational instability
-\citep[MRI,][]{balbus91}. However, it is not clear if the MRI operates
-throughout the vertical extent of the disc, because the midplane of protoplanetary
+It is believed that mass accretion in protoplanetary discs is driven by
+magnetohydrodynamic (MHD) turbulence as a result of the
+magneto-rotational instability \citep[MRI,][]{balbus91,balbus98}. However, it
+is not clear if the MRI operates throughout the vertical extent of the
+disc, because the midplane of protoplanetary 
 disc is dense and cold \citep{armitage11}. As a result, \cite{gammie96}
 proposed the layered disc model: accretion due to MHD turbulence
-is small near the midplane (the dead zone), while MHD turbulence driven accretion
+is small near the midplane (the dead zone), while MHD turbulence
+driven accretion 
 operaties near the disc surface (the active zone). The layered
 accretion disc model has been subject to numerous studies 
-\citep[e.g.,][]{fleming03,terquem08,oishi09,dzy10,kretke10,okuzumi11,flaig11,landry13}.    
+\citep[e.g.,][]{fleming03,terquem08,oishi09,dzy10,kretke10,okuzumi11,flaig11,landry13}.      
 If MRI-driven accretion can be modelled through an effective 
 viscosity \citep{balbus99}, this corresponds to a low viscosity midplane and 
 high viscosity atmosphere. It is therefore valid to ask how such a
-vertical disc structure would affect the RWI. 
+vertical disc structure would affect large-scale vortex formation via
+the RWI.  
 
 This problem is partly motivated by viscous disc-planet
-simulations which show that the gap-edge RWI only develops when the viscosity is
-sufficiently small \citep{valborro06,valborro07,edgar08}.%and edgar 'vertical structure of gaps'
-What happens if the effective 
-viscosity near the midplane is sufficiently low for the RWI to
-develop, but is too high away from the midplane? Does the
-instability, and therefore vortex formation, still take place? 
+simulations which show that the gap-edge vortex formation only
+develops when the viscosity is sufficiently small
+\citep{valborro06,valborro07,edgar08}. %and edgar 'vertical structure of gaps'
+What happens if the effective viscosity near the midplane is
+sufficiently low for the development of Rossby vortices, 
+but is too high away from the midplane? 
+%Does the
+%instability, and therefore vortex formation, still take place? 
 
 In this work we examine vortex formation through the RWI in
-layered discs. As a first study to this problem, we take an
+layered discs. As a first study of this problem, we take an
 experimental approach through customized numerical hydrodynamic
 simulations. We simulate global 3D protoplanetary discs with an imposed
 kinematic viscosity that varies with height above the disc
 midplane. %because most simulations use a NS viscosity. full mri
           %simulation too expensive. comparison to previous 
-The purpose of this paper is to demonstrate, through selected
+The question is whether or not applying a viscosity only in the upper
+layers of the disc damps the RWI and subsequent vortex formation.   
+The purpose of this paper is to demonstrate, through selected 
 simulations, the potential importance of layered disc structures on
 vortex formation. We defer a detailed parameter survey to a future
-study. 
+study.  
 
+ 
 This paper is organised as follows. The accretion disc model is 
 set up in \S\ref{model} and the numerical simulation method described
 in \S\ref{sims}. Results are presented in \S\ref{density_bump} for 
@@ -233,7 +242,6 @@ of important caveats of the present disc models.
 \input{bump}
 \input{planet}
 %%\input{dead}
-
 \input{summary}
 
 %% \section*{Acknowledgments}

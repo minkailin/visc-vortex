@@ -1,9 +1,9 @@
-\section{Disc-planet simulations with a dynamic viscosity
-  prescription}
+\section{Disc-planet simulations with a density-dependent viscosity
+  prescription} 
 Consider the kinematic viscosity prescription 
 \begin{align}\label{dyn-visc}
   \hat{\nu} = \hat{\nu}_0\left[1 + \left(A_\nu -
-  1\right)\exp{\left(-\frac{\int_z^\infty\rho
+    1\right)\exp{\left(-\frac{\int_z^\infty\rho
         dz^\prime}{\int_{z_\nu}^\infty\rho_i dz^\prime}\right)}\right],  
 \end{align}
 where $z=z_\nu(R)$ is a chosen transition height. Initially, in the active
@@ -11,7 +11,7 @@ or viscous layer ($z\gg z_\nu$) the kinematic viscosity $\hat{\nu}\to
 A_\nu\hat{\nu}_0$; while in the dead or low-viscosity layer ($z\ll
 z_\nu$) the kinematic viscosity $\hat{\nu}\to\hat{\nu}_0$. Unlike the
 static profiles used previously, Eq. \ref{dyn-visc} allows the
-kinematic viscosity to dynamically respond to the density
+kinematic viscosity to respond to the density
 field, i.e. $\hat{\nu}$ is time-dependent.  
 
 However, implementing Eq. \ref{dyn-visc} in our numerical disc model
@@ -28,7 +28,7 @@ density and the thin disc approximation has been applied ($z\ll R$).
 The above viscosity prescription becomes
 \begin{align}\label{dyn-visc-simple}
    \hat{\nu} \simeq \hat{\nu}_0\left\{1 + \left(A_\nu -
-  1\right)\exp{\left[-\frac{\rho}{\rho_i}\frac{\erfc(\zeta/\sqrt{2})}{\erfc(\zeta_\nu/\sqrt{2})}\right]}\right\},
+  1\right)\exp{\left[-\frac{\rho}{\rho_i}\frac{\erfc\left(\zeta/\sqrt{2}\right)}{\erfc\left(\zeta_\nu/\sqrt{2}\right)}\right]}\right\}, 
 %\notag\\
 %  &\simeq \hat{\nu}_0\left\{1 + \left(A_\nu -
 %  1\right)\exp{\left[-\frac{\rho}{\rho_i}\frac{\erfc(\zeta/\sqrt{2})}{\erfc(\zeta_\nu/\sqrt{2})}\right]}\right\}.

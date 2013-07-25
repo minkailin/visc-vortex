@@ -1,9 +1,9 @@
 \section{Numerical experiments}\label{sims}
 The neccessary condition for the RWI --- a potential vorticity 
-extremum --- is either set as an initial condition via a density bump, 
-or obtained from a smooth disc by evolving it under disc-planet
-interaction. The setup of each experiment is detailed in subsequent
-sections.    
+extremum \citep{li00} --- is either set as an initial condition
+via a density bump, or obtained from a smooth disc by evolving it
+under disc-planet interaction. The setup of each experiment is
+detailed in subsequent sections.    
 
 We adopt units such that $G=M_*=1$, and the reference radius $r_0=1$.    
 We set $\sigma=0.5$ for the initial surface density profile and apply 
@@ -19,25 +19,20 @@ Runge-Kutta time integration.
 
 Boundary conditions are imposed through ghost zones.   
 Let the flow velocity parallel and normal to a boundary be
-$v_\parallel$ and $v_\perp$, respectively. %($v_\perp>0$ signifies flow
-%out of the computational domain.) 
-Two types of numerical 
-conditions are considered for the meridional boundaries:
+$v_\parallel$ and $v_\perp$, respectively. Two types of numerical 
+conditions are considered for the $(r,\theta)$ boundaries:
 \begin{inparaenum}[(a)]
 \item \emph{reflective}: $\rho$ and $v_\parallel$ are symmetric with
   respect to the boundary while $v_\perp$ is anti-symmetric;  
-  %% \item \emph{outflow}, ghost values of $\rho,\,v_\parallel$ set to that of the nearest active zone, 
-  %% likewise for $v_\perp$ but only if the active $v_\perp>0$, otherwise ghost values of $v_\perp$ are set to zero; 
 \item \emph{unperturbed}: ghost zones retain their initial values
-\end{inparaenum}.
+\end{inparaenum}. 
 The boundary conditions adopted for all simulations is unperturbed in
 $r$, reflective in $\theta$ and periodic in $\phi$. 
 
-%For all cases both radial boundaries are unperturbed and the midplane is reflective. 
 
 \subsection{Diagnostics}
 We list several quantities calculated from simulation data for use in
-result visualization and analysis.  
+results visualization and analysis.  
 %Averaged quantities are used to facilitate  
 %comparison between different cases. We use $\avg{\cdots}_j$ 
 %to denote spatial averaging along the $j^\mathrm{th}$ co-ordinate. 
@@ -48,17 +43,17 @@ result visualization and analysis.
 
 \subsubsection{Density perturbations}
 The relative density perturbation $\delta\rho$ and 
-and the non-axisymmetric density fluctuation are defined as 
+and the non-axisymmetric density fluctuation $\Delta\rho$ are defined as 
 \begin{align}
   \delta\rho(\bm{r},t) \equiv \frac{\rho - \rho_i}{\rho_i}, \quad
   \Delta\rho(\bm{r},t) \equiv \frac{\rho -
     \aziavg{\rho}}{\aziavg{\rho}}, 
 \end{align} 
 where $\avg{\cdot}_\phi$ denotes an azimuthal average.  
-Note that in general $\Delta\rho$ accounts for the time evolution of
+In general $\Delta\rho$ accounts for the time evolution of 
 the axisymmetric part of the density field, but if
 $\p_t\avg{\rho}_\phi=0$ then $\Delta\rho$ is identical to
-$\delta\rho-\avg{\delta\rho}_\phi$.   
+$\delta\rho-\avg{\delta\rho}_\phi$.    
 
 \subsubsection{Vortical structures}
 The Rossby number
@@ -68,31 +63,24 @@ The Rossby number
 \end{align} 
 can be used to quantify the strength of vortical structures and to
 visualize it. $Ro<0$ signifies anti-cyclonic motion with respect to
-the axisymmetric shear. Note that while for thin discs the rotation
-profile is Keplerian, the shear is non-Keplerian for radially  
-structured discs (i.e. $\Omega\simeq\Omega_K$ but
-$\kappa\neq\Omega$). 
+the background rotation. Note that while for thin discs 
+the rotation profile is Keplerian, the shear is non-Keplerian for radially  
+structured discs (i.e. $\Omega\simeq\Omega_k$ but the epicyclic
+frequency $\kappa\neq\Omega$). 
 
 \subsubsection{Potential vorticity}
-The potential vorticity (PV, or vortensity) is defined as
-%\begin{align}
-$  \bm{\eta}_\mathrm{3D} = \nabla\times\bm{v}/\rho. $
-%\end{align}
-%% Accordingly we defined the density-weighted average
-%% \begin{align}
-%%   \bm{\eta} = \frac{\int \rho\bm{\eta}_\mathrm{3D} dz}{\int\rho dz}. 
-%% \end{align}
-%% We are usually interested in the $z$-component of the PV, 
-Since we are considering geometrically thin discs, however, it will be
-convenient to work with vertically averaged quantities. Specifically,
-we define 
+The potential vorticity (PV, or vortensity) is 
+$  \bm{\eta}_\mathrm{3D} = \nabla\times\bm{v}/\rho$. 
+%Since we are considering geometrically thin discs, 
+However, it will be convenient to work with vertically averaged
+quantities. We define  
 \begin{align}
   \eta_z = \frac{1}{\Sigma}\int \hat{\bm{z}}\cdot\nabla\times\bv dz
 \end{align}
 as the PV in this paper, where $\Sigma = \int\rho dz$ and the
 integrals are confined to the computational domain. 
 
-We recall for a two-dimensional disc the vortensity is defined as 
+We recall for a 2D disc the vortensity is defined as 
 $\eta_\mathrm{2D} \equiv \hat{\bm{z}}\cdot\nabla\times\bv/\Sigma$, and
 extrema in $\eta_\mathrm{2D}$ is neccessary for the RWI in
 2D \citep{lovelace99,lin10}. Clearly, if the velocity field has no
@@ -100,10 +88,11 @@ vertical dependence then $\eta_z$ is proportional to
 $\eta_\mathrm{2D}$ (at fixed cylindrical radius).   
 
 \subsubsection{Perturbed kinetic energy density}  
-We will be interested in the energetics of non-axisymmetric
-structures. We define the perturbed kinetic energy as
+%We will be interested in the energetics of non-axisymmetric
+%structures. 
+We define the perturbed kinetic energy as
 $W\equiv|\bm{v}|^2/|\bm{v}(t~=0)|^2 - 1$, and its Fourier transform 
 $W_m\equiv\int_0^{2\phi} W\exp{(-\mathrm{i}m\phi)}d\phi$. We will examine
-$|W_m(r,\theta)|$ averaged over portions of the $(r,\theta)$
+$|W_m(r,\theta)|$ averaged over sub-portions of the $(r,\theta)$
 plane. %Specifically we define the `midplane energy' as $|W_m|$
 %averaged over $$
