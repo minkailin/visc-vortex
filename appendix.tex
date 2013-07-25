@@ -1,16 +1,24 @@
 \section{Disc-planet simulations with a dynamic viscosity
-  prescription} 
-Consider the kinematic viscosity prescription
+  prescription}
+Consider the kinematic viscosity prescription 
 \begin{align}\label{dyn-visc}
   \hat{\nu} = \hat{\nu}_0\left[1 + \left(A_\nu -
   1\right)\exp{\left(-\frac{\int_z^\infty\rho
         dz^\prime}{\int_{z_\nu}^\infty\rho_i dz^\prime}\right)}\right],  
 \end{align}
-where $z=z_\nu$ is a fixed transition height. Implementing this
-prescription in our numerical disc model requires integration in the cylindrical
-vertical direction on a spherical grid. To avoid this complication, we 
+where $z=z_\nu(R)$ is a chosen transition height. Initially, in the active
+or viscous layer ($z\gg z_\nu$) the kinematic viscosity $\hat{\nu}\to
+A_\nu\hat{\nu}_0$; while in the dead or low-viscosity layer ($z\ll
+z_\nu$) the kinematic viscosity $\hat{\nu}\to\hat{\nu}_0$. Unlike the
+static profiles used previously, Eq. \ref{dyn-visc} allows the
+kinematic viscosity to dynamically respond to the density
+field, i.e. $\hat{\nu}$ is time-dependent.  
+
+However, implementing Eq. \ref{dyn-visc} in our numerical disc model
+requires integration in the cylindrical vertical direction on a
+spherical grid. To avoid this complication, we  
 assume vertical hydrostatic equilibrium is approximately maintained 
-throughout the simulation, so that
+throughout the simulation, so that 
 \begin{align}
   \rho(R,\phi, z) \simeq
   \frac{\Sigma(R,\phi)}{\sqrt{2\pi}H}\exp{\left(-\frac{z^2}{2H^2}\right)},  
@@ -27,8 +35,10 @@ The above viscosity prescription becomes
 \end{align} 
 where $\zeta = z/H$. Eq. \ref{dyn-visc-simple}, though much simplified
 from  Eq. \ref{dyn-visc}, still allows the kinematic 
-viscosity to vary with the density field $\rho$: a
+viscosity to vary with density: a
 positive density perturbation ($\rho>\rho_i$) causes a reduction in
 kinematic viscosity and vice versa; while the explicit dependence on
 $\zeta$ causes viscosity to increase from the midplane to the disc
 atmosphere.    
+
+Here we describe one simulation using Eq. \ref{dyn-visc-simple}. 
