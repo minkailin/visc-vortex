@@ -31,7 +31,10 @@ scale-height. We found that the non-axisymmetric energy densities have
 weak vertical dependence, so the disturbance evolves
 two-dimensionally. It appears that applying a large viscosity in the
 disc atmosphere is sufficient to damp the instability throughout the
-vertical column of the fluid.  
+vertical column of the fluid. Our results suggest that vortex
+formation at planetary gap edges require low viscosity
+($\alpha\lesssim10^{-4}$) throughout the vertical extent of the
+disc. 
 
 \subsection{Relation to other works}
 %The work of \cite{pierens10} is most closely related to the present
@@ -43,11 +46,21 @@ the disc atmosphere (the active zone, with $\alpha\sim10^{-2}$) to the
 disc midplane (the dead zone, with $\alpha\sim10^{-7}$). According to
 previous 2D simulations, such a low kinematic viscosity should lead to
 the RWI \citep{valborro06,valborro07}. However, \citeauthor{pierens10}
-did not report vortex formation (nor are vortices visible from their
-plots). This result is consistent with our simulations. 
+did not report vortex formation, nor are vortices visible from their
+plots. This result is consistent with our simulations. 
 
-Another related study is that of \cite{oishi09}. 
-
+\cite{oishi09} carried out MHD shearing box simulations with 
+a resistivity profile that varied with height to model a
+layered disc: the disc atmosphere was MHD turbulent while the disc
+midplane remained stable against the MRI. They envisioned the active
+zone as a vorticity source for vortex formation in the midplane.  
+Although their setup is fundamentally different to ours, they also
+reported a lack of coherent vortices in the dead zone. They argued
+that the MHD turbulence in the acive layer was not sufficiently strong
+to induce vortex formation in the dead zone. Our results suggest that,
+if MHD turbulence can be represented by a viscosity, then tall
+columnar vortices will be damped even if the turbulence is only
+present in the disc atmosphere.    
 
 
 \subsection{Caveats and outlooks}\label{caveats}
@@ -55,14 +68,49 @@ Another related study is that of \cite{oishi09}.
 %potential impact of disc vertical structure on Rossby vortices. We
 %adopted simple 
 
-{\bf viscosity does not mimic mri turbulence (need spatial and
-  temporal averaging)}
+The most important caveat of the current model is the viscous
+prescription to mimic MRI turbulence. In doing so, an implicit
+averaging is assumed \citep{balbus99}. The spatial avering should be
+taken on length scales no less than the local disc scale-height, and
+the temporal average taken on timescales no less than the local
+orbital period. These are, however, the relevant scales for vortex
+formation via the RWI. Furthermore, our viscosity profile varies on
+length-scales comparable to or even less than $H$ (e.g. the transition
+between high and low viscosity layers). Nevertheless, as a proof of
+concept, our simulations do demonstrate the potential importance of
+disc vertical structure on the RWI.   
 
-{\bf no magneto-elliptic instability}
+Another drawback of a hydrodynamic viscous disc model is the
+fact that it cannot mimic magneto-elliptic instabilities (MEI), which
+are known to destroy vortices in magnetic discs
+\citep{lyra11,mizerski12}. A natural question how 
+Rossby vortices are affected by the MEI when it only operates in
+the disc atmosphere. Extension of the present work to global non-ideal
+MHD simulations will be neccessary to address RWI vortex formation in
+layered discs.   
 
-{\bf static viscosity profile. but viscosity should depend on
-  density. enhanced density may cause lower viscosity so perhaps vortex would
-  survive? implement dynamic viscosity} 
+However, some improvements can be made within the viscous
+framework. A static viscosity profile neglects the
+back-reaction of the density field on the kinematic viscosity. Thus,
+our simulations only consider how the RWI and Rossby vortices
+respond to an externally applied axisymmetric viscous damping. A more
+physical viscosity prescription should depend on the local column density
+\citep{fleming03}, with viscosity decreasing with increasing column
+density. The effective viscosity inside Rossby vortices would be
+lowered relative to the background disk because disc vortices are
+over-densities. If the over-density is large, then it is
+conceivable that the vortex formation itself may render the effective
+viscosity to be sufficiently low throughout the fluid column to allow
+for long term survival.  
+%radial boundary between high and low viscosity 
+%(Of course, this is to say th) 
+Preparation for this study is underway and results will be reported in
+a follow-up paper. 
+%{\bf static viscosity profile. but viscosity should depend on
+%  density. enhanced density may cause lower viscosity so perhaps vortex would
+%  survive? implement dynamic viscosity} 
+
+
 
 %The most significant caveat of our model is, by far, the use of 
 %a kinematic viscosity to model accretion.   

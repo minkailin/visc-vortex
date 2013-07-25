@@ -1,26 +1,34 @@
-\section{Additional simulations with artificial density bumps}
-%% According to steady-state requirements described in \S\ref{visc_eq},
-%% Eq. \ref{visc_profile} is not an ideal model for viscosity, because
-%% it leads to a $R$-depdendent mass flux.  
-%% %% However, this dependency varies
-%% %% on a global scale, whereas the instability of concern is radially
-%% %% local.
-%% An ideal choice for the kinematic viscosity
-%% profile is 
-%% \begin{align}\label{nu_ideal}
-%%   \hat{\nu}_\mathrm{ideal} =
-%%   \hat{\nu}_0\left[1+Q(z)\right]\frac{\rho_i(r_0,z)}{\rho_i(R,z)}
-%%   \frac{\left.d\ln{\Omega}/d\ln{R}\right|_{r_0}}{d\ln{\Omega}/d\ln{R}}.           
-%% \end{align}
-%% This corresponds to viscous layers parallel to the midplane. 
-%% %% In a numerical simulation, maintaining a steady-state with
-%% %% Eq. \ref{nu_ideal} is still dependent on boundary conditions. 
-%% %% For example, a reflective boundary at $\theta=\theta_\mathrm{min}$
-%% %% would  result in mass build-up at the location where the
-%% %% transition to a viscous layer, say $z=z_\nu$, intersects the
-%% %% spherical grid at $\theta=\theta_\mathrm{min}$. 
-
-
-%% We repeat several simulations with the viscosity profile given by
-%% Eq. \ref{nu_ideal}. Specifically, we consider simulations initialized
-%% with a density bump. 
+\section{Disc-planet simulations with a dynamic viscosity
+  prescription} 
+Consider the kinematic viscosity prescription
+\begin{align}\label{dyn-visc}
+  \hat{\nu} = \hat{\nu}_0\left[1 + \left(A_\nu -
+  1\right)\exp{\left(-\frac{\int_z^\infty\rho
+        dz^\prime}{\int_{z_\nu}^\infty\rho_i dz^\prime}\right)}\right],  
+\end{align}
+where $z=z_\nu$ is a fixed transition height. Implementing this
+prescription in our numerical disc model requires integration in the cylindrical
+vertical direction on a spherical grid. To avoid this complication, we 
+assume vertical hydrostatic equilibrium is approximately maintained 
+throughout the simulation, so that
+\begin{align}
+  \rho(R,\phi, z) \simeq
+  \frac{\Sigma(R,\phi)}{\sqrt{2\pi}H}\exp{\left(-\frac{z^2}{2H^2}\right)},  
+\end{align}
+and similarly for $\rho_i$, where $\Sigma$ is the total column
+density and the thin disc approximation has been applied ($z\ll R$). 
+The above viscosity prescription becomes
+\begin{align}\label{dyn-visc-simple}
+   \hat{\nu} \simeq \hat{\nu}_0\left\{1 + \left(A_\nu -
+  1\right)\exp{\left[-\frac{\rho}{\rho_i}\frac{\erfc(\zeta/\sqrt{2})}{\erfc(\zeta_\nu/\sqrt{2})}\right]}\right\},
+%\notag\\
+%  &\simeq \hat{\nu}_0\left\{1 + \left(A_\nu -
+%  1\right)\exp{\left[-\frac{\rho}{\rho_i}\frac{\erfc(\zeta/\sqrt{2})}{\erfc(\zeta_\nu/\sqrt{2})}\right]}\right\}.
+\end{align} 
+where $\zeta = z/H$. Eq. \ref{dyn-visc-simple}, though much simplified
+from  Eq. \ref{dyn-visc}, still allows the kinematic 
+viscosity to vary with the density field $\rho$: a
+positive density perturbation ($\rho>\rho_i$) causes a reduction in
+kinematic viscosity and vice versa; while the explicit dependence on
+$\zeta$ causes viscosity to increase from the midplane to the disc
+atmosphere.    
