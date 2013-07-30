@@ -110,7 +110,8 @@ $t=100P_0$ with the layered viscosity profile of case P1.
     `wedge' viscosity model described by
     Eq. \ref{planet_visc_profile}. The thickness of the viscous layer
     is measured from the upper disc boundary. The $m=1$ mode amplitude was 
-    averaged over the shell $r\in[1.2,1.6]r_0$ and over time 
+    averaged over the shell $r\in[1.2,1.6]r_0$; and the overbar
+    denotes a further time average over    
     $t\in[t_\mathrm{max},200]P_0$, where $t_\mathrm{max}$ is when
     $\mathrm{max}(a_1)$ is attained. Case P0R employs the
     viscosity profile of P0 for $t\leq100P_0$, and that of P1 for 
@@ -118,7 +119,7 @@ $t=100P_0$ with the layered viscosity profile of case P1.
     \begin{tabular}{llllrrl}
       \hline\hline
       Case & $10^6\hat{\nu}_0$ & $A_\nu$ & visc. layer&
-      $10^2\overline{a}_1$&$10^2a_{1,t=200P_0}$ & comment \\ 
+      $10^2\overline{a}_1$&$10^2a_1(200P_0)$ & comment \\ 
       \hline
       P0     & 0.25  & 1            & 0     & 18.3  & 14.5 & single vortex
        by $t=130P_0$ and persists until end of sim.  \\ %doing HR
@@ -293,10 +294,15 @@ We observe similar evolution in P0HR and P1HR as their standard
 resolution versions. However, due to lower numerical diffusion, we
 find stronger vortices in P0HR. Although the vortex in P1HR persisted
 longer than the standard resolution run, it was still subject to rapid
-%%how long? 
-decay in comparison with P0HR. At the end of the simulation we find
-the $m=1$ amplitude to be $a_1=0.29$ and $a_1=0.10$, respectively for
-P0HR and P1HR; a similar contrast as that between P0 and P1.    
+decay in comparison with P0HR. At $t=200P_0$ we find 
+the $m=1$ amplitude to be $a_1=0.29$ and $a_1=0.10$ at the outer gap
+edge, respectively for P0HR and P1HR; a similar contrast as that
+between P0 and P1. A weak over-density was still observed in
+P1HR, but it further decays to $a_1=0.06$ at $t=230P_0$ and a vortex is
+effectively absent. By contrast, P0HR was simulated to $t=250P_0$ and
+the vortes survived with $a_1=0.25$.   
+
+   
 
 %Interestingly, we observe small-scale instability inside the
 %vortex. This is shown in Fig. . We suspect this is the elliptic
