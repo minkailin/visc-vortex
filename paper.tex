@@ -68,11 +68,12 @@
 %% 60 St. George Street, Toronto, ON, M5S 3H8, Canada \\
 %% }
 
-\author[Lin and Umurhan]{ Min-Kai Lin$^1$
-  \thanks{E-mail: mklin924@cita.utoronto.ca} and Orkan M. Umurhan $^2$ \thanks{E-mail:TBC} \\
-  $^1$ Canadian Institute for Theoretical Astrophysics,
-  60 St. George Street, Toronto, ON, M5S 3H8, Canada \\
-  $^2$ TBC
+\author[Lin]{Min-Kai Lin%$^1$
+  \thanks{E-mail: mklin924@cita.utoronto.ca} \\%and Orkan M. Umurhan $^2$ \thanks{E-mail:TBC} \\
+%  $^1$ 
+Canadian Institute for Theoretical Astrophysics,
+  60 St. George Street, Toronto, ON, M5S 3H8, Canada %\\
+%  $^2$ TBC
 }
 
 \begin{document}
@@ -86,10 +87,10 @@
   However, whether or not vortex formation operates in layered
   accretion discs, i.e. models of protoplanetary discs including dead zones, 
   has not been verified. As a first step toward testing the robustness of
-  vortex formation in 3D discs, we present 
+  vortex formation in layered discs, we present 
   non-linear hydrodynamical 
   simulations of global 3D protoplanetary discs with an imposed kinematic
-  viscosity that is height-dependent. Two sets of numerical 
+  viscosity that increases away from the disc midplane. Two sets of numerical 
   experiments are performed:
   \begin{inparaenum}[(i)]
   \item non-axisymmetric instability of artificial
@@ -104,7 +105,7 @@
    The disc-planet simulations  
    also show the initial development of vortices at gap edges, but in
    layered discs the vortices are transient structures which disappear  
-   well into the non-linear regime. We suggest that vortex
+   well into the non-linear regime. We suggest that long term vortex
    formation via the RWI requires low effective viscosity throughout the 
    vertical extent of the disc. 
 \end{abstract}
@@ -244,14 +245,20 @@ of important caveats of the present disc models.
 %%\input{dead}
 \input{summary}
 
-%% \section*{Acknowledgments}
-%rp nelson
+\section*{Acknowledgments}
+This work benefited from extensive discussion with O. Umurhan. I also
+thank R. Nelson for discussion. Computations were performed on the
+CITA Sunnyvale cluster, as well as the GPC supercomputer at the SciNet
+HPC Consortium. SciNet is funded by the Canada Foundation for
+Innovation under the auspices of Compute Canada, the Government of
+Ontario, Ontario Research Fund – Research Excellence and the
+University of Toronto.   
 
 \bibliographystyle{mn2e}
 \bibliography{ref}
 
-\appendix
-\input{appendix}
+%\appendix
+%\input{appendix}
 %\input{appendix2}
 
 \end{document}

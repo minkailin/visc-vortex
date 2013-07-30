@@ -115,30 +115,30 @@ $t=100P_0$ with the layered viscosity profile of case P1.
     $\mathrm{max}(a_1)$ is attained. Case P0R employs the
     viscosity profile of P0 for $t\leq100P_0$, and that of P1 for 
     $t>100P_0$.\label{planet_sims}}
-    \begin{tabular}{llllrl}
+    \begin{tabular}{llllrrl}
       \hline\hline
       Case & $10^6\hat{\nu}_0$ & $A_\nu$ & visc. layer&
-      $10^2\overline{a}_1$ & comment \\ 
+      $10^2\overline{a}_1$&$10^2a_{1,t=200P_0}$ & comment \\ 
       \hline
-      P0     & 0.25  & 1            & 0     & 18.3  &  single vortex
+      P0     & 0.25  & 1            & 0     & 18.3  & 14.5 & single vortex
        by $t=130P_0$ and persists until end of sim.  \\ %doing HR
-      P0.5   & 0.25  & 100          & $0.5H$ &  17.4   & single vortex
+      P0.5   & 0.25  & 100          & $0.5H$ &  17.4  & 8.6& single vortex
       by $t=90P_0$ and persists until end of sim.\\ 
-      P0R    & 0.25  & 1$\to$100    & $0\to H$& 10.1 &  single vortex
+      P0R    & 0.25  & 1$\to$100    & $0\to H$& 10.1 & 2.5& single vortex
       by $t=130P_0$, disappears after $t=180P_0$ \\
-      P1     & 0.25  & 100          & $H$    & 12.5  &  single vortex
+      P1     & 0.25  & 100          & $H$    & 12.5  & 2.1 &single vortex
       by $t=80P_0$, disappears after $t=170P_0$ \\   %doing HR
       
 
-      Pb0     & 1.0  & 1          & 0      & 9.2  & single vortex by $t=130P_0$, disappears
+      Pb0     & 1.0  & 1          & 0      & 9.2  & 5.4 &single vortex by $t=130P_0$, disappears
       vortex after $t=160P_0$   \\ %doing HR
-      Pb0.5   & 1.0  & 10         & $0.5H$ & 7.3  & similar to Pb0     \\ 
-      Pb1     & 1.0  & 10         & $H$    & 5.7  &    single vortex
+      Pb0.5   & 1.0  & 10         & $0.5H$ & 7.3  & 3.0 &similar to Pb0     \\ 
+      Pb1     & 1.0  & 10         & $H$    & 5.7  & 2.2   &single vortex
       by $t=120P_0$, disappears after $t=140P_0$   \\ %doing HR
 
-      Pc0.5   & 1.0  & 100          & $0.5H$ & 4.2  &  two vortices
+      Pc0.5   & 1.0  & 100          & $0.5H$ & 4.2  &  2.3 &two vortices
       at $t\sim100P_0$, no vortices after $t\sim120P_0$   \\ %optional
-      Pc1     & 1.0  & 100          & $H$    & 2.2 &   two vortices at
+      Pc1     & 1.0  & 100          & $H$    & 2.2 &  1.6 &two weak vortices at
       $t\sim60P_0$, no vortices after $t\sim 80P_0$\\ %optional  
       \hline
   \end{tabular}
@@ -234,7 +234,6 @@ $t\in[110,200]P_0$ because this corresponds to $\sim 6 t_\nu$, but
 the disturbance in the disc bulk is also damped out: the evolution
 remains two-dimensional.    
 
-
 \begin{figure}
   \centering
   \includegraphics[width=\linewidth]{figures/pdisk_kerz_cases_planet_m1}
@@ -249,15 +248,26 @@ remains two-dimensional.
 \label{pdisk_kerz_cases_planet}}
 \end{figure}
 
+We emphasize the kinetic energy is dominated by horizontal
+motions, with $\mathrm{max}(|v_z|/|\bm{v}|) < 0.03$ at the outer
+gap edge ($r\in[1.2,1.6]r_0$). Vertical motions are well sub-sonic. When averaged
+over $z\in[0,2]H$ and $z\in[2,3]H$, the vertical Mach number
+$M_z\equiv|v_z|/c_s=0.05,\,0.08$ (P0), $M_z=0.04,\,0.05$ (P0R) and
+$M_z=0.05,0.06$ (P1), respectively. That is, $|v_z|$
+increases with height, but the difference between $v_z$ in the disc
+atmosphere and that near the midplane diminishes when viscosity is
+present in the former. 
+
 \subsubsection{Potential vorticity}
-We examine the PV evolution for case P0R. To higlight the vortices, which are positive (negative)
-density (vertical vorticity) perturbations, we show in
-Fig. \ref{jup0_3h_visc_restart_vorten} the inverse PV perturbation,
-$\eta_z(t=0)/\eta_z - 1$. As noted above, a single vortex still forms
+We examine the PV evolution for case P0R in
+Fig. \ref{jup0_3h_visc_restart_vorten}, but  
+to higlight the vortices, which are positive (negative)
+density (vertical vorticity) perturbations, we show the inverse PV
+perturbation, $\eta_z(t=0)/\eta_z - 1$. As noted above, a single vortex still forms
 despite introducing a viscous layer at $t=100P_0$. However, this
-vortex decays rapidly compared to case P0. The vortex elongates,
+vortex decays rapidly compared to case P0. The vortex elongates, 
 producing a `tail' ($t=160P_0$), and eventually the vortex core
-disappears altogether. 
+disappears altogether.  
 
 
 \begin{figure*}
@@ -273,22 +283,24 @@ disappears altogether.
     \label{jup0_3h_visc_restart_vorten}}
 \end{figure*}
 
-\subsubsection{Double-resolution runs}%prob just commentary
+\subsubsection{Resolution check}%prob just commentary
 We repeated simulations P0 and P1 with resolution
 $(N_r,N_\theta,N_\phi)=(512,96,1536)$, corresponding
 to $12$ and $32$ cells per scale-height in $(r,\phi)$ and $\theta$,
 respectively. We denote these runs as P0HR and P1HR below. 
 
-Due to lower numerical diffusion, we find stronger vortices in P0HR. 
-Although the vortex in P1HR persisted longer than the standard
-resolution run, it was still subject to rapid decay in comparison with
-P0HR. At the end of the simulation we find the $m=1$ amplitude to be
-$a_1=0.29$ and $a_1=0.10$, respectively for P0HR and P1HR; a similar
-contrast as that bewteen P0 and P1.  
+We observe similar evolution in P0HR and P1HR as their standard
+resolution versions. However, due to lower numerical diffusion, we
+find stronger vortices in P0HR. Although the vortex in P1HR persisted
+longer than the standard resolution run, it was still subject to rapid
+%%how long? 
+decay in comparison with P0HR. At the end of the simulation we find
+the $m=1$ amplitude to be $a_1=0.29$ and $a_1=0.10$, respectively for
+P0HR and P1HR; a similar contrast as that bewteen P0 and P1.    
 
 %Interestingly, we observe small-scale instability inside the
 %vortex. This is shown in Fig. . We suspect this is the elliptic
-%instability, but cannot prove this. 
+%instability, but cannot prove this. It is absent in P1HR.  
 
 \subsection{Additional simulations}% higher visc, strict isothermal 
 Locally isothermal, low viscosity discs are vulnerable to the

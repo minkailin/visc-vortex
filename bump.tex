@@ -122,32 +122,7 @@ all runs in this section. The spherical radial velocity is subject
 to random perturbations of magnitude $10^{-4}c_s$ 
 a few time-steps after initialisation. 
 
-\subsubsection{Inviscid run}
-For reference we simulate an effectively inviscid disc, case B0,
-with the viscosity parameters $\hat{\nu}_0=10^{-9}$ and $A_\nu = 1$.  
-Thus viscosity is independent of $z$ at $R=r_0$.   
-Inviscid setups similar to case B0 have previously been simulated
-both in the linear and non-linear regimes  \citep{meheut12, lin13}. 
-%So, %in addition to a control run, case B0 also serves to test the \pluto
-%code in simulating the RWI.    
 
-\subsubsection{Viscous runs}
-In these runs the floor viscosity is 
-$\hat{\nu}_0=10^{-6}$. The control run case V0 has $A_\nu =
-1$. Thus, case V0 is the viscous version of case B0.  
-We then consider models where the kinematic viscosity increases by
-a factor $A_\nu=100$ for $z>\zeta_\nu H_0$ at the bump radius. We
-choose $\zeta_\nu=1.5,\,1.0$ for cases V1 and V2, respecively.  This
-gives a upper 
-viscous layer of thickness $0.5H$ and $H$ at $R=r_0$. (See
-Fig. \ref{visc2d} for a plot of the kinematic viscosity profile for case V2.) 
-For case V1 and V2 the transition thickness is fixed to
-$\Delta\zeta_\nu=0.2$.  
- 
-Finally, we consider a high viscosity run, case V3, 
-with $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$.  This is equivalent to
-extending the viscous layer in case V1/V2 to the entire vertical
-domain.  
 
 \subsubsection{Linear growth rates and frequencies}
 The present setup allows us to define a linear instability in the
@@ -187,18 +162,37 @@ $\Omega_0\equiv\Omega_i(r_0)\simeq\Omega_k(r_0)$.
 
 \subsection{Results}
 Table \ref{artificial_bump} summarises the simulations presented in
-this section. Linear mode frequencies are measured at 
-$t=10P_0$ (when $|\delta\rho|\ll 1$) and averaged over 
-$r\in[0.8,1.2]r_0$. The second set of measurements is made well into
-the non-linear regime at $t=100P_0$. 
-The minimum Rossby number is measured at
-the midplane.  
+this section. 
+%\subsubsection{Inviscid run}
+For reference we simulate an effectively inviscid disc, case B0,
+with the viscosity parameters $\hat{\nu}_0=10^{-9}$ and $A_\nu = 1$.  
+Thus viscosity is independent of $z$ at $R=r_0$.   
+Inviscid setups similar to case B0 have previously been simulated
+both in the linear and non-linear regimes  \citep{meheut12, lin13}. 
+%So, %in addition to a control run, case B0 also serves to test the \pluto
+%code in simulating the RWI.    
+
+%\subsubsection{Viscous runs}
+We then simulate discs with floor viscosity  
+$\hat{\nu}_0=10^{-6}$. The control run case V0 has $A_\nu =
+1$. Thus, case V0 is the viscous version of case B0.  
+We then consider models where the kinematic viscosity increases by
+a factor $A_\nu=100$ for $z>\zeta_\nu H_0$ at the bump radius. We
+choose $\zeta_\nu=1.5,\,1.0$ for cases V1 and V2, respecively.  This
+gives a upper 
+viscous layer of thickness $0.5H$ and $H$ at $R=r_0$. (See
+Fig. \ref{visc2d} for a plot of the kinematic viscosity profile for case V2.) 
+For case V1 and V2 the transition thickness is fixed to
+$\Delta\zeta_\nu=0.2$. Finally, we consider a high viscosity run, case
+V3, with $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$.  This is equivalent to 
+extending the viscous layer in case V1/V2 to the entire vertical
+domain.  
 
 \begin{table*}
   \centering
   \caption{Summary of hydrodynamic simulations initialized with a
-    density bump. 
-    $\hat{\nu}_0=10^{-4}$ and $A_\nu=1$. \label{artificial_bump}}
+    density bump. Linear mode frequencies are averaged over 
+    $r\in[0.8,1.2]r_0$. \label{artificial_bump}}
   \begin{tabular}{lcccccl @{\extracolsep{0.1cm}} ccc}
     \hline\hline
     \multicolumn{4}{c}{\phantom{stuff}} &
@@ -466,7 +460,11 @@ We conjecture that in the non-linear regime there is competition
 between destruction of the background PV minimum by the 
 vortices and reformation of the initial radial PV minimum by the
 imposed viscosity profile. The latter should favour the RWI, since the
-anti-cyclonic vortices are regions of local vorticity minima.  
+anti-cyclonic vortices are regions of local vorticity minima. In this
+way, viscosity acts to source vorticity, and this effect outweighs
+viscous damping of the linear perturbations.   
+%Because
+%viscosity has limited effect on the linear instability, its effect  
  
 
 
