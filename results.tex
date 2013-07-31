@@ -30,7 +30,7 @@ solution to Eq. \ref{ang_mom_cons}. That is, \emph{if} $\rho_i$ is a
 steady state density field, then Eq. \ref{init_vr} is \emph{a} corresponding
 steady radial flow. However, initializing the density and radial velocity
 separately according to Eq. \ref{init_den} and Eq. \ref{init_vr} 
-will not, in general, yield a time-indepdent flow. 
+will not, in general, yield a time-independent flow. 
 
 
 \subsection{Viscosity profile}\label{visc_model}
@@ -40,7 +40,7 @@ upper layers of the disc, but not elsewhere. We therefore choose a
 simple two-layered model for the kinematic viscosity as follows. Let
 $\nu = \hat{\nu}r_0^2\Omega_K(r_0)$, where
 $\hat{\nu}=\hat{\nu}(R,\psi)$ is a dimensionless function describing
-the magnitude and spatial distribution of the axisymmetric kinetmatic
+the magnitude and spatial distribution of the axisymmetric kinematic
 viscosity. We choose $\hat{\nu}$ such that   
 \begin{align}\label{visc_profile}
   \hat{\nu}\Sigma_i(R)\frac{d\ln{\Omega}}{d\ln{R}} =
@@ -134,7 +134,7 @@ B0. We then consider models where the kinematic viscosity increases by
 a factor $A_\nu=100$ beyond $\psi=\zeta_\nu$. The angular transition
 width is fixed to $\Delta\zeta_\nu=0.2h$. In the first instance, we
 maintain a vertical domain size of $n_h=2$, and choose
-$\zeta_\nu=1.5h,\,1.0h$ for cases V1 and V2, respecively. This gives a
+$\zeta_\nu=1.5h,\,1.0h$ for cases V1 and V2, respectively. This gives a
 viscous layer of thickness $0.5H$ and $H$ near the upper boundary at
 the reference radius. (See Fig. \ref{visc2d} for a plot of the
 kinematic viscosity profile for case V1.) Finally, we consider a high
@@ -251,7 +251,7 @@ unstable linear mode growth rate decreases by about $5\%$  (Table
 \ref{artificial_bump}). However, the non-linear evolution of case B1
 differs significantly from case B0. The final non-axisymmetry is weak
 , $|\Delta\rho|\sim 6\%$ (c.f. $\sim 50\%$ for case B0), and there is
-no distinct vortical structure. Vortex formation has been surpressed
+no distinct vortical structure. Vortex formation has been suppressed
 by changing the numerical boundary conditions. 
 
 It is clear from this simple experiment that vortex formation through
@@ -408,10 +408,10 @@ high-viscosity layer to occupy the entire vertical domain in case
 V3, so it has no viscosity transition with respect to $\psi$. 
 
 Table \ref{artificial_bump} shows that increasing the viscous layer thickness does not
-change the dominant azimuthal wavenumber in the linear phase, but does appreciablely decrease the 
+change the dominant azimuthal wavenumber in the linear phase, but does appreciably decrease the 
 linear growth rate (by $\sim 46\%$ from case V1 to V3). However, the growth time-scales are still
 $O(P_0)$.  It remains fast compared to the viscous time-scale. So
-viscosity does not significanty affect the linear phase.  
+viscosity does not significantly affect the linear phase.  
 
 Fig. \ref{vdamp2} compares the non-axisymmetric density field at
 $t=100P_0$ for cases V1, V2 and V3 described above. 
@@ -447,7 +447,7 @@ decreases.
    %%   0.99cm]{figures/vdamp0_nu4_pdisk019}\includegraphics[scale=.27,clip=true,clip=true,trim=2.3cm
    %%   0.cm 0.cm
    %%    0.99cm]{figures/vdamp0_nu4_pdisk024}
-    \caption{Non-axisymemtric density field at the midplane,
+    \caption{Non-axisymmetric density field at the midplane,
       $\Delta\rho(z=0)$, for case V1 (left), case V2 (middle) and case
       V3. The vertical domain size is $\tan{\psi_\mathrm{max}} = 2h$,
       and the angular thickness of the upper viscous layer at $r=r_0$
@@ -484,7 +484,7 @@ decreases.
 
 Stronger vortical structures with increasing viscosity is somewhat counter-intuitive, 
 as one normally expects viscosity to smooth out the flow. To
-rationalise this observation, we recall that the instability is
+rationalize this observation, we recall that the instability is
 fundamentally associated with vortensity minima. Consider the
 vortensity perturbation at the bump radius, which was found to be 
 \begin{align}
@@ -514,7 +514,7 @@ time-scale.
 
 When viscosity is small, the viscous time-scale is long. In this case
 the non-linear evolution of the instability weakens the vortensity
-extema with viscosity playing no role. 
+extrema with viscosity playing no role. 
 As we increase viscosity, the local viscous time-scale
 becomes shorter than our simulation time-scale. This means that over
 the course of the simulation, our spatially-fixed viscosity profile acts
