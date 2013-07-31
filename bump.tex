@@ -51,8 +51,7 @@ $z$. Eq. \ref{temp} motivates the simple choice
   v_{Ri} = \frac{\nu}{R}\frac{d\ln{\Omega_i}}{d\ln{R}} 
 \end{align}
 for the initial cylindrical radial velocity. Next, we choose the
-viscosity profile $\nu$ to make $\dot{M}$ independent of
-cylindrical radius.  
+viscosity profile $\nu$ to make $\dot{M}$ independent of $R$.   
 
 \subsubsection{Viscosity profile for a steady state}\label{visc_model}
 If the initial conditions corresponds to a steady state, then
@@ -79,7 +78,7 @@ where $\nu_0$ is a constant dimensionless floor viscosity and
 \end{align}
 is a generic function describing a step of magnitude
 $A_\nu-1$. The position and width of the step is described by
-$\zeta_\nu$ and $\Delta\zeta_\nu$, respectively. 
+$\zeta_\nu$ and $\Delta\zeta_\nu$, respectively, with $\Delta\zeta_\nu\ll\zeta_\nu$. 
 In Eq. \ref{visc_profile} we have set the dimensionless co-ordinate
 $\zeta=z/H_0$ where $H_0=H(r_0)$. %We have specified
 %the kinematic viscosity directly, but 
@@ -356,9 +355,9 @@ below.
     over $r\in[0.8,1.2]r_0$, for the inviscid case B0 (solid), low
     viscosity case V0 (dotted) and a layered viscosity case V1 (dashed). 
     For each, the contribution 
-    averaged over the disc atmosphere ($\tan{\psi}\in[0,0.5]h$, thin
+    averaged over the disc atmosphere ($\tan{\psi}\in[1.5,2.0]h$, thin
     lines) and over the
-    disc bulk ($\tan{\psi}\in[0.5,2.0]h$, thick lines) are plotted
+    disc bulk ($\tan{\psi}\in[0,1.5]h$, thick lines) are plotted
     separately. 
     \label{bump_energy}}
 \end{figure}
@@ -400,8 +399,9 @@ Inserting $h=0.1,\,\hat{\nu}=10^{-4}$ and $|Ro|=0.25$ (case V3) gives
 $t_\nu \sim 4t_\mathrm{turn}$. Therefore, depending on the vortex shape, 
 $t_\nu$ may not be much larger than $t_\mathrm{turn}$. 
 
-In any case, our simulations span several local viscous timescales, 
-$t_\mathrm{sim}\sim 10t_\nu $, so viscous damping should have taken
+In any case, our high-viscosity simulations span several local viscous timescales, 
+$t_\mathrm{sim}\sim 10t_\nu $ (for $\hat{\nu}\sim10^{-4}$), so viscous
+damping should have taken 
 place, making the observation that $Ro$ becomes more negative as the 
 viscous layer increases from case V0 to V3, a surprising
 result. However, recall that we imposed a stationary, radially
@@ -437,7 +437,7 @@ restore the initial density bump.
 
 When viscosity is small, the local viscous timescale $t_\nu$ is long compared to our
 simulation timescale $t_\mathrm{sim}$. Then vortex formation weakens the PV minimum
-with viscosity playing no role. Increasing viscosity eventually causes
+with viscosity playing no role. Increasing viscosity eventually makes 
 $t_\nu<t_\mathrm{sim}$. This means that over the course of the
 simulation, our spatially-fixed viscosity profile can act to recover the
 initial PV minimum.  
@@ -445,9 +445,9 @@ initial PV minimum.
 We conjecture that in the non-linear regime there is competition 
 between destruction of the background PV minimum by the 
 vortices and reformation of the initial radial PV minimum by the
-imposed viscosity profile. The latter should favour the RWI, since the
-anti-cyclonic vortices are regions of local vorticity minima. In this
-way, viscosity acts to source vorticity, and this effect outweighs
-viscous damping of the linear perturbations.   
+imposed viscosity profile. The latter effect should favour the RWI,
+since the anti-cyclonic vortices are regions of local vorticity
+minima. In this way, viscosity acts to source vorticity, and this
+effect outweighs viscous damping of the linear perturbations.    
 
 %lack of vortex migration in viscous models --> density bump re-enforced

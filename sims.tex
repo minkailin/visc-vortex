@@ -11,7 +11,7 @@ frictional damping within the shells $r<r_\mathrm{d,in} = 1.25\rin$
 and $r>r_\mathrm{d,out}=0.84\rout$.
 
 The fluid equations are evolved using the \pluto code \citep{mignone07} with 
-the FARGO algorithm enabled\citep{mignone12}. We employ a static
+the FARGO algorithm enabled \citep{mignone12}. We employ a static
 spherical grid with $(N_r, N_\theta, N_\phi)$ zones uniformly spaced
 in all directions. For the present simulations the code was configured
 with piece-wise linear reconstruction, a Roe solver and second order
@@ -33,14 +33,7 @@ $r$, reflective in $\theta$ and periodic in $\phi$.
 \subsection{Diagnostics}
 We list several quantities calculated from simulation data for use in
 results visualization and analysis.  
-%Averaged quantities are used to facilitate  
-%comparison between different cases. We use $\avg{\cdots}_j$ 
-%to denote spatial averaging along the $j^\mathrm{th}$ co-ordinate. 
-%Azimuthal averages are taken over $\phi\in[0,2\pi]$, while the domain
-%for meridional averaging is stated along with simulation results in
-%the next section. %% We also use $\overline{\cdots}$ to denote a further
-%% time average. 
-
+ 
 \subsubsection{Density perturbations}
 The relative density perturbation $\delta\rho$ and 
 and the non-axisymmetric density fluctuation $\Delta\rho$ are defined as 
@@ -70,7 +63,7 @@ frequency $\kappa\neq\Omega$).
 
 \subsubsection{Potential vorticity}
 The potential vorticity (PV, or vortensity) is 
-$  \bm{\eta}_\mathrm{3D} = \nabla\times\bm{v}/\rho$. 
+$  \bm{\eta}_\mathrm{3D} = \nabla\times~\bm{v}/\rho$. 
 %Since we are considering geometrically thin discs, 
 However, it will be convenient to work with vertically averaged
 quantities. We define  
@@ -82,16 +75,13 @@ integrals are confined to the computational domain.
 We recall for a 2D disc the vortensity is defined as 
 $\eta_\mathrm{2D} \equiv \hat{\bm{z}}\cdot\nabla\times\bv/\Sigma$, and
 extrema in $\eta_\mathrm{2D}$ is necessary for the RWI in
-2D \citep{lovelace99,lin10}. Clearly, if the velocity field has no
-vertical dependence then $\eta_z$ is proportional to
-$\eta_\mathrm{2D}$ (at fixed cylindrical radius).   
+2D \citep{lovelace99,lin10}. If the velocity field is indepdendent of 
+$z$ then $\eta_z$ is proportional to $\eta_\mathrm{2D}$ (at fixed
+cylindrical radius).    
 
 \subsubsection{Perturbed kinetic energy density}  
-%We will be interested in the energetics of non-axisymmetric
-%structures. 
 We define the perturbed kinetic energy as
 $W\equiv|\bm{v}|^2/|\bm{v}(t~=0)|^2 - 1$, and its Fourier transform 
 $W_m\equiv\int_0^{2\phi} W\exp{(-\mathrm{i}m\phi)}d\phi$. We will examine
 $|W_m(r,\theta)|$ averaged over sub-portions of the $(r,\theta)$
-plane. %Specifically we define the `midplane energy' as $|W_m|$
-%averaged over $$
+plane. 
