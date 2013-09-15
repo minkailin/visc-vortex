@@ -117,10 +117,21 @@ respectively. The planet potential is disabled for these runs
 reference velocity $\bm{v}_\mathrm{ref}=\bm{v}(t=0)$.     
 
 The bump parameters are set to $A=1.25$ and $\Delta R = 0.05r_0$ for
-all runs in this section. The spherical radial velocity is subject 
+all runs in this section. {\bf The corresponding PV profile is shown
+  in Fig. \ref{bump_PV}}. The spherical radial velocity is subject 
 to random perturbations of magnitude $10^{-4}c_s$ 
 a few time-steps after initialization. 
 
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{figures/bump0_vorten1d_000}
+  \caption{{\bf Potential vorticity profile for simulations initialised
+    with a surface density bump, as described by
+    Eq. \ref{bump_func}. The RWI is associated with the local PV
+    minima at unit radius.}
+    \label{bump_PV}}
+\end{figure}
 
 
 \subsubsection{Linear growth rates and frequencies}
@@ -440,7 +451,12 @@ simulation timescale $t_\mathrm{sim}$. Then vortex formation weakens the PV mini
 with viscosity playing no role. Increasing viscosity eventually makes 
 $t_\nu<t_\mathrm{sim}$. This means that over the course of the
 simulation, our spatially-fixed viscosity profile can act to recover the
-initial PV minimum.  
+initial PV minimum {\bf and surface density bump}. {\bf This further evidenced by  
+  reduced vortex migration observed in Fig. \ref{vdamp0} with
+  increased viscosity (e.g. the vortex in case V0 has migrated inwards to
+  $R\simeq0.9r_0$ while that in case V3 remains near $R\simeq r_0$). This
+  is because vortex migration can be halted by surface density bumps
+  \citep{paardekooper10}.}  
 
 We conjecture that in the non-linear regime there is competition 
 between destruction of the background PV minimum by the 
@@ -448,6 +464,7 @@ vortices and reformation of the initial radial PV minimum by the
 imposed viscosity profile. The latter effect should favour the RWI,
 since the anti-cyclonic vortices are regions of local vorticity
 minima. In this way, viscosity acts to source vorticity, and this
-effect outweighs viscous damping of the linear perturbations.    
+effect outweighs viscous damping of the linear perturbations. {\bf We
+  discuss additional simulations designed to test this hypothesis in
+  Appendix \ref{add_sim}.}    
 
-%lack of vortex migration in viscous models --> density bump re-enforced

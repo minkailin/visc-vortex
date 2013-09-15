@@ -1,10 +1,11 @@
 \section{Disc model and Governing equations}\label{model} 
-We consider a three-dimensional, isothermal,
+We consider a three-dimensional, {\bf locally} isothermal,
 non-self-gravitating fluid disc orbiting a central 
-star of mass $M_*$. We use both spherical co-ordinates
-$\bm{r}=(r,\theta,\phi)$ and cylindrical co-ordinates  
-$\bm{r}=(R, \phi, z)$ centred on the star and 
-adopt a non-rotating frame. We also define $\psi \equiv \pi/2 -
+star of mass $M_*$. {\bf We adopt a non-rotating frame centred on the
+  star. Our computer simulations employ spherical co-ordinates
+  $\bm{r}=(r,\theta,\phi)$, but for model description and results 
+  analysis we will also use cylindrical co-ordinates $\bm{r}=(R, \phi,
+  z)$.} We also define $\psi \equiv \pi/2 -
 \theta$ as the angular displacement from the disc midplane. For
 convenience, we will sometimes refer to $\psi$ as the vertical
 direction. The governing equations are: 
@@ -85,7 +86,7 @@ surface density $\Sigma_i(R)$ is chosen as
 where $\sigma$ is the power-law index, and the surface density scale $\Sigma_0$ 
 is arbitrary for a non-self-gravitating disc. 
 The bump function $B(R)$ is 
-\begin{align}
+\begin{align}\label{bump_func}
 B(R) = 1 + \left(A - 1\right)\exp{\left[-\frac{(R-r_0)^2}{2\Delta R^2}\right]},
 \end{align}
 where $A$ is the bump amplitude and $\Delta R$ is the bump width. The

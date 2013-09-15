@@ -11,7 +11,7 @@ frictional damping within the shells $r<r_\mathrm{d,in} = 1.25\rin$
 and $r>r_\mathrm{d,out}=0.84\rout$.
 
 The fluid equations are evolved using the \pluto code \citep{mignone07} with 
-the FARGO algorithm enabled \citep{mignone12}. We employ a static
+the FARGO algorithm enabled {\bf \citep{masset00,mignone12}.} We employ a static
 spherical grid with $(N_r, N_\theta, N_\phi)$ zones uniformly spaced
 in all directions. For the present simulations the code was configured
 with piece-wise linear reconstruction, a Roe solver and second order
@@ -35,7 +35,7 @@ We list several quantities calculated from simulation data for use in
 results visualization and analysis.  
  
 \subsubsection{Density perturbations}
-The relative density perturbation $\delta\rho$ and 
+The relative density perturbation $\delta\rho$ 
 and the non-axisymmetric density fluctuation $\Delta\rho$ are defined as 
 \begin{align}
   \delta\rho(\bm{r},t) \equiv \frac{\rho - \rho_i}{\rho_i}, \quad
