@@ -1,0 +1,91 @@
+I thank the reviewer for a prompt report and helpful comments. 
+The revisions are made in bold and further explained below. 
+
+****************************************************************************************
+However,  one concern with these results is that there seems to be a
+discrepancy between the effect of layered viscosity in disks with an artificial
+bump and realistic models where a gap is opened by a planet. As outlined in
+section 4.4 a simulation with a high viscosity layer and an artificial density
+bump shows that vorticity increases for a larger upper viscous layer possibly
+due to the artificial viscosity radial profile. I think this issue could be
+addressed in Section 6 after the two sets of numerical simulations have been
+presented. To try to identify why this behavior is present in the vortex
+evolution with a prescribed radial viscosity profile, two models with the same
+numerical setup and viscosity profile parameters with a density bump and a gap
+introduced by the planet could be compared directly.  This comparison could
+confirm the hypothesis that the viscosity profile supports the grow of
+vorticity if the same effect is reproduced in the simulation that includes the
+interaction with a planet.
+****************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*****************************************************************************************
+I have listed below several minor issues that should be changed in the
+manuscript to describe the models and results comprehensively.
+
+Abstract
+- Perhaps define in a few words the meaning of "dead zones" in this context:
+"including dead zones, has not been verified."->
+"including dead zones, regions that are magnetically inactive where viscosity
+is greatly reduced, has not been verified."
+
+- It could be specified that the experiment (i) refers to bumps in the radial
+direction:
+"of artificial density bumps"->"of artificial radial density bumps"
+
+Section 2
+- line 9, second column:
+"We use both spherical co-ordinates r = (r,θ,φ) and cylindrical co-ordinates"
+It is not clear from the description of the simulations in sections 4 and 5, in
+which cases each type of co-ordinates were used. It would be useful to have
+that information summarized in Tables 1 and 2 if possible with a short
+discussion in the text describing why a particular co-ordinate system was
+chosen for various experiments.
+
+- line 9, second column:
+"three-dimensional, isothermal,"->"three-dimensional, locally isothermal,"
+
+Section 2.1
+- line 18, first column.
+I think it would be good to show a plot of the surface density bump function as
+a function of radial distance described in eq. 10 for the parameters used in
+the disc models introduced in section 4 using different line styles. This would
+give the reader an idea of how this function compares with the shape of the
+edge of a gap opened up by a giant planet.
+
+Section 3
+- line 17, second column:
+Perhaps here also refer to the FARGO algorithm paper (Masset 2000):
+http://adsabs.harvard.edu/abs/2000A%26AS..141..165M
+
+The last paragraph in section 3 could be reworded to make clear which boundary
+conditions are applied on each coordinates. What are the conditions for z
+boundaries in the case of cylindrical coordinates?
+
+Section 3.1.1
+- line 38, second column:
+"and and the nonaxisymmetric" -> "and the nonaxisymmetric"
+
+Section 5:
+- line 15:
+"disappears vortex after"->"disappears after"
+
+Section 6.1
+- line  6, second column:
+"Pierens & Nelson"->"Pierens & Nelson (2010)"
+
+- line  19, second column:
+"Oishi & Mac Low"->"Oishi & Mac Low (2009)"
+
