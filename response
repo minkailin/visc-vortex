@@ -17,33 +17,57 @@ confirm the hypothesis that the viscosity profile supports the grow of
 vorticity if the same effect is reproduced in the simulation that includes the
 interaction with a planet.
 ****************************************************************************************
+I have performed additional simulations with artificial density bumps but using  
+a radially-smooth viscosity profile. This is described in Appendix A (to minimise 
+interruption to the original text) where it is compared to a corresponding case with 
+a radially-structured viscosity profile. The vortex is sustained in the latter case 
+(in fact its amplitude eventually begins to increase in the non-linear regime) whereas
+it decays away when the viscosity profile is radially smooth.  
+
+
+A radially-structured viscosity profile is neccessary to keep a radial density bump 
+in steady state. However, this is not required for a gap maintained by disc-planet interaction. 
+It is not obvious how to choose a radially-structured viscosity profile for 
+disc-planet systems to make it comparable to simulations with an artificial 
+radial density bump. One possibility is to assume a relation between a gap density and 
+viscosity profiles (e.g. nu*Sigma = constant, so that viscosity is lower at the gap 
+edge relative to that at the gap centre).  Specifying nu=nu(R,z) is not trivial in this case
+because (i) there is no simple analytical descriptions of a gap profile, and (ii) the gap profile itself
+depend on the imposed viscosity. One could allow the viscosity dynamically respond to the 
+evolving density field as the planet opens a gap. Such simulations  
+are being  prepared for future work, as stated in Section 6.2. Even then, it is not clear 
+how a disc-planet case is equivalent to a radial density bump case. 
+
+These additional complications are beyond the scope o.  
+The primary motivation for using the radial density bump with a radially-structured
+viscosity profile was to permit a well-defined linear instability. Vorticity growth in
+the non-linear regime is somewhat artificial 
 
 
 
+The experiment described above, is a simpler alternative that 
+empiracaly supports the hypothesis that a radially structured viscosity 
+profile helps the RWI. 
 
 
 
-
-
-
-
-
-
-
-
+%discrepency is resolved by nothing that the imposed viscosity plays both a source and damping in the 
 *****************************************************************************************
-I have listed below several minor issues that should be changed in the
-manuscript to describe the models and results comprehensively.
-
 Abstract
 - Perhaps define in a few words the meaning of "dead zones" in this context:
 "including dead zones, has not been verified."->
 "including dead zones, regions that are magnetically inactive where viscosity
 is greatly reduced, has not been verified."
+****************************************************************************************
+Done. 
+****************************************************************************************
 
 - It could be specified that the experiment (i) refers to bumps in the radial
 direction:
 "of artificial density bumps"->"of artificial radial density bumps"
+****************************************************************************************
+Done.
+****************************************************************************************
 
 Section 2
 - line 9, second column:
@@ -53,9 +77,17 @@ which cases each type of co-ordinates were used. It would be useful to have
 that information summarized in Tables 1 and 2 if possible with a short
 discussion in the text describing why a particular co-ordinate system was
 chosen for various experiments.
+****************************************************************************************
+All numerical simulations are performed in spherical co-ordinates. However, it was convenient
+to describe the disc models and present results in cylindrical co-ordinates. This is now clarified. 
+(It is also mentioned in Section 3, paragraph 3.) 
+****************************************************************************************
 
 - line 9, second column:
 "three-dimensional, isothermal,"->"three-dimensional, locally isothermal,"
+****************************************************************************************
+Done.
+****************************************************************************************
 
 Section 2.1
 - line 18, first column.
@@ -64,28 +96,51 @@ a function of radial distance described in eq. 10 for the parameters used in
 the disc models introduced in section 4 using different line styles. This would
 give the reader an idea of how this function compares with the shape of the
 edge of a gap opened up by a giant planet.
+****************************************************************************************
+I thank the reviewer for this suggestion. Instead of the surface density,
+I have chosen to plot the potential vorticity profile instead, since this is the
+key quantity associated with the RWI. The PV profile for the artificial bump is shown in
+Fig. 2, while that for a planet gap is shown in Fig. . 
+****************************************************************************************
 
 Section 3
 - line 17, second column:
 Perhaps here also refer to the FARGO algorithm paper (Masset 2000):
 http://adsabs.harvard.edu/abs/2000A%26AS..141..165M
+****************************************************************************************
+Added.
+****************************************************************************************
 
 The last paragraph in section 3 could be reworded to make clear which boundary
 conditions are applied on each coordinates. What are the conditions for z
 boundaries in the case of cylindrical coordinates?
-
+****************************************************************************************
+As stated above, all numerical simulations and therefore boundary conditions are 
+done in spherical co-ordinates. 
+****************************************************************************************
 Section 3.1.1
 - line 38, second column:
 "and and the nonaxisymmetric" -> "and the nonaxisymmetric"
+****************************************************************************************
+Corrected.
+****************************************************************************************
 
 Section 5:
 - line 15:
 "disappears vortex after"->"disappears after"
+****************************************************************************************
+Corrected.
+****************************************************************************************
 
 Section 6.1
 - line  6, second column:
 "Pierens & Nelson"->"Pierens & Nelson (2010)"
+****************************************************************************************
+Corrected.
+****************************************************************************************
 
 - line  19, second column:
 "Oishi & Mac Low"->"Oishi & Mac Low (2009)"
-
+****************************************************************************************
+Corrected.
+****************************************************************************************
