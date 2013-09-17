@@ -23,7 +23,7 @@ interruption to the original text) where it is compared to a corresponding case 
 a radially-structured viscosity profile. The vortex is sustained in the latter case 
 whereas it decays away when the viscosity profile is radially smooth.  
 
-A radially-structured viscosity profile is neccessary to keep a radial density bump 
+A radially-structured viscosity profile is necessary to keep a radial density bump 
 in steady state. However, this is not required for a gap maintained by
 disc-planet interaction. It is not obvious how to choose a radially-structured viscosity profile for 
 disc-planet systems to make it comparable to simulations with an artificial 
@@ -42,7 +42,7 @@ profile is to permit a well-defined linear instability (i.e. a
 non-evolving background). The difference in the non-linear regime 
 between disc-planet simulations and a radial density bump is not
 unexpected. The imposed radially-structured viscosity can 
-help the instability by sourcing the required disc structure. On ther other hand, if
+help the instability by sourcing the required disc structure. On the other hand, if
 viscosity is radially-smooth, it only acts to damp the instability (as it occurs
 for disc-planet simulations and that in Appendix A). 
 
