@@ -11,7 +11,7 @@ act as a damping mechanism.
 
 Vortex formation at gap edges is a standard result in 
 2D and 3D hydrodynamical simulations of giant planets in low viscosity discs 
-\citep{valborro07,lin10,lin11a,lin12}. The fact that this is due to
+\citep{valborro07,lin10,lin11a,lin12,zhu13}. The fact that this is due to
 the RWI has been explicitly verified through linear stability
 analysis %of planetary gap profiles produced from 2D simulations
 \citep{valborro07,lin10}. Here, we simulate gap-opening giant planets
@@ -269,16 +269,18 @@ We emphasize the kinetic energy is dominated by horizontal
 motions, with $\mathrm{max}(|v_z|/|\bm{v}|) < 0.03$ at the outer
 gap edge ($r\in[1.2,1.6]r_0$). Vertical motions are well sub-sonic. When averaged
 over $z\in[0,2]H$ and $z\in[2,3]H$, the vertical Mach number
-$M_z\equiv|v_z|/c_s=0.05,\,0.08$ (P0), $M_z=0.04,\,0.05$ (P0R) and
-$M_z=0.05,0.06$ (P1), respectively. %That is, $|v_z|$
+$M_z\equiv|v_z|/c_s \simeq 0.05,\,0.08$ (P0), $M_z\simeq 0.04,\,0.06$ (P0R) and
+$M_z \simeq 0.05,0.06$ (P1), respectively. %time averages
+
+%That is, $|v_z|$
 %increases with height, but the difference between $v_z$ in the disc
 %atmosphere and that near the midplane diminishes when viscosity is
 %present in the former. 
 
 \subsubsection{Potential vorticity}
 We examine the PV evolution for case P0R in
-Fig. \ref{jup0_3h_visc_restart_vorten}, but  
-to highlight the vortices, which are positive (negative)
+Fig. \ref{jup0_3h_visc_restart_vorten}.  
+To highlight the vortices, which are positive (negative)
 density (vertical vorticity) perturbations, we show the inverse PV
 perturbation, $\delta\eta_z^{-1}\equiv\eta_z(t=0)/\eta_z - 1$. As
 noted above, a single vortex still forms  
@@ -337,8 +339,10 @@ Fig. \ref{HR_sims} in terms of the (inverse) PV perturbation. We
 checked the density field remains smooth, so this small-scale structure is
 due to vorticity variations. This is unlikely the elliptic instability
 \citep{lesur09}, though, because the numerical resolution is still
-insufficient for studying such instabilities; especially since the vortex is weak  with aspect ratio
-$\sim 10$. Despite the disturbances, the vortex over-density in P0HR remains coherent until the
+insufficient for studying such instabilities; especially since the
+vortex is {\bf very elongated with large} aspect ratio
+$\sim 10$ {\bf \cite[so the elliptic instability is weak,][]{lesur09}}.  
+Despite the disturbances, the vortex over-density in P0HR remains coherent until the
 end of the simulation, possibly because the planet maintains the 
 condition for RWI. On the other hand, the vortex in the layered-case
 P1HR does not develop small-scale structure (Fig. \ref{HR_sims}, right

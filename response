@@ -2,7 +2,7 @@ I thank the reviewer for a prompt report and helpful comments.
 The revisions are made in bold and further explained below. 
 
 ****************************************************************************************
-However,  one concern with these results is that there seems to be a
+However, one concern with these results is that there seems to be a
 discrepancy between the effect of layered viscosity in disks with an artificial
 bump and realistic models where a gap is opened by a planet. As outlined in
 section 4.4 a simulation with a high viscosity layer and an artificial density
@@ -21,37 +21,34 @@ I have performed additional simulations with artificial density bumps but using
 a radially-smooth viscosity profile. This is described in Appendix A (to minimise 
 interruption to the original text) where it is compared to a corresponding case with 
 a radially-structured viscosity profile. The vortex is sustained in the latter case 
-(in fact its amplitude eventually begins to increase in the non-linear regime) whereas
-it decays away when the viscosity profile is radially smooth.  
-
+whereas it decays away when the viscosity profile is radially smooth.  
 
 A radially-structured viscosity profile is neccessary to keep a radial density bump 
-in steady state. However, this is not required for a gap maintained by disc-planet interaction. 
-It is not obvious how to choose a radially-structured viscosity profile for 
+in steady state. However, this is not required for a gap maintained by
+disc-planet interaction. It is not obvious how to choose a radially-structured viscosity profile for 
 disc-planet systems to make it comparable to simulations with an artificial 
 radial density bump. One possibility is to assume a relation between a gap density and 
 viscosity profiles (e.g. nu*Sigma = constant, so that viscosity is lower at the gap 
-edge relative to that at the gap centre).  Specifying nu=nu(R,z) is not trivial in this case
-because (i) there is no simple analytical descriptions of a gap profile, and (ii) the gap profile itself
-depend on the imposed viscosity. One could allow the viscosity dynamically respond to the 
+edge relative to that at the gap centre). Specifying nu=nu(R,z) is not trivial in this case
+because the gap density profile depends on the imposed viscosity, so there is
+no simple analytical expression for nu.  
+One could allow the viscosity to dynamically respond to the  
 evolving density field as the planet opens a gap. Such simulations  
 are being  prepared for future work, as stated in Section 6.2. Even then, it is not clear 
 how a disc-planet case is equivalent to a radial density bump case. 
 
-These additional complications are beyond the scope o.  
-The primary motivation for using the radial density bump with a radially-structured
-viscosity profile was to permit a well-defined linear instability. Vorticity growth in
-the non-linear regime is somewhat artificial 
+The primary motivation for using the radially-structured viscosity
+profile is to permit a well-defined linear instability (i.e. a
+non-evolving background). The difference in the non-linear regime 
+between disc-planet simulations and a radial density bump is not
+unexpected. The imposed radially-structured viscosity can 
+help the instability by sourcing the required disc structure. On ther other hand, if
+viscosity is radially-smooth, it only acts to damp the instability (as it occurs
+for disc-planet simulations and that in Appendix A). 
 
-
-
-The experiment described above, is a simpler alternative that 
-empiracaly supports the hypothesis that a radially structured viscosity 
-profile helps the RWI. 
-
-
-
-%discrepency is resolved by nothing that the imposed viscosity plays both a source and damping in the 
+The experiment described above is a simple alternative that still
+supports the hypothesis that a radially-structured viscosity profile
+helps the RWI in the non-linear regime. 
 *****************************************************************************************
 Abstract
 - Perhaps define in a few words the meaning of "dead zones" in this context:
@@ -78,8 +75,9 @@ that information summarized in Tables 1 and 2 if possible with a short
 discussion in the text describing why a particular co-ordinate system was
 chosen for various experiments.
 ****************************************************************************************
-All numerical simulations are performed in spherical co-ordinates. However, it was convenient
-to describe the disc models and present results in cylindrical co-ordinates. This is now clarified. 
+All numerical simulations are performed in spherical
+co-ordinates. However, cylindrical co-ordinates are used to describe
+the disc models and in results analysis. This is now clarified. 
 (It is also mentioned in Section 3, paragraph 3.) 
 ****************************************************************************************
 
@@ -100,7 +98,7 @@ edge of a gap opened up by a giant planet.
 I thank the reviewer for this suggestion. Instead of the surface density,
 I have chosen to plot the potential vorticity profile instead, since this is the
 key quantity associated with the RWI. The PV profile for the artificial bump is shown in
-Fig. 2, while that for a planet gap is shown in Fig. . 
+Fig. 2, while that for a planet gap is shown in Fig. 7. 
 ****************************************************************************************
 
 Section 3
